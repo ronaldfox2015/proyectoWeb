@@ -1,0 +1,46 @@
+<div class="modal fade modal-fondo" id="modal_pasos_recarga_automatica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="bg-transparent modal-content modal_recuperar_contrasenia_descripcion full-zkte-mod">
+      <div class="titulo-flotante-modal">Afiliación a la Recarga Automática</div>
+      <div class="modal-header modal_post_pago_consulta_header modal-radius-top">
+        <button type="button" class="close close-modal-flotante" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         
+        <h4 class="modal-title txtalgn-center" id="myModalLabel">
+
+          <img class="logo" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body modal_recuperar_contrasenia_descripcion full-zkte-mod">
+        <div class="modal-body_pasos_recarga">
+          <p>Si usted desea afiliarse a la recarga automática deberá seguir los siguientes pasos:
+          </p>
+          <ol class="lista_pasos">
+            <li>
+              Descargar y completar el siguiente formulario <a id="href_descargar_pdf" href="<?php echo $this->basePath('/static/file/contrato_de_recarga_automatica.pdf');?>" download="contrato_de_recarga_automatica">CLICK AQUÍ.</a>
+            </li>
+            <li>
+              Firmar el formulario para dar conformidad a su requerimiento.</li>
+            <li>
+              Enviar al formulario <sup>(1)</sup> en físico, a través de correo o Courier, a la siguiente dirección: Panamericana Sur km 19.5(sentido sur), Villa El Salvador.
+            </li>
+            <li>
+              En un plazo no mayor de 72 horas recibirá la confirmación de su afiliación.
+            </li>          
+                               
+          </ol>
+          <br/>
+          <div class="inline-block">
+            <sup>(1)</sup>
+          </div>
+          <div class="inline-block">            
+              Si optó por retirar su TAG de un punto de venta, deberá darle el formulario al personal de e-pass. En caso de haberlo solicitado para envío a domicilio, tendrá que entregárselo a la persona que le acerque el TAG.
+          </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer bg-orange modal-radius-bottom">
+        <button type="button" data-dismiss="modal" class="btn btn-default btn-lg btn-cerrar-modal-2 color-orange btn-cerrar-modal-pasos">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

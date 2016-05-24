@@ -1,0 +1,112 @@
+<?php
+$this->headLink()
+        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+        ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+        ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+?>
+<?php
+$this->inlineScript()
+        ->prependFile($this->linkCdn('/js/dashboard/comprobantes.js'))
+        ->prependFile($this->linkCdn('/js/dashboard/dashboard.js'));
+?>
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#comprobantes" aria-controls="home" role="tab" data-toggle="tab">Comprobantes de Pago</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="comprobantes">
+            <div class="contenedor">
+                <div>
+                    <span class="title-administrador">Comprobantes de Pago</span>
+                </div>
+                <div class="contenedor-administrador">
+                    <span class="descripcion-administrador"></span> 
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                        <div class="row">
+                  
+                            <div class="form-inline">
+<!--                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="mes" class="spanEpass col-xs-12 col-sm-12 col-md-4">Mes :</label>
+                                     <?=
+                                    $this->formElement($this->formSelec->get("mes")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker'));
+                                    ?>
+                                </div> -->
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="periodo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Periodo :</label>
+                                    <?=
+                                    $this->formElement($this->formSelec->get("periodo")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker'));
+                                    ?>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <button id="btn_buscar_comprobante" class="btn btn-buscar"> Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                        <div class="contenedorInputsEpass hide">
+                            <div class="msj14px">(*) Si no puedes descargar tu comprobante comunícate a la Central de Atención al Cliente 0800-45045 o 249-7222.</div>
+                            <table id="table_reporte_comprobantes" class="table-size table table-responsive table-personalizada">
+                                <thead>
+                                    <tr>
+                                        <th>Descargar (*)</th>
+                                        <th>Fecha Emisión</th>
+                                        <th>Tipo Comp.</th>
+                                        <th>Empresa Emisora</th>
+                                        <th>Monto </th>
+                                        <th>Serie</th>
+                                        <th>Correlativo</th>
+                                        <th>Periodo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                        <?php foreach ($this->movimientos as $key => $value) {?>
+                                        <tr>
+                                           <td class="td-center">
+                                                <?php if (!empty($value['URL'])): ?>
+                                                    <a onclick="downloadComprobante(this)" <?php echo $value['URL'] ?> style="cursor:pointer" ><i class="fa fa-file-pdf-o"></i></a>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td><?php $fecha=str_replace("-", "/",$value['FECHAEMISION']); echo $fecha; ?></td>
+                                            <td><?= $value['COMPROBANTE'] ?></td>
+                                            <td><?= $value['EMP'] ?></td>
+
+                                            <td class="td-right">S/ <?= number_format($value['MONTO'],2); ?></td>
+
+                                            <td><?= $value['SERIE'] ?></td>
+                                            <td><?= $value['CORRELATIVO'] ?></td>
+                                            <td><?= $value['MES'] ?></td>
+                                        </tr>
+                                        <?php } ?>
+                                </tbody>
+                            </table>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade confirmacion_popup" id="error_generar_pdf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-body red-confirmacion">
+            <div class="mensaje-confirmacion">
+              Se ha presentado un inconveniente al descargar su comprobante, Inténtelo nuevamente.
+            </div>
+            <div class="row padding-btn">
+                <button type="button" class="btn btn-default" data-dismiss="modal" >Cerrar</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

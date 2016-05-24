@@ -1,0 +1,18 @@
+<div class="modal fade confirmacion_popup" id="check_email_activacion_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-body red-confirmacion">
+            <div class="mensaje-confirmacion">
+              Se ha presentado un inconveniente en la Pasarela de Pagos. 
+              <?php echo $this->mensaje; ?>
+            </div>
+            <div class="row padding-btn">
+                <button type="button" class="btn btn-default" data-dismiss="modal" >Cerrar</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+ $('#check_email_activacion_cuenta').modal('show');
+</script>

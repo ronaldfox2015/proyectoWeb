@@ -1,0 +1,228 @@
+<?php
+$this->headLink()
+        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+        ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+        ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+?>
+<?php $this->inlineScript()
+        ->prependFile($this->linkCdn('/js/dashboard/reportes.js'))
+        ->prependFile($this->linkCdn('/js/dashboard/dashboard.js'))
+?>
+
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#movimientos" aria-controls="home" role="tab" data-toggle="tab">Mis Movimientos</a>
+        </li>
+        <li role="presentation" >
+            <a href="#transacciones" aria-controls="profile" role="tab" data-toggle="tab">Transacciones</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="movimientos">
+            <div class="contenedor">
+                <div>
+                    <span class="title-administrador">Reporte de Movimientos</span>
+                </div>
+                <div class="contenedor-administrador">
+                    <span class="descripcion-administrador">Los clientes de <i class="italic">e-pass</i> podrán llevar un registro contable en tiempo real, y sabrán cual es el monto generado por los Tag’s afiliados a la cuenta.</span>
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                        <div class="row">
+                            <div class="form-inline">
+
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="periodo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Periodo :</label>
+                                    <?=
+                                    $this->formElement($this->formReportes->get("periodo")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker'));
+                                    ?>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="medio_pago" class="spanEpass col-xs-12 col-sm-12 col-md-4"> Medio de Pago :</label>
+                                    <?=
+                                    $this->formElement($this->formReportes->get("mediopago")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker'));
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <button id="btn_reporte_movimiento" class="btn btn-buscar"> Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                        <div class="contenedorInputsEpass hide">
+                            <table id="table_reporte_movimiento" class="table table-center table-size table-responsive table-personalizada ">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha </th>
+                                        <th>Descripción de Movimiento</th>
+                                        <th>Importe</th>
+                                        <th>Medio Pago</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($this->movimiento as $key => $value) { ?>
+                                            <tr>
+                                                <td><?= $value["datetimeFormat"] ?></td>
+                                                <td><?=$value["tipo"] ?></td>
+                                                <td class="td-right">S/ <?=$value["req_Amount"] ?></td>
+                                                <td><?=$value["medio_pago"] ?></td>
+                                            </tr>  
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane " id="transacciones">
+            <div class="contenedor">
+                <div>
+                    <span class="title-administrador">Reporte de Transacciones</span>
+                </div>
+                <div class="contenedor-administrador">
+                    <span class="descripcion-administrador">Como cliente de <i class="italic">e-pass</i> usted podrá saber en qué momento los vehículos afiliados han hecho uso del servicio de los peajes.</span> 
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                        <div class="row">
+                            <div class="form-inline">
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                     <label for="periodo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Periodo :</label>
+                                    <?=
+                                    $this->formElement($this->formTransitos->get("periodo-transaccion")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker'));
+                                    ?>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="plaza" class="spanEpass col-xs-12 col-sm-12 col-md-4">Plaza :</label>
+                                    <?=
+                                    $this->formElement($this->formTransitos->get("plaza")->setAttribute('class',
+                                        'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker'));
+                                    ?>
+
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-4">Placa: </label>
+                                    <input id="placa" name="placa" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                   
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <button id="btn_reporte_transacciones" class="btn btn-buscar"> Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                        <div class="contenedorInputsEpass">
+                            <div>
+                                <button style="display:none" disabled="disabled" class="btn btn-border" data-toggle="modal" data-target="#asignacion_ruc"> Asignar RUC </button>
+                            </div>
+                            <table id="table_reporte_transacciones" class="table table-responsive table-size table-personalizada">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th>Fecha </th>
+                                        <th>Hora</th>
+                                       
+                                        <th>Plaza</th>
+                                        <th>Placa</th>
+                                        <th>Tag</th>
+                                        <th>Monto</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if(count($this->transito )>0){?>
+                                    <?php foreach ($this->transito as $key => $value) { ?>
+                                            <?php foreach ($value as $k => $v) { 
+                                                $fecha = date_create_from_format('YmdHisu', $v["PASSAGETIME"]);?>
+                                            <tr>
+                                                <td><?= date_format($fecha, 'd/m/Y'); ?></td>
+                                                <td><?= date_format($fecha, 'H:i'); ?></td>
+                                                <td><?= $v["NAME"] ?></td>
+                                                <td><?= $v["PLATE"] ?></td>
+                                                <td><?= $v["TAG"] ?></td>
+                                                <td class="td-right">S/ <?= number_format($v["AMOUNT"],2, '.', ''); ?></td>
+                                            </tr>  
+                                        <?php } ?>
+                                    <?php } ?>
+                                  <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="asignacion_ruc" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="title-mensaje-confirmacion">Asignación de RUC</p>
+                <p class=""> A continuación deberás asignar el RUC y la Razón Social de la empresa que deseas facturar </p>
+                <div class="row">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="ruc" class="spanEpass col-xs-12 col-sm-6 col-md-3">RUC:</label>
+                        <input id="ruc" type="text" class="imputEpass col-xs-12 col-sm-6 col-md-9"/>
+                    </div>
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="ruc" class="spanEpass col-xs-12 col-sm-6 col-md-3">Razon Social:</label>
+                        <input id="ruc" type="text" class="imputEpass col-xs-12 col-sm-6 col-md-9"/>
+                    </div>	        	
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-border" data-toggle="modal" data-target="#mensaje_confirmacion" data-dismiss="modal" >Asignar RUC</button>
+                <button type="button" class="btn btn-border" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="mensaje_confirmacion" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p class="title-mensaje-confirmacion">Mensaje de Confirmación</p>
+                <p class="description-mensaje-confirmacion"> ¿Estás seguro que deseas asignar el RUC? </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-confirmacion" >Aceptar</button>
+                <button type="button" class="btn btn-confirmacion" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,104 @@
+.nav-tabs{
+	border:none;
+}
+.nav-tabs li a{
+	background: #05AADD;
+    border-radius: 0px;
+    color: white;
+    border: none;
+    margin: 0;
+}
+.nav-tabs li a:hover{
+	background: #047598;
+	color:white;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+	background: #047598;
+    color: white;
+    border: none;
+
+}
+.contenedor{
+	padding-left: 1em;
+    padding-top: 1em;
+    padding-right: 3em;
+    background: #EFEFEF; 
+}
+.title-administrador{
+	font-size:1.5em;
+	color:#05AADD;
+}
+.descripcion-administrador{
+	font-size: 1em;
+	margin-top:1em; 
+}
+.contenedor-administrador{
+	margin-bottom: 2em; 
+}
+.btn-modal{
+    margin: 71px auto auto auto;
+    color: #f28b00;
+    width: 9em;
+    font-weight: bold;
+    padding: 0.3em;
+    text-align: center;
+    display: block;
+    border: 1px solid #bbb;
+    background: #eee;
+}
+.btn-modal:hover{
+    background:  #5F3804;
+    color: white;
+}
+.selectpicker{
+    border:1px solid gray;
+    border-radius: 0px;
+}
+.imputEpass{
+    border:1px solid gray;
+    border-radius: 0px;
+}
+.btn-buscar{
+	background: #05AADD;
+    color: white;
+    width: 9em;
+    float: right;
+}
+.btn-buscar:hover{
+	background:  #047598;
+    color: white;
+    width: 9em;
+    float: right;
+}
+.btn-border{
+	background: #F28B00;
+    border: 1px solid #F28B00;
+    color: white;
+    float: right;
+    width: 13em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+}
+.btn-border:hover{
+    background: #EFEFEF;
+    color: #F28B00;
+    width: 13em;
+    float: right;
+}
+.contenedorInputsEpass{
+	margin-top: 1em;
+}
+.td-center{
+    text-align:center; 
+}
+.td-right{
+    text-align:right; 
+}
+.td-center a{
+    color: #F28B00;
+    font-size: 1.7em;
+}
+
+.fa-pencil {
+    cursor: pointer;
+}

@@ -1,0 +1,90 @@
+<div id="datosprincipales_cuenta_asociada" class="col-md-9 sinPadding-right hide">
+    <div class="box-background">
+        <div class="item">
+            <div class="row ">
+                <div class="col-xs-10  col-sm-10 col-md-3">
+                    <p class="title-item">Datos Principales</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-9">
+                    <i class="fa fa-user"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row table-center">
+            <div class="col-sm-6 col-md-6 box-datos">
+                <table >
+                    <tr>
+                        <td><label>Nombre y Apellido: </label></td>
+                        <td><label><?= $this->name . ' ' . $this->lastname ?></label></td>
+
+                    </tr>
+                    <tr>
+                        <td><label>Tipo de Documento: </label></td>
+                        <td><label><?= $this->document_type ?></label></td>
+
+                    </tr>
+                    <tr> 
+                        <td><label>Nro Documento: </label></td>
+                        <td><label><?= $this->document_number ?></label></td>
+                </table>
+
+            </div>
+            <div class="col-sm-6 col-md-6 box-datos">
+                <table>
+                    <tr>
+                        <td><label>Usuario: </label></td>
+                        <td><label><?= $this->email ?></label></td>
+
+                    </tr>
+                    <tr>
+                        <td><label>Cuenta: </label></td>
+                        <td><label><?php echo $this->session_data_helper()->planTitle?></label></td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="datos_cuenta_asociada" class="col-md-9 sinPadding-right hide">
+    <div class="box-background">
+        <div class="item">
+            <div class="row ">
+                <div class="col-xs-10  col-sm-10 col-md-3">
+                    <p class="title-item">Cuentas Asociadas</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-9">
+                    <img class="img-responsive" src="<?php echo$this->basePath('/images/ee17e1ad-3eb8-4bc6-95c3-afbdc10dfe68.png') ?>">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <table class="table table-center table-size table-responsive table-personalizada datatable">
+                <thead>
+                    <tr>
+                        <th class="td-center">Contrato</th>
+                        <th class="td-center">Cuenta</th>
+                        <!--<th class="td-center">Cantidad TAGS</th>-->
+                        <th class="td-center">Fecha de Compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->accounts as $key => $value) { ?>   
+                        <tr>
+                            <td class="td-center"><?php
+                                echo substr_replace($value['account_id'], '.',
+                                        2, 0);
+                                ?></td>
+                            <td class="td-center"><?= \Application\Service\CuentaService::getPlanTitle($value['plan_name']) ?> </td>
+                            <!--<td class="td-center"><?php /*echo $value['vehicles'];*/ ?>  </td>-->
+                            <td class="td-center"><?= date("d/m/Y",
+                                    strtotime($value['created_at'])) ?></td>
+
+                        </tr>
+<?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

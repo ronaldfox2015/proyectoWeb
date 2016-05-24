@@ -1,0 +1,276 @@
+  <?php  $this->headLink()
+                        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+                         ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+                          ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+                         ?>
+ <?php   ?>
+
+    <div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#movimientos" aria-controls="home" role="tab" data-toggle="tab">Mis Movimientos</a></li>
+        <li role="presentation" ><a href="#transacciones" aria-controls="profile" role="tab" data-toggle="tab">Transacciones</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="movimientos">
+            <div class="contenedor">
+                <div>
+                    <span class="title-administrador">Reporte de Movimientos</span>
+                </div>
+                <div class="contenedor-administrador">
+                    <span class="descripcion-administrador">Como cliente de e-pass usted podrá saber en qué momento los vehículos afiliados han hecho uso del servicio ya sea en peajes y estacionamientos.</span> 
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                        <div class="row">
+                            <div class="form-inline">
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tipo :</label>
+                                    <select id="tipo" name="tipo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                        <option>Seleccione</option>
+                                        <option>DNI</option>
+                                        <option>RUC</option>
+                                    </select>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="periodo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Periodo :</label>
+                                    <select id="periodo" name="periodo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                        <option>Seleccione</option>
+                                        <option>Periodo 1</option>
+                                        <option>Periodo 2</option>
+                                    </select>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="medio_pago" class="spanEpass col-xs-12 col-sm-12 col-md-4"> Medio de Pago :</label>
+                                    <select id="medio_pago" name="medio_pago" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                        <option>Seleccione</option>
+                                        <option>medio de pago 1</option>
+                                        <option>medio de pago 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <button class="btn btn-buscar"> Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                        <div class="contenedorInputsEpass">
+                            <table class="table table-responsive table-personalizada">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha </th>
+                                        <th>Tipo</th>
+                                        <th>Contrato</th>
+                                        <th>Importe</th>
+                                        <th>Medio Pago</th>
+                                        <th>Descripción Movimiento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>02/10/10</td>
+                                        <td>Tipo A</td>
+                                        <td>98999989</td>
+                                        <td>80.00</td>
+                                        <td>Medio A</td>
+                                        <td>Descripcion A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02/10/10</td>
+                                        <td>Tipo A</td>
+                                        <td>98999989</td>
+                                        <td>80.00</td>
+                                        <td>Medio A</td>
+                                        <td>Descripcion A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02/10/10</td>
+                                        <td>Tipo A</td>
+                                        <td>98999989</td>
+                                        <td>80.00</td>
+                                        <td>Medio A</td>
+                                        <td>Descripcion A</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane " id="transacciones">
+            <div class="contenedor">
+                <div>
+                    <span class="title-administrador">Reporte de Transacciones</span>
+                </div>
+                <div class="contenedor-administrador">
+                    <span class="descripcion-administrador">Los clientes de e-pass podrán llevar un registro contable en tiempo real, y sabrán cual es el monto generado por los Tag’s afiliados a la cuenta</span> 
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                        <div class="row">
+                            <div class="form-inline">
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="categoria" class="spanEpass col-xs-12 col-sm-12 col-md-4">Categoria :</label>
+                                    <select id="categoria" name="categoria" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                        <option>Seleccione</option>
+                                    </select>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="plaza" class="spanEpass col-xs-12 col-sm-12 col-md-4">Plaza :</label>
+                                    <select id="plaza" name="plaza" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                        <option>Seleccione</option>
+                                    </select>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                      <label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-4">Placa</label>
+                                      <input id="placa" name="placa" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                  <label for="periodo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Periodo :</label>
+                                    <select id="periodo" name="periodo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                        <option>Seleccione</option>
+                                    </select>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <button class="btn btn-buscar"> Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-administrador">
+                    <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                        <div class="contenedorInputsEpass">
+                            <div>
+                                <button class="btn btn-border" data-toggle="modal" data-target="#asignacion_ruc"> Asignar RUC </button>
+                            </div>
+                            <table class="table table-responsive table-personalizada">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Fecha </th>
+                                        <th>Hora</th>
+                                        <th>Categoria</th>
+                                        <th>Plaza</th>
+                                        <th>Placa</th>
+                                        <th>Tag</th>
+                                        <th>Monto</th>
+                                        <th>Revisado</th>
+                                        <th>Ruc a Facturar</th>
+                                        <th>Razon Social a Facturar</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>02/10/10</td>
+                                        <td>9:40</td>
+                                        <td>Categoria A</td>
+                                        <td>Plaza A</td>
+                                        <td>090AFG</td>
+                                        <td>01234567</td>
+                                        <td>80:00</td>
+                                        <td>Ok</td>
+                                        <td>01234567891</td>
+                                        <td>Empresa A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"/></td>
+                                        <td>02/10/10</td>
+                                        <td>9:40</td>
+                                        <td>Categoria A</td>
+                                        <td>Plaza A</td>
+                                        <td>090AFG</td>
+                                        <td>01234567</td>
+                                        <td>80:00</td>
+                                        <td>Ok</td>
+                                        <td>01234567891</td>
+                                        <td>Empresa A</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"/></td>
+                                        <td>02/10/10</td>
+                                        <td>9:40</td>
+                                        <td>Categoria A</td>
+                                        <td>Plaza A</td>
+                                        <td>090AFG</td>
+                                        <td>01234567</td>
+                                        <td>80:00</td>
+                                        <td>Ok</td>
+                                        <td>01234567891</td>
+                                        <td>Empresa A</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<div id="asignacion_ruc" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	    <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    </div>
+	    <div class="modal-body">
+	        <p class="title-mensaje-confirmacion">Asignación de RUC</p>
+	        <p class=""> A continuación deberás asignar el RUC y la Razón Social de la empresa que deseas facturar </p>
+	        <div class="row">
+	        	<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                    <label for="ruc" class="spanEpass col-xs-12 col-sm-6 col-md-3">RUC:</label>
+                    <input id="ruc" type="text" class="imputEpass col-xs-12 col-sm-6 col-md-9"/>
+                </div>
+				<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                    <label for="ruc" class="spanEpass col-xs-12 col-sm-6 col-md-3">Razon Social:</label>
+                    <input id="ruc" type="text" class="imputEpass col-xs-12 col-sm-6 col-md-9"/>
+                </div>	        	
+	        </div>
+	    </div>
+	    <div class="modal-footer">
+	        <button type="button" class="btn btn-border" data-toggle="modal" data-target="#mensaje_confirmacion" data-dismiss="modal" >Asignar RUC</button>
+	        <button type="button" class="btn btn-border" data-dismiss="modal">Cancelar</button>
+	    </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="mensaje_confirmacion" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	    <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    </div>
+	    <div class="modal-body">
+	        <p class="title-mensaje-confirmacion">Mensaje de Confirmación</p>
+	        <p class="description-mensaje-confirmacion"> ¿Estás seguro que deseas asignar el RUC? </p>
+	    </div>
+	    <div class="modal-footer">
+	        <button type="button" class="btn btn-confirmacion" >Aceptar</button>
+	        <button type="button" class="btn btn-confirmacion" data-dismiss="modal">Cancelar</button>
+	    </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

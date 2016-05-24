@@ -1,0 +1,556 @@
+@-moz-keyframes animationRuedaRecarga {
+
+  50% {    
+    color: #403F3F;
+  }
+ 
+}
+@-webkit-keyframes animationRuedaRecarga {
+
+  50% {    
+    color: #403F3F;
+  }
+ 
+}
+@-o-keyframes animationRuedaRecarga {
+ 
+  50% {    
+    color: #403F3F;
+  }
+ 
+}
+@keyframes animationRuedaRecarga {
+  
+  50% {    
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+  
+}
+.overflowx-hide{
+  overflow-x:hidden; 
+}
+#logo img
+{
+	height: 2.5em;
+}
+.btn-recargar-zkte i
+{
+	animation: animationRuedaRecarga 5s infinite;
+}
+.btn-recargar-zkte
+{
+	background: #CEDF00;
+    color: #524D4D;
+    font-size: 1.5em !important;
+    margin-top: 0.6em !important;
+    -webkit-box-shadow: 9px 9px 5px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 9px 9px 5px -1px rgba(0,0,0,0.75);
+	box-shadow: 9px 9px 5px -1px rgba(0,0,0,0.75);
+}
+.top-button{
+  margin-top: 1.4em !important;
+}
+.header-sesion{
+  background: #05AADD;
+  	padding: 1em;
+	margin:0;
+}
+.header-bienvenido{
+	color:white;
+	font-size: 35px; 
+}
+.span-bienvenido
+{
+	font-size: 0.6em;
+}
+.span-nombre-usuario
+{
+	
+	line-height:1em;
+	font-size: 0.9em;
+	
+}
+.btn-recargar i
+{
+	animation: animationRuedaRecarga 5s infinite;
+}
+.content-bienvenido{	
+	margin-bottom: 0.5em;
+	padding: 0;
+    padding-left: 1em;
+    padding-bottom: 0.6em;
+}
+.btn-orange{
+	background: #F28B00;
+	color: white;
+	font-size: 14px;
+	
+	padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+
+
+}
+.btn-recargar{
+	background: #CEDF00;
+    color: gray;
+    font-size: 26px;
+    margin-top: 1em;
+    display: block;
+    margin: 30px 0px 0px 23px;
+}
+@-moz-keyframes animationButtonCambiarCuenta {
+
+  50% {
+    background: #6f6f6e;
+    color: white;
+  }
+ 
+}
+@-webkit-keyframes animationButtonCambiarCuenta {
+
+  50% {
+    background: #6f6f6e;
+    color: white;
+  }
+ 
+}
+@-o-keyframes animationButtonCambiarCuenta {
+ 
+  50% {
+    background: #6f6f6e;
+    color: white;
+  }
+ 
+}
+@keyframes animationButtonCambiarCuenta {
+  
+  50% {
+    background: #6f6f6e;
+    color: white;
+  }
+  
+}
+.btn-orange:hover{
+	animation: animationButtonCambiarCuenta 1s infinite;
+}
+.img-responsive{
+  height: 40px !important;
+  width: 38px !important;
+}
+@media (max-width: 580px) {
+  .tarjeta_radio_label
+  {
+    margin-left: 1.6em;
+  }
+  .link-item{
+		text-align: center;
+	}
+	.img-responsive{
+		width: 100%;
+	}
+   .conPadding-left{
+  padding-left: 0;
+  }
+  .conPadding-right{
+    padding-right: 0;
+  }
+  .span-nombre-usuario{
+    
+  }
+  .btn-recargar-zkte{
+    font-size: 1em !important;
+    margin-top: 2.3em !important;
+  }
+
+}
+@media (max-width: 990px) {
+  #span-amerca-ex-top
+  {
+    margin-top: 0.5em !important;
+  }
+}
+@media (max-width: 900px) {  
+	.link-item{
+		text-align: center;
+	}
+	.box-padding{
+		padding: 1em !important;
+	}
+	.box-padding-extremo{
+		padding: 0em !important; 
+	}
+  .conPadding-left{
+    padding-left: 0;
+  }
+  .conPadding-right{
+    padding-right: 0;
+  }
+  #form_dashboard_datos .subContenedorFormularioEpass{
+    height: auto !important;
+  }
+
+}
+
+/*********/
+.aside{
+	padding-right: 0;
+	padding-left: 0;
+}
+.item{
+	border-bottom-style: dotted; 
+	border-bottom-width: 1px;
+	border-bottom-color: #05AADD;
+  margin:0;
+}
+.title-item{
+	font-size: 18px;
+	color: #F28B00;
+  margin-top: 0.8em;
+}
+.number-item{
+	text-align: center;
+  font-size: 22px;
+  color:#757873;
+  margin-top: 0.6em;
+}
+.supernumber-item{
+	vertical-align: super;
+    font-size: 22px;
+}
+.sinPadding-left{
+  padding-left: 0 !important;
+}
+.sinPadding-right{
+  padding-right: 0 !important;
+}
+.conPadding-left{
+  padding-left: 10px;
+}
+.conPadding-right{
+  padding-right: 10px;
+}
+.link-item{
+	display: block;
+	font-size: 12px;
+	color:#05AADD;
+  padding-left: 10px;
+
+}
+.dotted-left{
+  border-left: dotted 3px #009fe3;
+  margin-top: 8px; 
+  margin-bottom: 4px; 
+  line-height: 1.8em;
+}
+.break-word{
+  overflow-wrap: break-word;
+}
+.content-datos{
+      border: 1px solid #CCCCCC;
+    border-radius: 9px;
+    margin: 1.5em;
+    line-height: 1.6em;
+}
+
+.link-item:hover{
+	text-decoration: none;
+	color: #428bca;
+}
+.box-datos{
+	padding-top: 1em;
+	line-height: 2em;
+	font-weight: normal;
+}
+.box-opciones{
+	border-left:1px solid #05AADD;
+	margin-top:1em; 
+	padding-left: 1em;
+	padding-top: 1em;
+	line-height: 2em;
+}
+.box-background{
+	background: #EFEFEF;
+    padding: 8px;
+    margin-top: 8px;
+}
+.box-padding{
+	padding-top: 2em;
+  padding-bottom: 1em;
+}
+.box-padding-extremo{
+	padding: 0em 2em; 
+}
+.table-personalizada thead{
+	background: #F28B00;
+	color:white;
+
+}
+.table-personalizada tbody{
+	background: white;
+}
+.table-personalizada th{
+	text-align: center;
+}
+.table-personalizada thead th {
+    border: 1px solid white;
+}
+.table-personalizada tbody td {
+    border: 1px solid #ddd;
+}
+.table-center{
+	width: 90% !important;
+	margin: 0 auto;
+}
+.table-size{
+  font-size: 14px;
+  width: 100% !important; 
+}
+.msj14px
+{
+  font-size: 12px;
+  color: #1F2021;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+/**** ESTILOS PARA alerta verde ******/
+.container-alert .alert{
+	color: black;
+    background-color: #CEDF00;
+    border-color: #808A03;
+    border-radius: 40px;
+    margin-bottom: 0.5em;
+}
+.container-alert .alert button{
+	opacity: 1;
+    text-shadow: none;
+    color: white;
+    background: #757873;
+    border-radius: 50%;
+    padding: 3px;
+    height: 25px;
+    width: 25px;
+}
+/****** estilos para modal asignacion ruc ********/
+#asignacion_ruc .btn-border{
+    background: #EFEFEF;
+    border: 1px solid #F28B00;
+    color: #F28B00;
+    width: 13em;
+    float:none;
+    margin:0; 
+}
+#asignacion_ruc .btn-border:hover{
+    background: #F28B00;
+    color: white;
+}
+#asignacion_ruc .modal-header,.modal-footer{
+    border:none;
+}
+#asignacion_ruc .modal-footer{
+    margin: 0;
+    padding-top: 0;
+    text-align: center;
+}
+#asignacion_ruc .title-mensaje-confirmacion{
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+#asignacion_ruc .description-mensaje-confirmacion{
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+.refresh{
+	font-size: 1em !important;
+    width: 16% !important;
+    text-align: center !important;
+}
+.sinPading
+{
+	padding-top: 2em;
+}
+.contenedorComponenteCuadroFlecha
+{
+	font-size: 12px
+}
+.mrgbottom2em
+{
+	font-size: 16px;
+	margin-bottom: 0em;
+}
+#form_dashboard_datos{
+  font-size: 12px;
+}
+#form_dashboard_datos .subContenedorFormularioEpass{
+  height: 26em;
+}
+/*******************************/
+.flecha-container{
+  font-size: 13em;
+}
+.flecha-size{
+  font-size:5em;
+  font-weight: bold;
+}
+#carusel-recarga{
+  font-size: 9px;
+} 
+.msg-observacion{
+  margin-top:1em;
+  font-size:0.8em;
+}
+.btn_center{
+  display: block;
+  margin: 1em auto;
+}
+/*  estilos para pagos        */
+.description-pago{
+    display: inline-block;
+    margin-top: 0.5em;
+    margin-left: 2em;
+}
+/***********Individual - paso 1***********/
+.breadcrumb-epas-dashboard
+{  
+  color: white; 
+}
+.pest-title
+{
+  background: #CEDF00;
+  padding: 1em;
+  text-align: center;
+  color: #757873;
+}
+.pest-active
+{
+  padding: 1em;
+  background: #0094c7;
+  text-align: center;
+}
+.pest-desactive
+{
+  padding: 1em;
+  text-align: center;
+  background: #05AADD;
+}
+/***********Individual - paso 1***********/
+.aside-item-active{
+  text-decoration: none;
+    color: #757873;
+}
+.aside-item-active:hover{
+  text-decoration: none;
+  cursor:normal;
+  color: #757873;
+}
+.href_invitado_login
+{
+  cursor: pointer;
+}
+#span-visa-top
+{
+  margin-top: 1.1em;
+}
+#span-amerca-ex-top
+{
+  margin-top: 1.1em;
+}
+#tarjeta_diners_club
+{
+  margin-top: 0.7em;
+}
+
+/** pagination slider recarga directa**/
+@media screen and (max-width: 760px) {
+  .box-padding-extremo-2
+  {
+    padding-left: 0em !important;
+  }
+
+  .owl-pagination{
+    display:block !important;
+    margin-bottom: 1em;
+  }
+  .msg-observacion {
+    margin-top: 4em;
+    text-align: center;
+  }
+  #tarjeta_visa,#tarjeta_master_card,#tarjeta_american_expres,#tarjeta_diners_club
+  {
+    margin-left: 1.5em;
+  }
+  .img_medio_pago_americanexpress
+  {
+    margin-left: 0em;
+  }
+}
+.owl-pagination {
+    display: none;
+    position: relative;
+    top: 11px;
+    text-align: center;
+    height: 0;
+}
+.owl-controls .owl-page, .owl-controls .owl-buttons div {
+    cursor: pointer;
+}
+.owl-page {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #F28B00;
+    margin: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.owl-pagination .active {
+    background: #05AADD;
+    box-shadow: 0 0 0 2px #47a3da;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.medio-pago-descripcion-dashboard
+{
+  
+}
+.box-padding-extremo-2
+{
+  padding: 0em 2em;
+}
+@media (max-width: 770px) {
+  .separate-zkte
+  {
+    margin-top: 1em;
+  }
+  .medio-pago-descripcion-dashboard
+  {
+    display: inline-block;
+  }
+
+}
+#tarjeta_master_card,#tarjeta_visa,#tarjeta_american_expres
+{
+  margin-top: 1em;
+}
+.img_medio_pago_dinersclub
+{
+  height: 5.3em;
+}
+.color-gray{
+  color:gray !important;
+  cursor:default !important;
+}
+.span-tipo-cuenta{
+  display: block;
+  font-size: 0.6em;
+  color: #CEDF00;
+  font-weight: bold;
+}

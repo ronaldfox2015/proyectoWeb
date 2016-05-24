@@ -1,0 +1,76 @@
+<style type="text/css">
+  body
+  {
+    background: white;
+  }
+  .containerRedirect
+  {
+    background: #6F6F6E;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    border: 3px dashed #DBDC4D;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 21px;
+  }
+  #btn-redirect-pasrla
+  {
+    display: none;
+  }
+  #logo
+  {
+    height: 40px;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  .contenedor-img
+  {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1.5em 0em;
+    text-align: center;
+  }
+  .span-pasarela
+  {
+    font-weight: bold;
+    color: #312E2E;
+    font-style: italic;
+  }
+</style>
+<!--<div class="contenedor-img">
+  <img id="logo" src="<?php echo $this->linkCdn('/img/logo.svg') ?>"alt="visa"/>  
+</div>
+
+<div class="containerRedirect">
+  <p>Espere por favor.</p>
+  <p><span class="span-pasarela"><?php echo $this->mp?></span> está gestionando tu transacción</p>-->
+<form id="frm-pag-mov" method="post" name="frm" action="<?php echo $this->action;?>">
+  <?php
+  if($this->mp=='Visa')
+  {
+    ?>
+        <input type="hidden" name="ETICKET" value="<?php echo $this->datos['ETICKET'];?>"/>
+  <?php  
+  } else {
+    $i=0;
+    foreach ($this->datos as $dato) {?>
+      <input type="hidden" name="<?php echo "I".($i+1); ?>" value="<?php echo $dato;?>"/>
+    <?php
+    $i++;
+  }
+  }
+   ?>
+  <!--<input id="btn-redirect-pasrla" name="enviar" type="submit"  value="Enviar a <?php echo $this->mp?>"/>-->
+</form>
+<!--</div>-->
+
+<div style=" margin: auto; text-align: center; overflow: hidden;">
+    <img style="width: 98%; height: auto;"  src="<?php echo $this->linkCdn('/img/mobile-carga.jpg') ?>"/>  
+</div>
+<script type="text/javascript">
+  setTimeout(function(){ 
+    document.getElementById("frm-pag-mov").submit();
+  }, 3000);
+</script>

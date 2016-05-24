@@ -1,0 +1,221 @@
+.nav > .active
+{
+	box-shadow:none !important;
+}
+
+.lineaVerde
+{
+	width: 100%;
+    height: 0.5em;
+    background: #CEDF00;
+    margin-bottom: 4em
+}
+.prev,.next
+{
+	color: #F28B00;
+	position: absolute;
+	z-index: 9;
+	top: 38%;
+}
+.prev:hover
+{
+	color: #05AADD;
+}
+.next:hover
+{
+	color: #05AADD;
+}
+.owl-carousel .owl-wrapper, .owl-carousel .owl-item
+{
+	margin-top: -0.4em;
+	z-index: -2;
+}
+.next
+{
+	right: 1%;
+}
+.next i,.prev i
+{
+	font-size: 6em;
+}
+.contenedorSlider
+{
+	position: relative;
+}
+.owl-pagination
+{
+	position: relative;
+	top: -57px;
+	text-align: center;
+	height: 0;
+}
+.owl-page
+{
+	display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #F28B00;
+    margin: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.active
+{
+	background: #05AADD;
+    box-shadow: 0 0 0 2px #47a3da;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.fa-angle-right,.fa-angle-left
+{
+	font-size: 1.5em;
+    font-weight: bold;
+    
+}
+.posit-Epass-Container
+{
+	z-index: 12 !important;
+}
+.sinPaddingRight
+{
+	padding-right: 0px;	
+}
+.contenedor-FlechaImg
+{
+	text-align: center;
+}
+.contenedor-FlechaImg img
+{
+	width: 50%;
+	max-width: 5em;
+}
+.video-Epass
+{
+	margin-bottom: 4em;
+}
+.backgroundPuntitos
+{
+	background: url(../../img/puntosBackground.jpg);
+	width: 100%;
+    height: 5em;
+    background-repeat: repeat-x;
+    background-position-y: 50%;
+}
+.preguntaEpassTitulo
+{
+	color: #F28B00;
+	font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+}
+.marginFlechitas
+{
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.video-Epass {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	clear:both;
+}
+.video-Epass iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.cont_video_ePass
+{
+	float: none;
+	margin: 0 auto;
+}
+@media screen and (max-width: 1313px){
+	.zkte-spad
+	{
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+@media screen and (max-width: 1040px){
+	.prev,.next
+	{
+		top: 25%;
+	}
+	.owl-pagination
+	{
+		top: -25px
+	}
+}
+
+@media screen and (max-width: 1032px){
+
+}
+@media screen and (max-width: 782px){
+	.preguntaEpassTitulo
+	{
+		font-size: 2.5em;
+	}
+	.backgroundPuntitos
+	{
+		height: 3em;
+	}
+	.height
+	{
+		height: 2em;
+	}
+	.zkte-spad
+	{
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+
+}
+@media screen and (max-width: 767px){
+
+
+}
+@media screen and (max-width: 420px) {
+  .preguntaEpassTitulo {
+    font-size: 2em;
+  }
+  .backgroundPuntitos
+  {
+  	height: 3em;
+  }
+  .prev,.next
+  {
+  	display: none;
+  }
+  .owl-page
+  {
+  	height: 12px;
+  	width:12px;
+  }
+  .lineaVerde
+  {
+  	margin-bottom: 0em;
+  }
+}
+.img_modalTemporaneo
+{
+	width: 100%;
+}
+#btn-cerrar_modal_remporaneo
+{
+	z-index: 44;
+    position: absolute;
+    right: 3px;
+    top: -2px;
+    font-size: 3em;
+}

@@ -1,0 +1,6 @@
+<div>Se esta precesando su peticion</div>
+<form name="frm" method="post" action="<?php echo $this->action;?>">
+  <?php foreach ($this->campos as $key => $value) { ?>
+    <input type="hidden" name="<?php echo $key;?>" value="<?php echo $value;?>"/>
+  <?php } ?>
+</form>

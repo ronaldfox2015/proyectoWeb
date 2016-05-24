@@ -1,0 +1,149 @@
+ <?php  $this->headLink()
+             ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+ ?>
+<?php  $this->inlineScript()                                    
+            ->prependFile($this->linkCdn('/js/contactanos/contactanos.js')); ?> 
+
+<?php
+        $form = $this->form;
+        $form->prepare();
+        $form->setAttribute('id', 'form_contactanos');        
+        echo $this->form()->openTag($form);
+    ?>
+<form id="form_contactanos">        
+	<div class="contenidoContactanos">
+		<div class="titulo-contactanos">Contáctanos</div>
+			<div class="">
+				<div class="">
+				    <div class="contenedorInputsEpass row">
+					    <div class="form-inline">
+					        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+					          <label for="nombre" class="spanEpass col-xs-12 col-sm-6 col-md-4">Nombre :</label>
+					          <div class="col-xs-12 col-sm-12 col-md-8">
+					          	<!--<input id="nombre" name="nombre" type="text" placeholder="Ingrese nombre completo" class="imputEpass col-xs-12 col-sm-12 col-md-12 required" minlength="2"  maxlength="20" />-->
+                                                      <?php
+                                                            $nombre = $form->get('nombre');
+                                                            $nombre->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 required');
+                                                            $nombre->setAttribute('placeholder', 'Ingrese nombre completo');
+                                                            $nombre->setAttribute('name', 'nombre');
+                                                            echo $this->formElement($nombre);
+                                                            echo $this->formElementerrors($nombre);
+                                                        ?>
+					          </div>
+					        </div>
+					        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+					          <label for="apellidos" class="spanEpass col-xs-12 col-sm-12 col-md-4">Apellidos :</label>
+					          <div class="col-xs-12 col-sm-12 col-md-8">
+					               <!--<input id="apellidos" name="apellidos" type="text" placeholder="Ingrese apellidos completos" class="imputEpass col-xs-12 col-sm-12 col-md-12 required" minlength="2"  maxlength="20"/>-->
+                                                      <?php
+                                                            $apellidos = $form->get('apellidos');
+                                                            $apellidos->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 required');
+                                                            $apellidos->setAttribute('placeholder', 'Ingrese apellidos completos');
+                                                            $apellidos->setAttribute('name', 'apellidos');
+                                                            echo $this->formElement($apellidos);
+                                                            echo $this->formElementerrors($apellidos);
+                                                        ?>
+					           </div>
+					        </div>
+					    </div>
+					    <div class="form-inline">
+					        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+					          	<label for="telefono_contacto" class="center-label spanEpass col-xs-12 col-sm-12 col-md-4">Teléfono :</label>
+					          	<div class="col-xs-12 col-sm-12 col-md-8">
+					           		<!--<input id="telefono_contacto"  name="telefono_contacto" type="text" placeholder="Ingrese teléfono" class="imputEpass col-xs-12 col-sm-12 col-md-12 required digits" maxlength="15"/>-->
+                                                            <?php
+                                                                    $telefono1 = $form->get('telefono_contacto');
+                                                                    $telefono1->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 required digits');
+                                                                    $telefono1->setAttribute('placeholder', 'Ingrese Teléfono');
+                                                                    $telefono1->setAttribute('name', 'telefono_contacto');
+                                                                    echo $this->formElement($telefono1);
+                                                                    echo $this->formElementerrors($telefono1);
+                                                                ?>
+					           	</div>
+					        </div>
+					        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+					          	<label for="telefono_adicional" class="center-label spanEpass col-xs-12 col-sm-12 col-md-4">Teléfono Adicional:</label>
+					          	<div class="col-xs-12 col-sm-12 col-md-8">
+					           		<!--<input id="telefono_adicional" name="telefono_adicional" type="text" placeholder="Ingrese teléfono" class="imputEpass col-xs-12 col-sm-12 col- md-12 required digits" maxlength="15"/>-->
+                                                            <?php
+                                                                    $telefono2 = $form->get('telefono_adicional');
+                                                                    $telefono2->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 required digits');
+                                                                    $telefono2->setAttribute('placeholder', 'Ingrese Teléfono');
+                                                                    $telefono2->setAttribute('name', 'telefono_adicional');
+                                                                    echo $this->formElement($telefono2);
+                                                                    echo $this->formElementerrors($telefono2);
+                                                                ?>
+					           	</div>
+					        </div>
+					    </div>
+					    <div class="form-inline">
+					        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+					          <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Correo :</label>
+					          <div class="col-xs-12 col-sm-12 col-md-10">
+					          		<!--<input id="correo" name="correo" placeholder="Ingrese correo" class="slSinMarg imputEpass col-xs-12 col-sm-12 col-md-12 required email" minlength="3" />-->
+                                                      <?php
+                                                        $email = $form->get('correo');
+                                                        $email->setAttribute('class', 'slSinMarg imputEpass col-xs-12 col-sm-12 col-md-12 required email');
+                                                        $email->setAttribute('placeholder', 'Ingrese correo');
+                                                        $email->setAttribute('name', 'correo');
+                                                        echo $this->formElement($email);
+                                                        echo $this->formElementerrors($email);
+                                                    ?>
+					          </div>
+					        </div>
+					    </div>
+					    <div class="form-inline">
+					        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+					          	<label for="asunto" class="spanEpass col-xs-12 col-sm-12 col-md-4">Asunto :</label>
+					          	<div class="col-xs-12 col-sm-12 col-md-12 sinPadding-left">
+					          		<!--<input id="asunto" name="asunto" type="text" placeholder="Ingrese asunto" class="imputEpass col-xs-12 col-sm-12 col-md-12 required" minlength="4" maxlength="120" />-->
+                                                            <?php
+                                                                    $asunto = $form->get('asunto');
+                                                                    $asunto->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 required');
+                                                                    $asunto->setAttribute('placeholder', 'Ingrese asunto');
+                                                                    $asunto->setAttribute('name', 'asunto');
+                                                                    echo $this->formElement($asunto);
+                                                                    echo $this->formElementerrors($asunto);
+                                                                ?>
+					          	</div>
+					        </div>
+					        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+					          	<label for="mensaje" class="spanEpass col-xs-12 col-sm-12 col-md-4">Mensaje :</label>
+					          	<div class="col-xs-12 col-sm-12 col-md-12 sinPadding-left">
+					          		<!--<textarea id="mensaje" name="mensaje" type="text" placeholder="Ingrese mensaje" class="textarea-contactanos required col-xs-12 col-sm-12 col-md-12"  minlength="10"></textarea>-->
+                                                            <?php
+                                                                $mensaje = $form->get('mensaje');
+                                                                $mensaje->setAttribute('class', 'textarea-contactanos required col-xs-12 col-sm-12 col-md-12');
+                                                                $mensaje->setAttribute('rows', '4');
+                                                                $mensaje->setAttribute('placeholder', 'Ingrese mensaje');
+                                                                $mensaje->setAttribute('required', 'required');
+                                                                $mensaje->setAttribute('name', 'mensaje');
+                                                                echo $this->formElement($mensaje);
+                                                                echo $this->formElementerrors($mensaje);
+                                                            ?>
+					          	</div>
+					        </div>
+					    </div>
+					    <div class="form-inline">
+					        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+					          	<label for="asunto" class="spanEpass">
+					          		<!--<input type="checkbox" name="no_robot" class="required" />-->
+                                                                <?php
+                                                                    /*$noSoyRobot = $form->get('no_robot');
+                                                                    $noSoyRobot->setAttribute('class', 'required');
+                                                                    echo $this->formElement($noSoyRobot);
+                                                                    echo $this->formElementerrors($noSoyRobot);*/
+                                                                ?>
+					          		<!--No soy un robot-->
+					          	</label>
+					        </div>
+					    </div>
+				    </div>
+				</div>
+				<div>
+					<!--<button type="submit" class="btn btn-enviar">Enviar</button>-->
+                                        <?= $this->formRow($form->get('submit')->setAttribute('class', 'btn btn-enviar')) ?>
+				</div>
+			</div>  
+	</div>
+</form>

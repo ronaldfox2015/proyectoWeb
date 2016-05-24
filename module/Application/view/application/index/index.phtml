@@ -1,0 +1,176 @@
+<?php   $this->headLink()
+    ->prependStylesheet($this->linkCdn('/css/home/home.css'))    
+?>
+<?php  $this->inlineScript()
+    ->prependFile($this->linkCdn('/js/home/home.js'))    
+; ?>
+
+<?php
+    
+    
+    function compararFechas($primera, $segunda)
+     {
+      $valoresPrimera = explode ("/", $primera);   
+      $valoresSegunda = explode ("/", $segunda); 
+      $diaPrimera    = $valoresPrimera[0];  
+      $mesPrimera  = $valoresPrimera[1];  
+      $anyoPrimera   = $valoresPrimera[2]; 
+      $diaSegunda   = $valoresSegunda[0];  
+      $mesSegunda = $valoresSegunda[1];  
+      $anyoSegunda  = $valoresSegunda[2];
+      $diasPrimeraJuliano = gregoriantojd($mesPrimera, $diaPrimera, $anyoPrimera);  
+      $diasSegundaJuliano = gregoriantojd($mesSegunda, $diaSegunda, $anyoSegunda);     
+      if(!checkdate($mesPrimera, $diaPrimera, $anyoPrimera)){
+        // "La fecha ".$primera." no es válida";
+        return 0;
+      }elseif(!checkdate($mesSegunda, $diaSegunda, $anyoSegunda)){
+        // "La fecha ".$segunda." no es válida";
+        return 0;
+      }else{
+        return  $diasPrimeraJuliano - $diasSegundaJuliano;
+      } 
+    }
+    $primera = "09/05/2016";// fecha fin
+    $segunda = date("d/m/Y");
+
+    $mostrarPopup= compararFechas ($primera,$segunda);
+?>
+
+<div class="contenedorSlider">
+    <a class="btn prev">
+            <i class="fa fa-angle-left flechaSlider flechaSlider-left"></i>
+    </a>
+    <div id="owl-demo" class="owl-carousel owl-theme">
+        
+          <div class="item">
+            <img class="img-lazy"  data-original="<?php echo $this->linkCdn('/img/epass_es_simple_1_origin.jpg') ?>" alt="img01" src="<?php echo $this->linkCdn('/img/epass_es_simple_1x30.jpg') ?>"alt="img01"/>
+        </div>
+        <div class="item">
+            <img class="img-lazy"  src="<?php echo $this->linkCdn('/img/epass_es_comodo_1_origin.jpg') ?>" alt="img01" />
+        </div>
+        <div class="item">
+            <img class="img-lazy" src="<?php echo $this->linkCdn('/img/epass_es_facil_1_origin.jpg') ?>" alt="img01"  alt="img01"/>
+        </div>
+        
+        
+    </div> 
+    <a class="btn next">    
+            <i class="fa fa-angle-right flechaSlider flechaSlider-right"></i>
+    </a>
+</div>
+
+<div class="lineaVerde"></div>
+<!-- Button trigger modal -->
+
+
+<div class="col-md-12 sinPaddingRight">
+    <div class="col-xs-12 col-sm-1 col-md-1">
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5">
+        <!--************** gota ePass **************//-->        
+        <div class="gota-epas link_persona" >
+          <div class="gota-epas-titulo"><span>Personas</span></div>
+          <div class="gota-epas-img">
+            <div class="gota-epas-btn"><a href="personas"><span>Ver Paquetes</span><i class="fa fa-angle-right"></i></a></div>
+          </div>
+        </div>       
+        <!--************** gota ePass **************//-->
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5 ">
+        <!--************** gota ePass **************//-->
+        <div class="gota-epas bg-celeste link_empresa" >
+          <div class="gota-epas-titulo"><span>Empresas</span></div>
+          <div class="gota-epas-img gota-epas-img-transarent-celeste">
+            <div class="gota-epas-btn"><a href="/empresas"><span>Ver Paquetes</span><i class="fa fa-angle-right"></i></a></div>
+          </div>
+        </div>
+        <!--************** gota ePass **************//-->
+    </div>
+    <div class="col-xs-12 col-sm-1 col-md-1">
+    </div>
+       
+    
+    <!-- FLECHITAS -->
+</div>
+<div class="col-md-12">
+    <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="contenedor-FlechaImg">
+            <img src="<?php echo $this->linkCdn('/img/flecha-verde.jpg') ?>" >
+        </div>
+    </div>
+    <div class=" col-xs-4 col-sm-4 col-md-4 ">
+        <div class="contenedor-FlechaImg">
+            <img src="<?php echo $this->linkCdn('/img/flecha-azul.jpg') ?>" >
+        </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="contenedor-FlechaImg">
+            <img src="<?php echo $this->linkCdn('/img/flecha-naranja.jpg') ?>" >
+        </div>
+    </div>
+
+</div>
+<!-- FIN FLECHITAS -->
+
+<!-- TITULO ¿QUÉ ES e-Pass? -->
+<div class="col-md-12 marginFlechitas">
+    <div class="col-xs-12 col-sm-3 col-md-4">
+        <div class="backgroundPuntitos"></div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="preguntaEpassTitulo">¿Qué es <span class=italic>e-pass</span>?</div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-4">
+        <div class="backgroundPuntitos"></div>
+    </div>
+</div>
+<!-- Video -->
+<div class="col-md-12 clear">
+    <div class="col-xs-1 col-sm-2 col-md-2">
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 cont_video_ePass">
+        <div class="video-Epass">
+            
+        </div>
+    </div>
+    <div class="col-xs-1 col-sm-2 col-md-2">
+    </div>
+</div>
+
+<!-- Video -->
+<!-- MOdales temporaneos en el home -->
+<!-- Modal -->
+<div class="modal fade" id="modalTemporaneo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button id="btn-cerrar_modal_remporaneo" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <img class="img_modalTemporaneo" src="<?php echo $this->linkCdn('/img/popup_huaylas.jpg') ?>">
+    
+    </div>
+  </div>
+</div>
+<?php 
+session_start();
+    
+  if(isset($_SESSION['popupTemporaneo']))
+  {
+       
+  }
+  else
+  {
+    $_SESSION['popupTemporaneo']=true;
+    ?>
+    <script>
+    var mostrarPopup = "<?php echo $mostrarPopup; ?>" ;
+   
+   
+        if(mostrarPopup>=0)
+        {    
+            $("#modalTemporaneo").modal("show");
+        }
+
+    </script>
+    <?php
+  }
+
+?>

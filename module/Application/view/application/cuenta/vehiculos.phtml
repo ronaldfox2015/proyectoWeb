@@ -1,0 +1,289 @@
+  <?php  $this->headLink()
+                        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+                         ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+                          ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+                         ?>
+   
+ 
+<?php $this->inlineScript()
+        ->prependFile($this->linkCdn('/js/dashboard/vehiculos.js'))
+        ->prependFile($this->linkCdn('/js/cuenta/cuenta.js'))
+        ->prependFile($this->linkCdn('/js/dashboard/dashboard.js'));
+
+ 
+//Cargar de formulario
+$form = $this->formActualizarVehiculo;
+$form->prepare();
+$form->setAttribute('method', 'post')
+        ->setAttribute('action', 'mis-vehiculos')
+        ->setAttribute('class', 'formulario-actualizar-vehiculo')
+        ->setAttribute('id', 'formulario-actualizar-vehiculo');
+
+
+$formBusqueda = $this->formBuscarVehiculo;
+$formBusqueda->prepare();
+$formBusqueda->setAttribute('method', 'post')
+        ->setAttribute('action', 'buscar-vehiculo')
+        ->setAttribute('class', 'formulario-buscar-vehiculo')
+        ->setAttribute('id', 'formulario-buscar-vehiculo');
+echo $this->form()->openTag($formBusqueda);
+echo $this->form()->closeTag();
+?>
+
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#vehiculos" aria-controls="home" role="tab" data-toggle="tab">Mis Vehículos</a></li>
+        </ul>
+
+      <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="vehiculos">
+                <div class="contenedor">
+                    <div>
+                        <span class="title-administrador">Mis Vehículos</span>
+                    </div>
+                    <div class="contenedor-administrador">
+                        <span class="descripcion-administrador">En esta sección podrá visualizar los vehículos asociados</span> 
+                    </div>
+                    <div class="contenedor-administrador">
+                        <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-4">Cuenta: </label>
+                                            <!--<input id="cuenta" name="cuenta" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>-->
+                                            <?=
+                                                $this->formElement($formBusqueda->get("bslxCuenta")->setAttribute('class',
+                                                        'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('id',
+                                                        'bcuenta'));
+                                            ?>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-4">Placa: </label>
+                                          <!--<input id="placa" name="placa" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>-->
+                                        <?=
+                                            $this->formElement($formBusqueda->get("bslxPlaca")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('id',
+                                                    'bplaca'));
+                                        ?>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="tag" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tag: </label>
+                                          <!--<input id="tag" name="tag" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>-->
+                                        <?=
+                                            $this->formElement($formBusqueda->get("bslxTag")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('id',
+                                                    'btag'));
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="estado" class="spanEpass col-xs-12 col-sm-12 col-md-4">Estado :</label>
+                                        <?php echo $this->formElement($formBusqueda->get("bslxEstado")->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('required', 'required')); ?>
+                                        <!--<select id="estado" name="estado" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                            <option value="0">Seleccione Estado</option>
+                                            <option value="O">Activo</option>
+                                            <option value="S">Inactivo</option>
+                                        </select>-->
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="marca" class="spanEpass col-xs-12 col-sm-12 col-md-4">Marca :</label>
+                                        <!--<input id="marca" name="marca" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>-->
+                                        <?=
+                                            $this->formElement($formBusqueda->get("bslxMarca")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('id',
+                                                    'bmarca'));
+                                        ?>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="modelo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Modelo :</label>
+                                        <!--<input id="modelo" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>-->
+                                        <?=
+                                            $this->formElement($formBusqueda->get("bslxModelo")->setAttribute('class',
+                                                    'imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('id',
+                                                    'bmodelo'));
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <button id="btn_vehiculos" class="btn btn-buscar"> Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-administrador">
+                        <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                            <div class="contenedorInputsEpass">
+                                <table id="table_reporte_vehiculos" class="table table-responsive table-personalizada">
+                                    <thead>
+                                        <tr>
+                                            <th>Editar </th>
+                                            <th>Cuenta </th>
+                                            <th>Placa</th>
+                                            <th>Tag</th>
+                                            <th>Estado Actual</th>
+                                            <th>Marca</th>
+                                            <th>Modelo</th>
+                                            <th>Color</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($this->vehiculos as $value) { ?>
+                                            <tr>
+                                                <td class="td-center title-item">
+                                                    <!--<button id="editar" type="button" class="fa fa-pencil" data-toggle="modal" data-target="#editar_vehiculo" onclick="javascript:data_vehiculo('<?php echo $value["cuenta"]; ?>', '<?php echo $value["placa"]; ?>');"></button>-->
+                                                    <i id="editar"  class="fa fa-pencil" onclick="javascript:data_vehiculo('<?php echo $value["cuenta"]; ?>', '<?php echo $value["placa"]; ?>');"></i>
+                                                </td>
+                                                <td class="cuenta_vehiculo"><?= $value["cuenta"] ?></td>
+                                                <td class="placa_vehiculo"><?= $value["placa"] ?></td>
+                                                <td><?= $value["tag"] ?></td>
+                                                <td><?= $value["estado_actual"] ?></td>
+                                                <td><?= strtoupper($value["marca"]) ?></td>
+                                                <td><?= $value["modelo"] ?></td>
+                                                <td><?= strtoupper($value["color"]) ?></td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="editar_vehiculo" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <?php echo $this->form()->openTag($form); ?>
+            <div class="subContenedorFormularioEpass "><span class="spanEncima color-white" >Edición de Vehículo</span>
+                <div class="row">
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-4">Cuenta :</label>
+                            <?=
+                                $this->formElement($form->get("txtCuenta")->setAttribute('class',
+                                        'disabled-input imputEpass col-xs-12 col-sm-12 col-md-8')->setAttribute('id',
+                                        'cuenta_v'));
+                            ?>
+                            <!--<input id="cuenta_v" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8" value="" />-->
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-4">Placa:</label>
+                            <?=
+                                $this->formElement($form->get("txtPlaca")->setAttribute('class',
+                                        'disabled-input imputEpass col-xs-12 col-sm-12 col-md-8')->setAttribute('id',
+                                        'placa_v'));
+                            ?>
+                            <!--<input id="placa_v" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8" value="" />-->
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="tag" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tag :</label>
+                            <?=
+                                $this->formElement($form->get("txtTag")->setAttribute('class',
+                                        'disabled-input imputEpass col-xs-12 col-sm-12 col-md-8')->setAttribute('id',
+                                        'tag_v'));
+                            ?>
+                            <!--<input id="tag_v" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8" value="" />-->
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="estado" class="spanEpass col-xs-12 col-sm-12 col-md-4">Estado:</label>
+                            <?=
+                                $this->formElement($form->get("txtEstado")->setAttribute('class',
+                                        'disabled-input imputEpass col-xs-12 col-sm-12 col-md-8')->setAttribute('id',
+                                        'estado_v'));
+                            ?>
+                            <!--<input id="estado_v" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8" value="" />-->
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div id="select_tipo" class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="tipo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tipo:</label>
+                            <?php echo $this->formElement($form->get("slxTipo")->setAttribute('class', 'select-valid imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('required', 'required')); ?>
+                            <!--<select id="tipo"  class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                <option>Seleccione</option>
+                            </select>-->
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="marca" class="spanEpass col-xs-12 col-sm-12 col-md-4">Marca:</label>
+                            <?php echo $this->formElement($form->get("slxMarca")->setAttribute('class', 'select-valid imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('required', 'required')); ?>
+                            <!--<select id="marca"  class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                <option>Seleccione</option>
+                            </select>-->
+                        </div>
+                 
+                    </div>
+                    <div class="form-inline separate">
+                       
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="modelo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Modelo:</label>
+                            <?php echo $this->formElement($form->get("slxModelo")->setAttribute('class', 'select-valid imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker')->setAttribute('required', 'required')); ?>
+                            <!--<select id="modelo"  class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                <option>Seleccione</option>
+                            </select>-->
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="color" class="spanEpass col-xs-12 col-sm-12 col-md-4">Color:</label>
+                            <?=
+                                $this->formElement($form->get("txtColor")->setAttribute('class',
+                                        'imputEpass col-xs-12 col-sm-12 col-md-8')->setAttribute('id',
+                                        'color_v')
+                                        ->setAttribute('maxlength',
+                                        '15'));
+                            ?>
+                            <!--<input id="color_v" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8" value="" />-->
+                            <!--<select id="color"  class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                <option>Seleccione</option>
+                            </select>-->
+                        </div>
+                        <?= $this->formElement($form->get("texto_marca")); ?>
+                        <?= $this->formElement($form->get("texto_modelo")); ?>
+                        <?= $this->formElement($form->get("vehiculo_id")); ?>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="modal-footer">
+                        <button id="btn-editar-vehiculo" type="button" class="btn btn-confirmacion" data-toggle="modal" >Actualizar</button>
+                        <button type="button" class="btn btn-confirmacion" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+            <?php echo $this->form()->closeTag(); ?>
+        </div>
+       
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="mensaje_confirmacion" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <p class="title-mensaje-confirmacion">Mensaje de Confirmación</p>
+            <p class="description-mensaje-confirmacion"></p>
+        </div>
+        <div class="modal-footer">
+            <button id="actualizar_vehiculo" type="button" class="btn btn-confirmacion" data-dismiss="modal">Aceptar</button>
+            <button type="button" class="btn btn-confirmacion" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

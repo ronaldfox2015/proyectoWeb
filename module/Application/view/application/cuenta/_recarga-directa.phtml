@@ -1,0 +1,216 @@
+<form method="post" action="/application/pasarela/generate" id="pagos" name="pagos" > 
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="sinPadding-right sinPadding-left">
+                <div class="row">
+                    <div class="col-md-6 box-background box-padding">
+                        <div class="subContenedorFormularioEpass separate sinPadding-right sinPadding-left">
+                            <span class="spanEncima">Datos de Recarga</span>
+                            <div class="row box-padding-extremo">
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                                        <label for="tag" class="spanEpass col-xs-12 col-sm-12 col-md-6">Contrato:</label>
+                                        <input id="tag" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-6 " value="<?= $this->account_id ?>"/>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                                        <label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-4">Cuenta:</label>
+                                        <input id="placa" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8 " value="<?php echo $this->session_data_helper()->planTitle?>"/> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subContenedorFormularioEpass separate">
+                            <span class="spanEncima">Paquetes del Plan</span>
+                            <div id="paquetesPlan-recargaDirecta" class="row ">
+                                <div class="col-md-12" >
+                                    <div class="hidden-xs col-sm-1 col-md-1 margencito flecha-container">
+                                        <a class="btn prev2">
+                                            <i class="fa fa-angle-left flecha-size"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10 col-md-10">
+                                        <div id="carusel-recarga">
+                                            <div id="owl-demo" class="owl-carousel"><?php $count = 0; ?>
+                                                <?php foreach ($this->dataPaquetes as $key => $data) { ?>
+                                                    <?php foreach ($data as $k => $value) { ?>
+                                                        <div class="item1"><?php $value = (array) $value ?>
+                                                            <!--************** paquete ePass **************//-->
+                                                            <div class="paqueteEpass"><?php $count++; ?>
+                                                                <div class="paqueteEpass-Titulo bgceleste"><span>Paquete <?= $k + 1 ?></span></div>
+                                                                <div class="contenedorContenido borderCeleste">
+                                                                    <div class="paqueteEpass-Contenido">
+                                                                        <div class="paqueteEpass-Contenido-Precio bgceleste"><span class="soles">S/.</span>
+                                                                            <div class="precio"><span><?=number_format((float)trim($value['total']) , 2, '.','');?></span><span> *</span></div>
+                                                                        </div>
+                                                                        <div class="paqueteEpass-Contenido-Recarga"><span class="colorceleste">Sólo Recarga</span></div>
+                                                                        <div class="paqueteEpass-Contenido-bloque3 dashedCeleste"><span>Tasa Recarga</span><span class="saldo-monto">S/. <?=number_format((float)trim( $value['tasaRecarga']) , 2, '.',''); ?></span></div>
+                                                                        <div class="paqueteEpass-Contenido-bloque1 sinDashed"><span>Saldo para uso</span><span class="saldo-monto">S/. <?=number_format((float)trim($value['saldoUso']) , 2, '.','')  ?></span></div>
+                                                                        <div class="paqueteEpass-Contenido-VerMas bgCelesteTransparent">
+                                                                            <span onclick="paqueteSeleccionado(<?= $count ?>)" class="bgceleste">Recarga</span>
+                                                                            <input id="costoTotal<?= $count ?>" type="hidden" value="<?=number_format((float)trim( $value['total']) , 2, '.','') ?>" />
+                                                                            <input id="tasaRecarga<?= $count ?>" type="hidden" value="<?=number_format((float)trim($value['tasaRecarga']) , 2, '.','')  ?>" />
+                                                                            <input id="saldoUso<?= $count ?>" type="hidden" value="<?=number_format((float)trim( $value['saldoUso']) , 2, '.','')  ?>" />
+                                                                            <input id="costoTag<?= $count ?>" type="hidden" value="0" />
+                                                                            <input id="costoPromocionalTag<?= $count ?>" type="hidden" value="0" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--************** paquete ePass **************//-->
+                                                        </div>
+                                                    <?php } ?>
+                                                <?php } ?>	
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hidden-xs col-sm-1 col-md-1 margencito flecha-container">
+                                        <a class="btn next2">
+                                            <i class="fa fa-angle-right flecha-size"></i>
+                                        </a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="msg-observacion">
+                                <p>(*)Los Planes de Recarga no incluyen el Costo del TAG. Si el usuario ya está afiliado, sólo deberá recargar su TAG</p>
+                            </div>
+                        </div>
+                    </div>              
+                    <div class="col-md-6 sinPadding-right" >
+                        <div class="col-md-12 box-background box-padding">
+                            <div class="col-md-12 subContenedorFormularioEpass ">
+                                <span class="spanEncima"> Método de Pago</span>
+                                <div class="row box-padding-extremo-2">
+                                    <div class="separate conPadding-left">Eliga el Medio de Pago para realizar la recarga</div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 sinPadding-right sinPadding-left">
+                                        <div class=" col-xs-12 col-sm-6 col-md-12 separate sinPadding-right sinPadding-left">
+                                            <div class="col-xs-1 col-sm-1 col-md-1 sinPadding-right sinPadding-left">
+                                                <input name="medio_de_pago" type="radio" id="tarjeta_visa" value="visa" class="sinPadding-right sinPadding-left">
+                                            </div>
+                                            <div class="col-xs-11 col-sm-5 col-md-11 sinPadding-right sinPadding-left">
+                                                <label for="tarjeta_visa" class="tarjeta_radio_label label-animation">
+                                                    <div class="contenedor-img-tarejta">
+                                                        <img  class="img_medio_pago" src="<?php echo $this->linkCdn('/img/visa2.png') ?>" >
+                                                    </div>
+                                                    <span id="span-visa-top" class="medio-pago-descripcion medio-pago-descripcion-dashboard medio-pago-descripcion-visa">Paga con tu tarjeta VISA</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-6 col-md-12 sinPadding-right sinPadding-left">
+                                            <div class="col-xs-1 col-sm-1 col-md-1 sinPadding-right sinPadding-left">
+                                                <input name="medio_de_pago" type="radio" id="tarjeta_american_expres" class="tarjeta_radio_label sinPadding-right sinPadding-left" value="amex">
+                                            </div>
+                                            <div class="col-xs-11 col-sm-5 col-md-11 sinPadding-right sinPadding-left">
+                                                <label for="tarjeta_american_expres" class="tarjeta_radio_label label-animation">
+                                                    <div class="contenedor-img-tarejta">
+                                                        <img  class="img_medio_pago_americanexpress" src="<?php echo $this->linkCdn('/img/american_express.jpg') ?>" >
+                                                    </div>
+                                                    <span id="span-amerca-ex-top" class="medio-pago-descripcion-dashboard medio-pago-descripcion">Paga con tu American Express</span>
+                                                </label>
+                                            </div>
+                                        </div>					
+                                    </div>
+                                    <div class="separate-zkte col-xs-12 col-sm-6 col-md-6 sinPadding-right sinPadding-left">
+                                        <div class=" col-xs-12 col-sm-6 col-md-12 separate sinPadding-right sinPadding-left">	
+                                            <div class="col-xs-1 col-sm-1 col-md-1 sinPadding-right sinPadding-left">
+                                                <input name="medio_de_pago" type="radio" id="tarjeta_master_card" class="tarjeta_radio_label sinPadding-right sinPadding-left" value="master">
+                                            </div>
+                                            <div class="col-xs-11 col-sm-5 col-md-11 sinPadding-right sinPadding-left">
+                                                <label for="tarjeta_master_card" class="tarjeta_radio_label label-animation">
+                                                    <div class="contenedor-img-tarejta">
+                                                        <img  class="img_medio_pago_master_card" src="<?php echo $this->linkCdn('/img/master_card.png') ?>" >
+                                                    </div>
+                                                <span class="medio-pago-descripcion-dashboard medio-pago-descripcion medio-pago-descripcion-mastercard">Paga con tu MasterCard</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-6 col-md-12 sinPadding-right sinPadding-left">
+                                            <div class="col-xs-1 col-sm-1 col-md-1 sinPadding-right sinPadding-left">
+                                                <input name="medio_de_pago" type="radio" id="tarjeta_diners_club" class="tarjeta_radio_label sinPadding-right sinPadding-left" value="diners">
+                                            </div>
+                                            <div class="col-xs-11 col-sm-5 col-md-11 sinPadding-right sinPadding-left">
+                                                <label for="tarjeta_diners_club" class="tarjeta_radio_label label-animation">
+                                                    <div class="contenedor-img-tarejta">
+                                                        <img  class="img_medio_pago_dinersclub" src="<?php echo $this->linkCdn('/img/diners_club.png') ?>">
+                                                    </div>
+                                                    <span class=" medio-pago-descripcion-dashboard medio-pago-descripcion">Paga con tu Diners Club</span>		
+
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="col-md-offset-1 col-md-6 subContenedorFormularioEpass ">
+                                <span class="spanEncima"> Comprobante</span>
+                                <div class="row box-padding-extremo">
+                                    <div class="separate ">
+                                        <?php
+                                        $factura = '';
+                                        $boleta = '';
+                                        $class = 'imputEpass col-md-12 disabled-input';
+                                        if ($this->plan) {
+                                            $factura = 'checked';
+                                            $class = 'imputEpass col-md-12 error error-validacion';
+                                        } elseif (!$this->plan) {
+                                            $boleta = 'checked';
+                                            $class = 'imputEpass col-md-12 disabled-input';
+                                        }
+                                        ?>
+                                        <span>Desea una:</span>
+                                        <?php if(!$this->plan){?>
+                                        <span>
+                                            <input name="medio_de_pago_dash" type="radio" <?= $boleta ?> value="boleta"> Boleta 
+                                        </span>
+                                        <?php } ?>
+
+                                        <span>
+                                            <input name="medio_de_pago_dash" type="radio" <?= $factura ?> value="factura"> Factura
+                                        </span>
+
+                                    </div>
+
+                                    <div class="bloqueInput separate">
+                                        <p>RUC:</p>
+                                        <input id="comp_ruc" name="comp_ruc" maxlength="11"  type="text" class="<?= $class ?>">
+                                    </div>
+                                    <br>
+                                    <div class="bloqueInput separate">
+                                        <p>Razón Social:</p>
+                                        <input id="comp_raz_soc"  name="comp_raz_soc" maxlength="100"  type="text" class="<?= $class ?>">
+                                    </div>
+
+
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="col-md-12 box-background ">
+                            <div class="subContenedorFormularioEpass">
+                                <span class="spanEncima">Confirma tu Pago</span>
+                                <div class="row box-padding-extremo">
+                                    <div class="">
+                                        <div class="bloqueInput col-xs-6 col-sm-6 col-md-6 form-group">
+                                            <label for="nombre" class="color-lighblue">Cuenta:</label>
+                                            <label for="nombre" class=""><?php echo $this->session_data_helper()->planTitle?></label>
+                                        </div>
+                                        <div class="bloqueInput col-xs-6 col-sm-6 col-md-6 form-group">
+                                            <label for="nombre" class="color-lighblue ">Paquete:</label>
+                                            <label id="total_plan" for="nombre" class=""> </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <input type="hidden" id="token" name="token" value="<?= $this->token ?>"/>
+                                        <button id="pagar-recarga-directa" type="button" class="btn submit_sgtpaso btn_center"> Pagar </button>
+                                        <p id="validacion_pago" class=" txtalgn-center error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form> 

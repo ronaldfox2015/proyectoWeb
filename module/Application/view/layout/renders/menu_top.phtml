@@ -1,0 +1,39 @@
+<!-- Collect the nav links, forms, and other content for toggling -->
+<?php
+    $isauth = $this->session_active_helper();
+?>
+<div class="collapse navbar-collapse" id="navbar-collapse-principal">
+    <ul class="nav navbar-nav navbar-right">
+        <?php foreach($this->container as $page): ?>
+                
+                    <?php if(!(($page->get('login') =='1' && $isauth) || ($page->get('logout') =='1' && !$isauth))) { ?>
+                            <li     
+                                class="<?= $page->isActive(true) ? 'active': '' ?><?=$page->get('class') ?>">
+
+                                <?php if($page->label=="Iniciar Sesión"){ ?>
+                                  <a class="cursorPointer"
+                                   title="<?= $page->label ?>"
+                                   id="id_top_menu<?= str_replace(" ","",$page->label) ?>"
+                                   <?php if(!$page->get('logout')) { ?>
+                                        data-toggle="<?=$page->get('data-toggle')?>"
+                                        data-target="<?=$page->get('data-target')?>"
+                                   <?php } ?>
+                                ><?= $page->label ?></a>
+                                <?php }else{ ?>
+                                  <a href="<?= $page->getHref(); ?>"
+                                   title="<?= $page->label ?>"
+                                   id="id_top_menu<?= str_replace(" ","",$page->label) ?>"
+                                   <?php if(!$page->get('logout')) { ?>
+                                        data-toggle="<?=$page->get('data-toggle')?>"
+                                        data-target="<?=$page->get('data-target')?>"
+                                   <?php } ?>
+                                ><?= $page->label ?></a>
+                                <?php } ?>
+                                
+
+
+                            </li>
+                    <?php } ?>
+        <?php endforeach; ?>
+    </ul>
+</div><!-- /.navbar-collapse -->

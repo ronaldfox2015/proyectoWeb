@@ -1,0 +1,83 @@
+         <style type="text/css">
+        .contenedor {
+            margin: 0; padding: 0; 
+                     width: 100%;
+        }
+      a,a:link{
+            color: #fff;
+        }
+        body
+        {
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+        }
+        .ii a[href]
+        {
+            color: #F08B00 !important;
+        }
+        </style>
+
+    <div class="contenedor" style="         
+            margin:0 auto;
+            font-size: 12px;
+            font-family: 'Arial';">
+                <div class="div-img" style="text-align: center;">
+                    <div style="float:left;width: 49%;text-align: left;">
+                        
+                         <img  src="<?=$this->view->linkCdn('/img/flecha_activacion_cuenta.jpg');?>" class="img" style="width: 57%;">
+                         
+                    </div>
+                     <div style="float:right;width: 44%;text-align: center;margin-top: 4%;">
+                        <img src="logo.jpg" src="<?=$this->view->linkCdn('/img/logo.jpg');?>" class="img" style="width: 77%;">
+                         
+                     </div>
+                 </div>
+
+                
+        <div class="body-mensaje" style="clear:both;font-family: 'Open Sans', sans-serif;text-align: center;">
+            <div class="bienvenido">
+                <h3 style=" text-align: center; color:#009ddf;font-size: 2.4em;    padding-top: 4%;
+    padding-left: 9%;">Bienvenid<span style="font-weight: normal">@</span> <span class="email-mensaje" style="font-style: italic; text-decoration: none; color: #f08b00; font-size: 1em;"><?php echo $this->name; ?></span></h3>
+            </div>
+            <div class="descripcion-cuerpo" style="font-size: 1.1em;
+                line-height: 13px;
+                color: #009ddf;">
+                           
+                                <table style="color: #009ddf;
+                                    font-size: 1em;
+                                    padding: 0% 10%;
+                                    float: left;
+                                    text-align: left;
+                                    font-weight: bold;">
+                                    <tr >
+                                        <td valign="top" width="30" ><img src="<?=$this->view->linkCdn('/img/mail-item.png');?>" class="img" style="width: 30px"> </td>
+                                        <td style="padding-bottom: 10px"> Con la Activación de tu Cuenta podrás ver tus saldos, tus consumos y recargar fácil y rápido.
+                                        </td>
+                                    </tr>  
+                                <tr>
+                                        <td valign="top" width="30"><img src="<?=$this->view->linkCdn('/img/mail-item.png');?>" class="img" style="width: 30px"> </td>
+                                        <td> Luego de Activar tu Cuenta, podrás Iniciar la Sesión utilizando tu correo electrónico y la contraseña que ingresaste al momento de registrarte en la web.
+                                        </td>
+                                    </tr>  
+                                </table>                
+                                    
+            </div>
+                        
+                        <div class="div-img" style="text-align: center; margin-bottom: 25px; margin-top: 25px">
+                            <a href="<?php echo $this->url; ?>"><img src="<?=$this->view->linkCdn('/img/activar_cuenta_btn.jpg');?>" class="img" style="width: 38%;margin-top: 2em;"></a>
+                        </div>
+        </div>
+                <div class="div-img" style="text-align: center;">
+                    <img src="<?=$this->view->linkCdn('/img/mail-footer2.png');?>" class="img" style="width: 100%">
+                </div>
+    </div>
+
+
+
+
+
+
+
+
+    

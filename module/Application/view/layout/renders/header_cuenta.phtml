@@ -1,0 +1,108 @@
+
+<?php echo $this->partial('renders/modal_login') ?>
+<script src='https://cdn.datatables.net/1.10.11/js/jquery.dataTables.js'></script>
+<nav id="menu_principal" class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#navbar-collapse-admin" >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a id="logo" class="navbar-brand" href="<?php echo '/' ?>">
+                <img src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-admin"> 
+            <?php
+            if (isset($this->invitado)) {
+                $content = $this->navigation('my_account_navigation')->findOneByAction('reportes');
+                $content2 = $this->navigation('my_account_navigation')->findOneByAction('vehiculos');
+                $content3 = $this->navigation('my_account_navigation')->findOneByAction('comprobantes');
+
+                $navigation = $this->navigation('my_account_navigation')->removePage($content);
+                $navigation2 = $this->navigation('my_account_navigation')->removePage($content2);
+                $navigation3 = $this->navigation('my_account_navigation')->removePage($content3);
+            }
+            echo $this->navigation('my_account_navigation')
+                    ->menu()
+                    ->setPartial('renders/menu_user')->render()
+            ?>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="row header-sesion content-bienvenido">
+    <div class="col-xs-6 col-sm-8 col-md-8"> 
+        <p class="header-bienvenido">
+            <span class="span-bienvenido">¡Bienvenido!</span>
+            <span class="span-nombre-usuario"> <?= $this->name_user ?> </span>
+           <span class="span-tipo-cuenta">Cuenta <?php echo $this->session_data_helper()->planTitle?></span>
+        </p>
+        <?php $estilo=""; if (count($this->accounts) > 1) { $estilo="top-button"; ?>
+            <button class="btn btn-orange" data-toggle="modal" data-target="#cambiar_cuenta"> Cambiar Cuenta </button>
+
+        <?php } ?>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-3 col-md-offset-1">
+        <?php if (!isset($this->recarga)) { ?>
+            <button id="btn-recargar-dashboard" class="btn btn-recargar-zkte<?= ($this->button)?'':' hide'?> <?= $estilo ?>" onclick="activeRecargaDirecta()">
+                <i class="fa fa-refresh refresh"></i> Recargar
+            </button>
+        <?php } elseif (isset($this->recarga)  && isset($this->button))  { ?>
+            <a id="btn-recargar-dashboard" class="btn btn-recargar-zkte<?= ($this->button)?'':' hide'?> <?= $estilo ?>"  href="/mi-cuenta/recarga-directa">
+                <i class="fa fa-refresh refresh"></i> Recargar
+            </a>
+        <?php } ?>
+    </div>
+</div>
+
+
+<div id="cambiar_cuenta" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row padding-modal">
+
+                    <p class="title-mensaje-confirmacion">Cambiar Cuenta</p>
+                    <p class=".description-mensaje-confirmacion-izq"> Seleccione la cuenta que desea visualizar </p>
+                    <table id="table-cuentas" class="table table-responsive table-personalizada">
+                        <thead>
+                            <tr>
+                                <th>Seleccionar </th>
+                                <th>Contrato</th>
+                                <th>Cuenta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($this->accounts as $account) { ?>
+                                <tr><?php $checked=($this->acount_id==$account['account_id'])?'checked="checked"':''; ?>
+                                    <td class="td-center"><input type="radio" name="account_id" <?=$checked?> value="<?php echo $account['account_id'] ?>"/></td>
+                                    <td><?php
+                                echo substr_replace($account['account_id'], '.',
+                                        2, 0);
+                                ?></td>
+                                    <td><?= \Application\Service\CuentaService::getPlanTitle($account['plan_name']) ?></td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>  
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-confirmacion" data-dismiss="modal" type="submit" class="btn  btn-confirmacion"  >Aceptar</button>
+                <button type="button" class="btn  btn-confirmacion" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<input id="vista-actual" type="hidden" value=""/>
+<?php echo $this->partial('renders/modal_cuenta'); ?>
+<?php echo $this->partial('renders/modal_solicitud') ?>

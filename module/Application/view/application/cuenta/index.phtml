@@ -1,0 +1,122 @@
+<?php
+$this->headLink()
+        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+        ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+        ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+?>
+<?php
+$this->inlineScript()
+        ->prependFile($this->linkCdn('/js/afiliate/afiliate.js'))
+        ->prependFile($this->linkCdn('/js/dashboard/dashboard.js'))
+?>
+<?php echo $this->partial('renders/modal_status_solicitudes'); ?>
+<!----->
+<?php
+   $text = (!$this->haveAccountWithEmail) ? 'En caso no cuentes con Usuario Web, podrás obtenerlo <a id="registro" href="/registro-cuenta">Aquí </a>.' : "";
+?>
+
+<?php if (isset($this->usuario_invitado)) { ?>
+    <div class="container-alert">
+        <div class="alert alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            Si deseas ver tus datos deberás  <a class="shoh-modal-login-dashboard cursorPointer" id="login"  class="href_invitado_login">Iniciar Sesión</a>. <?php echo $text?>
+        </div>
+    </div>
+<?php } ?>
+
+<?php
+echo $this->partial('layout/renders/dashboard',
+        array(
+    'resumen' => $this->resumen,
+    'editCuenta' => $this->editCuenta,
+    'recargadirecta' => $this->recargadirecta,
+    'solicitudes' => $this->solicitudes,
+    'recarga' => $this->recarga,
+    'mis_datos' => $this->mis_datos
+));
+?>
+<div id="tab-content-cuenta" class="tab-content">
+    <?php if (!isset($this->usuario_invitado)) { ?>
+        <div role="tabpanel" class="tab-pane <?= ($this->resumen && (!$this->recarga) && !$this->mis_datos) ? 'active' : '' ?>" id="resumen">
+            <?=
+            $this->partial('application/cuenta/_resumen',
+                    array(
+                'plan' => $this->plan,
+                                        'plans' => $this->plans,
+
+                'name' => $this->name,
+                'lastname' => $this->lastname,
+                'document_type' => $this->document_type,
+                'document_number' => $this->document_number,
+                'email' => $this->email,
+                'plan_name' => $this->plan_name,
+                /*'ultimas_recargas' => $this->ultimas_recargas,*/
+                'solo_recargas' => $this->solo_recargas,
+                'cuentas_asociadas' => $this->cuentas_asociadas,
+                'mis_vehiculos' => $this->mis_vehiculos,
+                'saldo_disponible' => $this->saldo_disponible,
+                'individual'=>$this->individual
+            ));
+            ?> 
+            <?php if (!isset($this->usuario_invitado)) { ?>
+                <?=
+                $this->partial('application/cuenta/_cuentas-asociadas',
+                        array(
+                    'views' => $this,
+                    'document_type' => $this->document_type,
+                    'document_number' => $this->document_number,
+                    'name' => $this->name,
+                    'lastname' => $this->lastname,
+                    'email' => $this->email,
+                    'plan_name' => $this->plan_name,
+                    'accounts' => $this->accounts
+                ));
+                ?>   
+            <?php } ?>
+        </div>
+        <div role="tabpanel" class="tab-pane <?= ($this->editCuenta || $this->mis_datos) ? 'active' : '' ?>" id="misdatos">
+            <div class="container-fluid">
+                <div class="col-md-12 sinPadding-right sinPadding-left">
+                    <div class="box-background box-padding overflowx-hide">
+                        <?=
+                        $this->partial('application/cuenta/_mis-datos',
+                                array(
+                            'formActualizar' => $this->formActualizar,
+                            'forms' => $this,
+                             'plan' => $this->plan,
+                                    
+                            'requerido' => $this->requerido,
+                            'bloqueado' => $this->bloqueado
+                        ));
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <div role="tabpanel" class="tab-pane <?= (isset($this->usuario_invitado) || isset($this->recarga) && $this->recarga) ? 'active' : '' ?>" id="recargadirecta">
+        <?=
+        $this->partial('application/cuenta/_recarga-directa',
+                array(
+            'views' => $this,
+            'dataPaquetes' => $this->dataPaquetes,
+            'plan_name' => $this->plan_name,
+            'plan' => $this->plan,
+            'token' => $this->token,
+            'account_id' => $this->account_id
+        ));
+        ?>
+    </div> 
+    <div role="tabpanel" class="tab-pane" id="solicitudes">
+        <?php if (!isset($this->usuario_invitado)) { ?>
+            <?=
+            $this->partial('application/cuenta/_solicitudes',
+                    array(
+                'LisSolicitudes' => $this->LisSolicitudes,
+            ));
+            ?>
+        <?php } ?>
+    </div> 
+    <input type="hidden" name="active_lima" id="active_lima" value="<?php echo $this->active_lima; ?>"/>
+</div>
+

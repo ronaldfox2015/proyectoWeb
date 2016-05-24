@@ -1,0 +1,119 @@
+  <?php  $this->headLink()
+                        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+                         ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+                          ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+                         ?>
+ <?php   ?>
+
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#comprobantes" aria-controls="home" role="tab" data-toggle="tab">Comprobantes de Pago</a></li>
+        </ul>
+
+      <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="comprobantes">
+                <div class="contenedor">
+                    <div>
+                        <span class="title-administrador">Comprobantes de Pago</span>
+                    </div>
+                    <div class="contenedor-administrador">
+                        <span class="descripcion-administrador"></span> 
+                    </div>
+                    <div class="contenedor-administrador">
+                        <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="documento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Documento: </label>
+                                        <input id="documento" name="documento" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="nro_factura" class="spanEpass col-xs-12 col-sm-12 col-md-4">N° de Factura: </label>
+                                          <input id="nro_factura" name="nro_factura" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="contrato" class="spanEpass col-xs-12 col-sm-12 col-md-4">Contrato: </label>
+                                          <input id="contrato" name="contrato" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="mes" class="spanEpass col-xs-12 col-sm-12 col-md-4">Mes :</label>
+                                        <select id="mes" name="mes" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                            <option>Seleccione</option>
+                                        </select>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="periodo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Periodo :</label>
+                                        <select id="periodo" name="periodo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                            <option>Seleccione</option>
+                                        </select>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                            <button class="btn btn-buscar"> Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-administrador">
+                        <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                            <div class="contenedorInputsEpass">
+                                <table class="table table-responsive table-personalizada">
+                                    <thead>
+                                        <tr>
+                                            <th>Descargar </th>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Documento</th>
+                                            <th>N° Factura</th>
+                                            <th>Contrato</th>
+                                            <th>Mes</th>
+                                            <th>Periodo</th>
+                                            <th>Cantidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="td-center"><a href=""><i class="fa fa-file-pdf-o"></i></a></td>
+                                            <td>0000024483</td>
+                                            <td>Nombre A</td>
+                                            <td>98745623</td>
+                                            <td>000-00000000</td>
+                                            <td>00.105064</td>
+                                            <td>Enero</td>
+                                            <td>1 al 15</td>
+                                            <td>Ok</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-center"><a href=""><i class="fa fa-file-pdf-o"></i></a></td>
+                                            <td>0000024483</td>
+                                            <td>Nombre B</td>
+                                            <td>98745623</td>
+                                            <td>000-00000000</td>
+                                            <td>00.105064</td>
+                                            <td>Enero</td>
+                                            <td>1 al 15</td>
+                                            <td>Ok</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-center"><a href=""><i class="fa fa-file-pdf-o"></i></a></td>
+                                            <td>0000024483</td>
+                                            <td>Nombre C</td>
+                                            <td>98745623</td>
+                                            <td>000-00000000</td>
+                                            <td>00.105064</td>
+                                            <td>Enero</td>
+                                            <td>16 al 30</td>
+                                            <td>Ok</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

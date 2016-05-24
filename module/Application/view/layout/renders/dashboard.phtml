@@ -1,0 +1,27 @@
+<ul id="enlace-tab-cuenta" class="nav nav-tabs" role="tablist">
+    <?php if (isset($this->resumen)) { ?>
+        <li id="tab-resumen" role="presentation" class="<?= ($this->resumen && !$this->recarga && !$this->mis_datos) ? 'active' : '' ?>">
+            <a id="resumen_dashboard" href="#resumen" aria-controls="home" role="tab" data-toggle="tab">Resumen</a>
+        </li>
+    <?php } ?>
+    <?php if (isset($this->editCuenta)) { ?>
+        <li id="tab-datos" role="presentation" class="<?= ($this->editCuenta || $this->mis_datos) ? 'active' : '' ?>">
+            <a id="tab-mis-datos" href="#misdatos" aria-controls="profile" role="tab" data-toggle="tab">Mis Datos</a>
+        </li>
+    <?php } ?>
+    <?php if (isset($this->solicitudes)) { ?>
+        <li id="tab-solicitudes" role="presentation" class="">
+            <a id="tab-solicitudes" href="#solicitudes" aria-controls="profile" role="tab" data-toggle="tab">Solicitudes</a>
+        </li>
+    <?php } ?>
+    <?php if (isset($this->recargadirecta) || isset($this->recarga)) { ?>
+        <li id="tab-recarga-directa" role="presentation" class="<?= ($this->recargadirecta || $this->recarga) ? 'active' : '' ?>">
+            <a id="tab-recarga-directa" href="#recargadirecta" aria-controls="profile" role="tab" data-toggle="tab">Recarga Directa</a>
+        </li>
+    <?php } ?>
+    <?php if (isset($this->registrar)) { ?>
+        <li id="tab-recarga-directa" role="presentation" class="<?= ($this->registro ) ? 'active' : '' ?>">
+            <a id="tab-recarga-directa" href="#registro" aria-controls="profile" role="tab" data-toggle="tab">Creación de Usuario Web</a>
+        </li>
+    <?php } ?>
+</ul>

@@ -1,0 +1,16 @@
+<?php 
+    $data = $this->session_data_helper();
+    $invitado = ($data->role == 'usuario_recarga') ?  1 : 0;
+?>
+
+<ul class="nav navbar-nav navbar-left">
+    <?php foreach($this->container as $page): ?>
+            
+        <li
+            class="<?= $page->isActive(true) ? 'active': '' ?><?= ($page->label == 'Cerrar Sesión') ? 'iniciar_sesion': '' ?>">
+            <a href="<?= $page->getHref(); ?>"
+               title="<?= $page->label ?>"
+               class=""><?= (($page->label == 'Cerrar Sesión') && $invitado) ?  'Cerrar Sesión Invitado' :  $page->label ?></a>
+        </li>
+    <?php endforeach; ?>
+</ul>

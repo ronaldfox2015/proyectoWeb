@@ -1,0 +1,62 @@
+{
+    "name": "clickslatam/epass-2.0",
+    "description": "Proyecto E-pass 2.0",
+    "license": "MIT",
+    "time": "2016-02-19",
+    "keywords": [
+        "E-pass",
+        "ClicksLatam"
+    ],
+    "authors": [
+        {
+            "name": "Deybee",
+            "email": "deybeecz@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Renzo Tejada",
+            "email": "renzzo09@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Martin Cruz",
+            "email": "i@martincruz.me",
+            "role": "Developer"
+        },
+        {
+            "name": "Jhon Campos",
+            "email": "camposarteaga.j@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://epass.pe/",
+    "require": {
+        "php": ">=5.5",
+        "zendesk/zendesk_api_client_php": "^2.0",
+        "zendframework/zend-cache": "2.6.1",
+        "zendframework/zend-session": "2.6.2",
+        "zendframework/zend-mvc": "2.6.3",
+        "zendframework/zend-db": "2.7.0",
+        "firebase/php-jwt": "*",
+        "vgarvardt/zf-simple-migrations": "dev-master",
+        "tasmaniski/zf2-current-route": "1.0.*",
+        "zendframework/zendframework": "^2.5",
+        "paragonie/random_compat": "^1.2",
+        "zendframework/zendservice-recaptcha": "*",
+        "google/apiclient": "2.0.0-RC4"
+    },
+    "require-dev": {
+        "zendframework/zend-developer-tools": "dev-master",
+        "zendframework/zftool": "dev-master",
+        "bjyoungblood/BjyProfiler" : "dev-master"
+    },
+    "autoload": {
+        "files": ["lib/Firelogger/fl.core.php"],
+        "psr-0":{
+            "Clicks\\":"lib/Clicks/"
+        },
+        "classmap": [
+            "lib/Clicks/"
+        ]
+    }
+}

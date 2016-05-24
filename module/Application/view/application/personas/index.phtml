@@ -1,0 +1,177 @@
+<?php   $this->headLink()
+    ->prependStylesheet($this->linkCdn('/css/persona/persona.css'))
+?>
+<?php  $this->inlineScript()
+    ->prependFile($this->linkCdn('/js/persona/persona.js'))
+; ?>
+
+
+
+
+<!--**************Conoce Nuestro Plan Individual **************-->
+<div class=" contenedor-gotas-personas">
+    <div class="col-xs-12 col-sm-1 col-md-1">
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5">
+        <!--************** gota ePass **************//-->
+        <div class="gota-epas bg-celeste bg-celeste-woman position-hover" href="#planes_individual">
+          <div class="gota-epas-titulo"><span class="gota-text-cuenta">Cuenta Individual</span></div>
+          <div class="gota-epas-img gota-epas-img-transarent-celeste background-none">
+            <div class="gota-epas-btn"><a id="href_planes_individuales" href="#planes_individual"><span>Ver Paquetes</span><i class="fa fa-angle-right"></i></a></div>
+          </div>
+          <div class="gota-texto-hover gota-epas-img-transarent-celeste"> La Cuenta Individual asocia un TAG a un vehículo. Puedes tener más de una Cuenta Individual. </div>
+        </div>
+        <!--************** gota ePass **************//-->
+        
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5 ">
+        <!--************** gota ePass **************//-->
+        <div class="gota-epas bg-green gota-persona-familia position-hover" href="#planes_familiares">
+          <div class="gota-epas-titulo"><span class="gota-text-cuenta">Cuenta Compartida</span></div>
+          <div class="gota-epas-img gota-epas-img-transarent-green background-none">
+            <div class="gota-epas-btn"><a id="href_planes_familiares" ><span>Próximamente</span><i class="fa fa-angle-right"></i></a></div>
+          </div>
+          
+          <div class="gota-texto-hover gota-epas-img-transarent-green "> La Cuenta Compartida te permite compartir el saldo entre los vehículos que asocies a esta cuenta. </div>
+        </div>
+        <!--************** gota ePass **************//-->
+    </div>
+    <div class="col-xs-12 col-sm-1 col-md-1">
+    </div>
+</div>
+<div class="titleEnPersona" id="planes_individual">
+    Conoce nuestros Paquetes
+</div>
+<div class="col-md-12 sinPaddingRight">
+    <div class="hidden-xs col-sm-1 col-md-1 margencito txtalgnright_flecha_prev">
+        <a class="btn prev2">
+            <i class="fa fa-angle-left flechaSlider flechaSlider-left"></i>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10">
+        <!--************** slider touch **************//-->
+            <div id="demo">
+                <div class="">
+                    <div class="row">
+                        <div class="span12">
+                            <div id="plan-familiar" class="owl-carousel">
+                                 <?php foreach($pqtI as $k => $v) {?>
+                                <div class="item">
+                                    <!--************** paquete ePass **************//-->
+                                        <div class="paqueteEpass">
+                                            <div class="paqueteEpass-Titulo bgceleste"><span>Paquete <?php echo $k+1?></span></div>
+                                            <div class="contenedorContenido borderCeleste">
+                                                <div class="paqueteEpass-Contenido">
+                                                    <div class="paqueteEpass-Contenido-Precio bgceleste"><span class="soles">S/.</span>
+                                                        <div class="precio"><span><?php echo number_format($v['costoTotalConTag'], 2) ?> </span><span> </span></div>
+                                                    </div>
+                                                    <div class="paqueteEpass-Contenido-Recarga"><span class="colorceleste">Recarga + TAG</span></div>
+                                                    <div class="paqueteEpass-Contenido-bloque1 dashedCeleste"><span>Saldo para Uso</span><span class="saldo-monto">S/. <?= number_format($v['saldoUso'], 2) ?></span></div>
+                                                    <div class="paqueteEpass-Contenido-bloque2 dashedCeleste">
+                                                        <?php if( $v['costoPromocionalTag'] > 0) { ?>
+                                                            <div class="relative">
+                                                                <div>Costo TAG</div>
+                                                                <div class="saldo-monto tachado">
+                                                                    <strike>(S/.<?php echo number_format($v['costoFijoTag'], 2) ?>) </strike>
+                                                                </div>
+                                                            </div>
+                                                            <div class="relative">
+                                                                <div class="pad">Promo Verano</div>
+                                                                <div class="saldo-monto top0 specialPrice">S/.<?php echo number_format($v['costoPromocionalTag'], 2) ?>             </div>
+                                                            </div>
+                                                        <?php } else{ ?>
+                                                            <div class="relative">
+                                                                <div>Costo TAG</div>
+                                                                <div class="saldo-monto top0 ">
+                                                                    S/.<?php echo number_format($v['costoFijoTag'], 2) ?>
+                                                                </div>
+                                                            </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                    <div class="paqueteEpass-Contenido-bloque3 sinDashed"><span >Tasa Recarga</span><span class="saldo-monto"> S/.<?= number_format($v['tasaRecarga'], 2) ?></span></div>
+                                                    <div class="paqueteEpass-Contenido-VerMas bgCelesteTransparent">
+                                                        <form id="afiliacion<?php echo $k+1?>" method="POST" action="/paquete-individual">
+                                                            <input type="hidden" name="idPlan" value="<?php echo $v['planId']?>"/>
+                                                            <input type="hidden" name="nombrePlan" value="<?php echo $v['namePlan']?>"/>
+                                                            <input type="hidden" name="monto" value="<?php echo $v['costoTotalConTag']?>"/>
+                                                            <input type="hidden" name="max_vehiculos" value="<?php echo $v['maxVehiculos']?>"/>
+                                                        </form>
+                                                        <span class="bgceleste" onclick="enviarIndividual(<?php echo $k+1?>)">Afíliate</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!--************** paquete ePass **************//-->
+                                </div>
+                                <?php }?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor-msj" data-toggle="modal" data-target="#modal_pasos_recarga_automatica">
+                <div class="msj-paquete bg-celeste-epass">
+                    <span>Recuerda: Puedes solicitar la Recarga Automática al momento de afiliarte, sólo deberás seguir los pasos que te indicamos </span>
+                    <a href="">aquí</a>
+                </div>
+            </div>
+            
+        <!--************** slider touch **************//-->        
+    </div>
+    <div class="hidden-xs col-sm-1 col-md-1 margencito">
+        <a class="btn next2">
+            <i class="fa fa-angle-right flechaSlider flechaSlider-right"></i>
+        </a> 
+    </div>
+    <!--<div class="col-xs-12 col-sm-6 col-md-3 margencito">-->
+        <!--************** paquete ePassMas **************//-->
+        <!--
+        <div class="paqueteEpass">
+            <div class="paqueteEpass-TituloPlomo"><span>Más</span></div>
+            <div class="contenedorContenidoPlomo">
+                <div class="paqueteEpass-Contenido">
+                    <div class="paqueteEpass-Contenido-PrecioPlomo">
+                        <div class="precioPlomo"><span>Paquetes</span></div>
+                    </div>
+                    <div class="paqueteEpass-Contenido-RecargaPlomo"><span>Conoza </span><a href="#">aquí </a><span>
+                   más paquetes que tenemos para ti en
+                  nuestro plan individual.</span></div>
+                    <div class="paqueteEpass-Contenido-VerMasPlomo"><span>Consultar</span></div>
+                </div>
+            </div>
+        </div>-->
+        <!--************** paquete ePassMas **************//-->
+    <!--</div>-->
+</div>
+<div class="dashedLine"></div>
+<div class="titleEnPersona" id="planes_familiares">
+    Cuenta Compartida
+</div>
+<div  class="title-mensaje-prox">
+    Estimado Cliente, este beneficio está siendo mejorado y pronto estará activo en nuestra Web. Si deseas compartir el saldo entre tus vehículos afiliados, llámanos al 
+    <p>0800-45045 ó 249-7222. </p> Gracias.
+</div>
+
+<div class="col-md-12 publicidadEpass" >
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="publicidadEpass-Texto">Si ya cuentas con el TAG de <i class=italic>e-pass</i>, ¡Qué esperas!</div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 center">
+        <div class="publicidadEpass-Button">
+        <a onclick="recargaEvent()">
+            <span>Recarga Aquí</span>
+            <i class="fa fa-angle-right"></i>
+        </a>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</div>
+<script type="text/javascript">
+    function enviarIndividual(id){
+        var form = document.getElementById("afiliacion"+id);
+        form.submit();        
+    }
+    function enviarFamiliar(id){
+        var form = document.getElementById("afiliacion-familiar"+id);
+        form.submit();
+    }
+</script>

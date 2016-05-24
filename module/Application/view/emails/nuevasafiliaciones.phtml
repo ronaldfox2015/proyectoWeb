@@ -1,0 +1,55 @@
+<style >
+  td{ margin: 15px;
+	padding: 8px;
+    }
+</style>
+<!--<div class="contenedor" style="width: 500px; border:2px solid #05AADD;padding:2em;margin:0 auto;font-size: 12px;font-family: 'Arial';color:#333333">-->		
+    <div class="div-img" style="text-align: center;">
+        <img src="<?=$this->view->linkCdn('/img/epass.png');?>" class="img" style="width: 100px">
+    </div>
+
+    <div class="body-mensaje" style="padding:1em;">
+        <div class="bienvenido">
+            <h3 style="color:#333333"> Estimado Administrador </h3>
+        </div>
+
+        <div class="descripcion-cuerpo" style="font-size: 1.1em;line-height: 1.7em;color: #3C3B3B;">
+            <?php if(count($afiliaciones) > 0) { ?>
+                <p>
+                    Para esta fecha <?=$fecha?> se han registrado en total <?=count($afiliaciones)?> <?php echo (count($afiliaciones) > 1 ? "afiliaciones" : "afiliación") ?> en el portal de e-pass.
+                </p>
+
+                <table border="1" style="border-collapse: collapse;width: 100%;font-size: 14px;margin-bottom: 10px;line-height: 20px;">
+                        <thead style="background: #05AADD;color: white;">
+                             <th colspan="1" style="text-align: center ">Nro de Cuenta</th>
+                             <th colspan="1" style="text-align: center ">Correo</th>
+                             <th colspan="1" style="text-align: center ">Nombre / Razón Social</th>
+                             <th colspan="1" style="text-align: center ">Tipo de Entrega</th>
+                             <th colspan="1" style="text-align: center ">Dirección</th>
+                             <th colspan="1" style="text-align: center ">Placa</th>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($afiliaciones as $afiliacion) {?>
+                                <tr>
+                                    <td><?=$afiliacion['account_id']?></td>
+                                    <td><?=$afiliacion['email']?></td>
+                                    <td><?=$afiliacion['nombre_razonsocial']?></td>
+                                    <td><?=$afiliacion['tipo_entrega']?></td>
+                                    <td><?=$afiliacion['direccion']?></td>
+                                    <td><?=$afiliacion['placa']?></td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                </table>
+            <?php } else { ?>
+                <p>
+                    Para esta fecha <?=$fecha?> no hubo registros en el portal de e-pass.
+                </p>
+            <?php } ?>    
+            <p>
+                Atentamente,<br>
+                El equipo de e-pass.
+            </p>
+        </div>
+    </div>
+<!--</div>-->

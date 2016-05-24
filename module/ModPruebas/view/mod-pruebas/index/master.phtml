@@ -1,0 +1,14 @@
+<div>
+  <h3>Formulario para MasterCard</h3>
+<form method="post" name="frm" action="<?php echo $this->action;?>">
+  <?php
+    $i=0;
+    foreach ($this->datos as $dato) {?>
+      <input type="hidden" name="<?php echo "I".($i+1); ?>" value="<?php echo $dato;?>"/>
+    <?php
+    $i++;
+  }
+   ?>
+  <input name="enviar" type="submit" value="Enviar a MasterCard"/>  
+</form>
+</div>

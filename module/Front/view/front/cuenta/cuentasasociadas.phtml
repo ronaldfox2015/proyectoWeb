@@ -1,0 +1,166 @@
+<?php  $this->headLink()
+						->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+						 ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+						 ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+						 ->prependStylesheet($this->linkCdn('/css/general/general.css'))
+						 ?>
+
+	<?php echo $this->partial('layout/render/dashboard'); ?>
+<div role="tabpanel" class="tab-pane active" id="resumen">
+			<div class="container-fluid">
+				<div class="col-md-3 sinPadding-left sinPadding-right"> 
+					<div class="col-md-12 box-background">
+						<div class="row item">
+							<div class="col-xs-10  col-sm-10 col-md-9">
+								<p class="title-item">Saldo Disponible</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-3">
+								<img class="img-responsive" src="<?php echo$this->basePath('/images/8c24584b-e3a9-4133-bc9b-9493621299c4.png') ?>">
+							</div>
+						</div>
+						<div class="row">
+								<div class="col-md-6">
+									<p class="number-item"><span class="supernumber-item">S/.</span> 100.00 </p>
+								</div>
+								<div class="col-md-6 sinPadding-left dotted-left">
+									<a class="link-item" href="">Realizar Recargar</a>
+									<a class="link-item" href="">Ver Últimas Recargas</a>
+								</div>
+						</div>
+					</div>
+					<div class="col-md-12 box-background">
+						<div class="row item">
+							<div class="col-xs-10  col-sm-10 col-md-9">
+								<p class="title-item">Mis Vehículos</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-3">
+								<img class="img-responsive" src="<?php echo $this->basePath('/images/f95271b2-2f4a-4b8a-ab4d-7815fba5a053.png') ?>">
+							</div>
+						</div>
+						<div class="row">
+								<div class="col-md-6">
+									<p class="number-item">2 </p>
+								</div>
+								<div class="col-md-6 sinPadding-left dotted-left">
+									<a class="link-item" href="">Ver Detalle Vehículos</a>
+								</div>
+						</div>
+					</div>
+					<div class="col-md-12 box-background">
+						<div class="row item">
+							<div class="col-xs-10  col-sm-10 col-md-9">
+								<p class="title-item">Cuentas Asociadas</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-3">
+								<img class="img-responsive" src="<?php echo$this->basePath('/images/ee17e1ad-3eb8-4bc6-95c3-afbdc10dfe68.png') ?>">
+							</div>
+						</div>
+						<div class="row">
+								<div class="col-md-6">
+									<p class="number-item"> 2 </p>
+								</div>
+								<div class="col-md-6 sinPadding-left dotted-left">
+									<a class="active-aside link-item" href="">Ver Cuentas  Asociadas</a>
+								</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9 sinPadding-right">
+					<div class="box-background">
+						<div class="item">
+								<div class="row ">
+									<div class="col-xs-10  col-sm-10 col-md-3">
+										<p class="title-item">Datos Principales</p>
+									</div>
+									<div class="col-xs-2 col-sm-2 col-md-9">
+										<i class="fa fa-user"></i>
+									</div>
+								</div>
+						</div>
+						<div class="row table-center">
+							<div class="col-sm-6 col-md-6 box-datos">
+								<table>
+									<tr>
+										<td><label>Nombre y Apellido: </label></td>
+										<td><label>Jhon Smith Miller</label></td>
+										
+									</tr>
+									   <tr>
+										<td><label>Tipo de Documento: </label></td>
+										<td><label>DNI</label></td>
+										
+									</tr>
+									   <tr>
+										<td><label>Nro Documento: </label></td>
+										<td><label>7055585589</label></td>
+								</table>
+
+							</div>
+							<div class="col-sm-6 col-md-6 box-datos">
+								<table>
+									<tr>
+										<td><label>Usuario: </label></td>
+									<td><label>jsmith171@gmail.com</label></td>
+										
+									</tr>
+									   <tr>
+										<td><label>Tipo de Cuenta: </label></td>
+										<td><label>Pre-Pago - Individual</label></td>
+										
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9 sinPadding-right">
+					<div class="box-background">
+						<div class="item">
+								<div class="row ">
+									<div class="col-xs-10  col-sm-10 col-md-3">
+										<p class="title-item">Cuentas Asociadas</p>
+									</div>
+									<div class="col-xs-2 col-sm-2 col-md-9">
+										<img class="img-responsive" src="<?php echo$this->basePath('/images/ee17e1ad-3eb8-4bc6-95c3-afbdc10dfe68.png') ?>">
+									</div>
+								</div>
+						</div>
+						<br>
+						<div>
+							<table class="table table-center table-size table-responsive table-personalizada">
+									<thead>
+										<tr>
+											<th class="td-center">Cuenta</th>
+											<th class="td-center">Plan</th>
+											<th class="td-center">Cantidad TAGS</th>
+											<th class="td-center">Fecha de Compra</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+
+											<td class="td-center">00.105066</td>
+											<td class="td-center">Individual </td>
+											<td class="td-center">1 </td>
+											<td class="td-center">02/05/2015</td>
+
+										</tr>
+										 <tr>
+											<td class="td-center">00.105066</td>
+											<td class="td-center">Individual </td>
+											<td class="td-center">1 </td>
+											<td class="td-center">02/05/2015</td>
+										</tr>
+										<tr>
+											<td class="td-center">00.105066</td>
+											<td class="td-center">Individual </td>
+											<td class="td-center">1 </td>
+											<td class="td-center">02/05/2015</td>
+										</tr>
+									</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>E-PASS</h1>
+    </div>
+    <div class="col-md-4">
+        <h2>Inicia tu Sesión</h2>
+        <?php
+            $form_login_sesion = $this->form_sesion;
+            $form_login_sesion->setAttribute('action', $this->url('auth', array('action' => 'login')));
+            $form_login_sesion->prepare();
+            echo $this->form()->openTag($form_login_sesion);
+            $form_login_sesion->get('id')->setValue('login_sesion');
+            echo $this->formHidden($form_login_sesion->get('id'));
+        ?>
+        <form>
+            <div class="form-group">
+              <?= $this->formLabel($form_login_sesion->get('email')) ?>
+              <?= $this->formInput($form_login_sesion->get('email')); ?>
+              <?= $this->formElementErrors($form_login_sesion->get('email')); ?>
+            </div>
+            <div class="form-group">
+              <?= $this->formLabel($form_login_sesion->get('password')) ?>
+              <?= $this->formInput($form_login_sesion->get('password')); ?>
+              <?= $this->formElementErrors($form_login_sesion->get('password')); ?>  
+            </div>
+              <?= $this->formInput($form_login_sesion->get('submit')); ?>
+            <div class="form-group">
+                <a href="">Olvide mi contraseña</a>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <?= $this->formCheckbox($form_login_sesion->get('recordarmipass')); ?>
+                    Recordar mi contraseña
+                </label>    
+            </div>
+        </form>
+        
+        <?php
+            echo $this->form()->closeTag($form_login_sesion);
+            if (!empty($this->messages_sesion)){
+                echo '<ul>';
+                foreach($this->messages_sesion as $message){
+                    echo '<li>'.$message.'</li>';
+                }
+                echo '</ul>';
+            }
+        ?>
+    </div>
+    
+    <div class="col-md-4">
+        <h2>Recarga</h2>
+        <p>Para recargar debe ingresar su número de tag o placa</p>
+        <?php
+            $form_login_recarga = $this->form_recarga;
+            $form_login_recarga->setAttribute('action', $this->url('auth', array('action' => 'login')));
+            $form_login_recarga->prepare();
+            echo $this->form()->openTag($form_login_recarga);
+            $form_login_recarga->get('id')->setValue('login_recarga');
+            echo $this->formHidden($form_login_recarga->get('id'));
+        ?>
+        <form>
+            <div class="form-group">
+              <?= $this->formRow($form_login_recarga->get('checktagplaca')); ?>
+              <?= $this->formElementErrors($form_login_recarga->get('checktagplaca')); ?>  
+            </div>
+            <div class="form-group">
+              <?= $this->formInput($form_login_recarga->get('tag_placa')); ?>
+              <?= $this->formElementErrors($form_login_recarga->get('tag_placa')); ?> 
+            </div>
+              <?= $this->formInput($form_login_recarga->get('submit')); ?>
+            <div class="form-group">
+                ¿Quieres ver tus movimientos?
+                <a href="">Registrate aqui</a>
+            </div>
+        </form>
+    
+        <?php
+            echo $this->form()->closeTag($form_login_recarga);
+            if (!empty($this->messages_recarga)){
+                echo '<ul>';
+                foreach($this->messages_recarga as $message)
+                {
+                    if(is_array($message)){
+                        echo print_r($message);
+                    }else{
+                        echo '<li>'.$message.'</li>';
+                    }
+                }
+                echo '</ul>';
+            }
+        ?>
+    </div>
+    
+</div>

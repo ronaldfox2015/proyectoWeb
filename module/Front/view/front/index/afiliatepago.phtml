@@ -1,0 +1,101 @@
+ <?php  $this->headLink()
+             ->prependStylesheet($this->basePath('static/css/afiliate/afiliate.css'))
+ ?> 
+ <?php  $this->headScript()                                    
+            ->prependFile($this->basePath('static/js/afiliate/afiliate.js')); 
+?>
+        
+<div class="contenidoAfiliate">
+	<div class="titulo">Afiliación</div>
+	<p class="letraAfiliate">
+		Para obtener nuestro servicio, sólo tiene que completar el siguiente formulario. Una vez que termine el proceso de afiliación, en un plazo no mayor de 72 horas recibirá su e-pass.
+	</p>
+	<div class="contenedorComponenteCuadroFlecha">
+		<!--************** publicidad epassFlecha **************//-->
+		<div class="ContenedorCuadroFlecha">
+		  <div class="titulo-epassFlecha">Paquete Seleccionado</div>
+		  <div class="contenedorPubli">
+		    <div class="titulo-Naranja">Plan Individual</div>
+		    <div class="flechaConCss"><i class="fa fa-long-arrow-right"></i></div>
+		    <div class="titulo-Naranja">Paquete de 50 mil</div>
+		  </div>
+		</div>
+		<!--************** publicidad epassFlecha **************//-->
+	</div>
+	<div class="contenedorComponenteFormularioEpass">
+		<!--************** formulario ePass **************//-->
+		<div class="contenedorFormularioEpass">
+			<div class="subContenedorFormularioEpass cont_check">
+			
+			<div class="row">
+				<div class="span-metodo-de-pago">Método Pago</div>
+				<div class="span-metodo-de-pago-subtitulo">Eliga el Medio de Pago para realizar la recarga</div>
+				<div class="row">
+					<div class=" col-xs-12 col-sm-6 col-md-6">
+							<span class="label-animation">
+								<input name="medio_de_pago" type="radio" id="tarjeta_visa" class="tarjeta_radio_label">
+								<label for="tarjeta_visa" class="tarjeta_radio_label">
+									<div class="contenedor-img-tarejta">
+										<img  class="img_medio_pago" src="<?php echo $this->basePath('static/img/visa2.png') ?>" >
+									</div>								
+									<span class="medio-pago-descripcion">Paga con tu tarjeta VISA</span>
+								</label>
+							</span>							
+					</div>
+					<div class=" col-xs-12 col-sm-6 col-md-6 mgtop4">					<span class="label-animation">	
+							<input name="medio_de_pago" type="radio" id="tarjeta_master_card" class="tarjeta_radio_label">
+							<label for="tarjeta_master_card" class="tarjeta_radio_label">
+								<div class="contenedor-img-tarejta">
+									<img  class="img_medio_pago_master_card" src="<?php echo $this->basePath('static/img/master_card.png') ?>" >
+								</div>
+								<span class="medio-pago-descripcion medio-pago-descripcion-mastercard">Paga con tu tarjeta Master Card</span>
+							</label>
+						</span>							
+					</div>					
+				</div>
+				<div class="row top-1em">
+					<div class=" col-xs-12 col-sm-6 col-md-6">
+						<span class="label-animation">
+							<input name="medio_de_pago" type="radio" id="tarjeta_american_expres" class="tarjeta_radio_label">
+							<label for="tarjeta_american_expres" class="tarjeta_radio_label">
+								<div class="contenedor-img-tarejta">
+									<img  class="img_medio_pago_americanexpress" src="<?php echo $this->basePath('static/img/american_express.jpg') ?>" >
+								</div>
+								<span class="medio-pago-descripcion">Paga con tu tarjeta American Express</span>
+							</label>
+						</span>
+					</div>
+					<div class=" col-xs-12 col-sm-6 col-md-6 mgtop4">					<span class="label-animation">
+							<input name="medio_de_pago" type="radio" id="tarjeta_diners_club" class="tarjeta_radio_label">
+							<label for="tarjeta_diners_club" class="tarjeta_radio_label">
+								<div class="contenedor-img-tarejta">
+									<img  class="img_medio_pago_dinersclub" src="<?php echo $this->basePath('static/img/diners_club.png') ?>">
+								</div>		
+								<span class="medio-pago-descripcion">Paga con tu Dineres Club</span>
+							</label>
+						</span>							
+					</div>
+					</div>
+				</div>				
+			</div>		  	 	
+		  </div>		  	
+		</div>
+		<div class="row botoneras">
+					<div class="col-xs-12 col-sm-6 col-md-3 ">
+						
+					</div>					
+					<div class="col-xs-12 col-sm-6 col-md-3 ">
+					</div>
+					<div class="btn_siguientePaso col-xs-12 col-sm-6 col-md-3 ">
+						<a >
+							<i class="fa fa-angle-left"></i>
+							<span>Paso Anterior</span>
+						</a>
+					</div>
+					<div class="btn_siguientePaso col-xs-12 col-sm-6 col-md-3 ">
+						<a class="btn-pagar">Pagar</a>
+					</div>
+			</div>
+		<!--************** formulario ePass **************//-->
+	</div>
+</div>

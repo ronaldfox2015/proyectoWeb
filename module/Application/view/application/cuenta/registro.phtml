@@ -1,0 +1,41 @@
+<?php
+$this->headLink()
+        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+        ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+        ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'));
+?>
+<?php
+$this->inlineScript()
+        ->prependFile($this->linkCdn('/js/afiliate/afiliate.js'))
+        ->prependFile($this->linkCdn('/js/dashboard/dashboard.js'));
+?> 
+<?php
+echo $this->partial('layout/renders/dashboard',
+        array('registrar' => $this->registrar,
+  ));
+?>
+<div id="tab-content-cuenta" class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="misdatos">
+        <div class="container-fluid">
+            <div class="col-md-12 sinPadding-right sinPadding-left">
+                <div class="box-background box-padding">
+
+                    <?php
+                    echo
+                    $this->partial('application/cuenta/_mis-datos',
+                            array(
+                        'formActualizar' => $this->formActualizar,
+                        'forms' => $this,
+                        'registrar' => $this->registrar,
+                                 'requerido' => $this->requerido,
+                                'bloqueado'=>$this->bloqueado,
+                                'plan' => $this->plan,
+                                'formdisable' => $this->formdisable
+                    ));
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="active_lima" id="active_lima" value="<?php echo $this->active_lima; ?>"/>
+</div>

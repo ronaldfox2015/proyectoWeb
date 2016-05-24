@@ -1,0 +1,226 @@
+<?php
+$flash = $this->flashMessenger();
+$flash->setMessageOpenFormat('<div%s>
+        <button style="padding:0 20px 0 0" type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        &times;
+        </button>
+        <div>')->setMessageCloseString('</div></div>');
+echo $flash->renderCurrent('error',
+        array('alert', 'alert-dismissable', 'alert-danger'));
+echo $flash->renderCurrent('success',
+        array('alert', 'alert-dismissable', 'alert-success'));
+$flash->clearCurrentMessages();
+?>
+<?php
+$this->inlineScript()->prependFile($this->linkCdn('/js/cuenta/recargadirecta.js'));
+$form = $this->formActualizar;
+$bloqueado = isset($this->bloqueado) ? $this->bloqueado : false;
+$action = isset($this->registrar) ? '/registro-cuenta' : 'mi-cuenta';
+
+$recarga_name       = isset($this->formdisable['txtNombreTitular']) ? 'readonly' : '';
+$recarga_lastname   = isset($this->formdisable['txtApellidosTitular']) ? 'readonly' : '';
+$recarga_rs         = isset($this->formdisable['txtRazonsocial']) ? 'readonly' : '';
+$recarga_tipodoc    = isset($this->formdisable['tipoDoc']) ? 'readonly' : '';
+$recarga_numdoc     = isset($this->formdisable['txtNumDocumento']) ? 'readonly' : '';
+$recarga_correo     = isset($this->formdisable['txtCorreo']) ? 'readonly' : '';
+$recarga_dpto       = isset($this->formdisable['idDpto']) ? 'readonly' : '';
+$recarga_prov       = isset($this->formdisable['idProvin']) ? 'readonly' : '';
+$recarga_distr      = isset($this->formdisable['idDistrito']) ? 'readonly' : '';
+$recarga_dir        = isset($this->formdisable['txtDireccion']) ? 'readonly' : '';
+$recarga_referencia = isset($this->formdisable['txtReferencia']) ? 'readonly' : '';
+        
+$form->prepare();
+$form->setAttribute('method', 'post')
+        ->setAttribute('action', $action)->setAttribute('id',
+        'form_dashboard_datos');
+echo $this->form()->openTag($form);
+?>
+<?php $requerido = ($this->requerido) ? 'required ' : ''; ?>
+<div class="row" style="margin-top:15px">
+    <div class="col-md-4">
+        <div class="subContenedorFormularioEpass separate">
+            <span class="spanEncima">Datos Principales</span>
+            <div class="row ">
+                <?php if (!$this->plan) { ?>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                            <label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Nombre :</label>
+                            <?=
+                            $this->forms->formElement($form->get("txtNombreTitular")->setAttribute('placeholder',
+                                                    'Ingrese nombre completo')->
+                                            setAttribute('class',
+                                                    'required imputEpass col-xs-12 col-sm-8 col-md-9 '. ($recarga_name!='' ? 'disabled-input' : ''))->setAttribute('data-parsley-pattern-message',
+                                                    'Solo letras, espacios () y guiones (-)')->setAttribute('data-parsley-maxlength',
+                                                    '100')->setAttribute('data-parsley-minlength',
+                                                    '3')->setAttribute('maxlength',
+                                                    '20')->setAttribute('autocomplete', 'off')->setAttribute($recarga_name, $recarga_name)->
+                                            setAttribute('autocomplete', 'off'));
+                            ?>                                            </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                            <label for="apellido" class="spanEpass col-xs-12 col-sm-4 col-md-3">Apellidos: </label>
+                            <?=
+                            $this->forms->formElement($form->get("txtApellidosTitular")->setAttribute('placeholder',
+                                            'Ingrese apellidos completos')->setAttribute('class',
+                                            'required imputEpass col-xs-12 col-sm-8 col-md-9 '. ( $recarga_lastname != '' ? 'disabled-input' : ''))->setAttribute('maxlength',
+                                            '20')->setAttribute($recarga_lastname, $recarga_lastname));
+                            ?></div>
+                    </div>
+
+
+                <?php } else { ?>
+
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                            <label for="apellido" class="spanEpass col-xs-12 col-sm-4 col-md-3">Razón Social: </label>
+                            <?=
+                            $this->forms->formElement($form->get("txtRazonsocial")->setAttribute('class',
+                                        ' imputEpass col-xs-12 col-sm-8 col-md-9 selectpicker ' . ((!$bloqueado && $recarga_rs=='') ? '' : 'disabled-input'))->setAttribute($recarga_rs, $recarga_rs));
+                            ?>  
+                        </div>
+
+                    </div>
+                <?php } ?>
+
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="tipoDoc" class="spanEpass col-xs-12 col-sm-4 col-md-3">Tipo Doc.:</label>
+                        <?=
+                        $this->forms->formElement($form->get("tipoDoc")->setAttribute('class',
+                                        'select_tipo_documento imputEpass col-xs-12 col-sm-8 col-md-9 selectpicker ' . ((!$bloqueado && $recarga_tipodoc=='')? '' : 'disabled-input'))->setAttribute($recarga_tipodoc, $recarga_tipodoc));
+                        ?>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="numDoc" class="spanEpass col-xs-12 col-sm-4 col-md-3">Nro Doc.:</label>
+                        <?=
+                        $this->forms->formElement($form->get("txtNumDocumento")->setAttribute('placeholder',
+                                        'Ingrese número documento')->setAttribute('class',
+                                        'required imputEpass col-xs-12 col-sm-4 col-md-9 ' . (isset($this->registrar) && $recarga_numdoc == '' ? '' : 'disabled-input'))->setAttribute($recarga_numdoc, $recarga_numdoc));
+                        ?> 
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="correo" class="spanEpass col-xs-12 col-sm-4 col-md-3">Correo :</label>
+                        <?=
+                        $this->forms->formElement($form->get("txtCorreo")->setAttribute('placeholder',
+                                        'Ingrese correo')->setAttribute('class',
+                                        'required email imputEpass col-xs-12 col-sm-8 col-md-9 selectpicker ' . (isset($this->registrar) && $recarga_correo == '' ? '' : 'disabled-input'))->setAttribute('required',
+                                        'required')->setAttribute($recarga_correo, $recarga_correo));
+                        ?>                                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="subContenedorFormularioEpass separate">
+            <span class="spanEncima">Dirección</span>
+            <div class="row">
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Departamento:</label>
+                        <?=
+                        $this->forms->formElement($form->get("idDpto")->setAttribute('class',
+                                        $requerido . ' selectpicker col-xs-12 col-sm-8 col-md-9 '));
+                        ?>
+
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="provincia" class="spanEpass ccol-xs-12 col-sm-4 col-md-3">Provincia:</label>
+                        <?=
+                        $this->forms->formElement($form->get("idProvin")->setAttribute('class',
+                                        'selectpicker col-xs-12 col-sm-8 col-md-9 '));
+                        ?>
+
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="distrito" class="spanEpass col-xs-12 col-sm-4 col-md-3">Distrito:</label>
+                        <?=
+                        $this->formElement($form->get("idDistrito")->setAttribute('class',
+                                        'selectpicker col-xs-12 col-sm-8 col-md-9 '));
+                        ?>
+                    </div>
+                </div>
+
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="urbanizacion" class="spanEpass col-xs-12 col-sm-4 col-md-3">Dirección:</label>
+                        <?=
+                        $this->forms->formElement($form->get("txtDireccion")->setAttribute('placeholder',
+                                                'Ingrese Dirección')->setAttribute('class',
+                                                'imputEpass col-xs-12 col-sm-8 col-md-9 '.($recarga_dir == '' ? '' : 'disabled-input'))->setAttribute($recarga_dir, $recarga_dir)
+                                        ->setAttribute('maxlength', '180'));
+                        ?>
+
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="referencia" class="spanEpass col-xs-12 col-sm-4 col-md-3">Referencia :</label>
+                        <?=
+                        $this->forms->formElement($form->get("txtReferencia")->setAttribute('placeholder',
+                                        'Referencia')->setAttribute('class',
+                                        'imputEpass col-xs-12 col-sm-8 col-md-9 '.($recarga_referencia == '' ? '' : 'disabled-input'))->setAttribute('maxlength', '180')->setAttribute($recarga_referencia, $recarga_referencia));
+                        ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="subContenedorFormularioEpass separate">
+            <span class="spanEncima">Contraseña</span>
+            <div class="row">
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="password" class="spanEpass col-xs-12 col-sm-6 col-md-5">Nueva Clave:</label>
+                        <?php
+                        echo $this->formElement($form->get("txtContrasenia")->setAttribute('placeholder',
+                                        'Ingrese contraseña segura')->setAttribute('class',
+                                        $requerido . 'imputEpass col-xs-12 col-sm-6 col-md-7')->setAttribute($requerido,
+                                        $requerido));
+                        ?>
+                        <p class="col-sm-offset-6 col-sm-6 col-md-offset-5 col-md-12 sinPadding-left">(mínimo 6 y máximo 12 caracteres)</p>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="n_clave" class="spanEpass col-xs-12 col-sm-6 col-md-5">Repetir Clave:</label>
+                        <?php
+                        echo $this->formElement($form->get("txtConfirmaContrasenia")->setAttribute('placeholder',
+                                        'Repita contraseña')->setAttribute('class',
+                                        $requerido . 'imputEpass col-xs-12 col-sm-6 col-md-7'));
+                        ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8">
+        <?= $this->forms->formElement($form->get("id")); ?>
+        <?= $this->forms->formElement($form->get("idUser")); ?>
+
+        <?=
+        $this->forms->formElement($form->get("btnSgtPaso")->setAttribute('class',
+                        'btn btn-border'));
+        ?>
+        <?=
+        $this->forms->formElement($form->get("btnCancelar")
+                        ->setAttribute('class', 'btn btn-border')
+                        ->setAttribute('id', 'btnCancelar'));
+        ?>
+    </div>
+</div>
+<?php echo $this->forms->form()->closeTag($form); ?>

@@ -1,0 +1,291 @@
+.saldo-monto
+{
+  
+}
+.specialPrice,.pad
+{
+  
+}
+.margencito
+{
+	margin-bottom: 1em;
+}
+.titleEnPersona
+{
+	text-align: center;
+    color: #757873;
+    font-size: 3.5em;
+    padding: 16px 29%;
+    clear:both;
+}
+.dashedLine {
+    border-bottom: 2px dashed #757873;
+    /* height: 4em; */
+    clear: both;
+    padding: 1.5em 0em;
+    margin-bottom: 1.5em;
+}
+
+.texto-asterisco
+{
+	color: #757873;
+	clear: both;
+	padding-top: 3em;
+	padding-right:4%;
+	padding-left:4%;
+	padding-bottom:0.5em;
+  font-size: 1.2em
+}
+
+.publicidadEpass {
+  background: #6f6f6e;
+  padding: 1em 8%;
+  color: #fff;
+}
+.publicidadEpass-Texto {
+  font-size: 2.5em;
+  text-align: right;
+}
+.publicidadEpass-Button {
+  padding-left: 3em;
+}
+.publicidadEpass-Texto,
+.publicidadEpass-Button {
+  display: inline-block;
+  vertical-align: top;
+}
+.publicidadEpass-Button a {
+  text-decoration: none;
+  background: #fff;
+  color: #79788A;
+  padding: 0.5em 1em;
+  border-radius: 16px;
+  font-size: 2.4em;
+  cursor: pointer;
+  
+}
+@-moz-keyframes animationButtonCeleste {
+
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+ 
+}
+@-webkit-keyframes animationButtonCeleste {
+
+  50% {
+    background: #05AADD;
+    color: white;
+  }
+ 
+}
+@-o-keyframes animationButtonCeleste {
+ 
+  50% {
+    background: #05AADD;
+    color: white;
+  }
+ 
+}
+@keyframes animationButtonCeleste {
+  
+  50% {
+    background: #05AADD;
+    color: white;
+  }
+  
+}
+.padding0
+{
+  padding: 0 !important;
+}
+.tachado
+{
+  top:-5px !important;
+}
+.publicidadEpass-Button a:hover
+{
+	animation: animationButtonCeleste 1s infinite;
+}
+.sinPaddingRight
+{
+  padding: 0em 10%;
+}
+.publicidadEpass-Button i {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 2em;
+  position: relative;
+  top: 12px;
+}
+.sinPorcentaje
+{
+  width: 100% !important;
+}
+footer
+{
+	clear: both;
+}
+.saldo-monto span
+{
+  color: #757873;
+}
+
+@media screen and (max-width: 992px) {
+   .titleEnPersona
+  {
+    font-size: 2.5em;
+  }
+  .publicidadEpass
+  {
+    
+  }
+  .publicidadEpass-Texto
+  {
+    text-align: center ;
+  }
+  .center
+  {
+    text-align: center;
+  }
+  .paqueteEpass-recarga
+  {
+    font-size: 14px; 
+  }
+  
+}
+@media screen and (max-width: 991px){
+  .lista-afiliate-aqui_paso_4
+  {
+    margin-top: -13px !important;
+  }
+ 
+}
+@media screen and (max-width: 650px) {
+  .titleEnPersona
+  {
+    font-size: 2em;
+  }
+  .publicidadEpass-Texto,.publicidadEpass-Button a
+  {
+    font-size: 2em ;
+  }
+  .publicidadEpass-empresa
+  {
+    padding: 1em 8%!important;
+  }
+
+}
+@media screen and (max-width: 450px) {
+
+  .titleEnPersona
+  {
+    padding: 16px 10%;
+  }
+  .publicidadEpass-Texto,.publicidadEpass-Button a
+  {
+    font-size: 1.5em ;
+  }
+  .publicidadEpass
+  {
+    
+  }
+  
+}
+.requi_afiliacion
+{
+  font-size: 2em;
+    font-weight: bold;
+}
+.border-blanco
+{
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 0.2em 0em; 
+}
+.publicidadEpass-empresa
+{
+  padding: 1em 4%;
+}
+.flecha-requisitos-afiliacion
+{
+  margin-top:1em;
+}
+.lista-afiliate-aqui
+{
+  list-style: none;
+  margin-top: 1em;
+  font-size: 1.12em;
+  margin: 1em 0em;
+  padding: 0em;
+}
+.baner_afiliate
+{
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.flechaSlider {
+    color: #05AADD;
+    font-size: 6em !important;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    top: 2.5em;
+}
+.span-color-orange
+{
+  color: #f28b00 !important;
+}
+.flechaSlider-left {
+    animation: animationFlechasSlideLeft 1s infinite;
+}
+/** pagination slider empresa**/
+@media screen and (max-width: 760px) {
+  #plan-post-pago .owl-pagination{
+    display:block !important;
+    top: -491px;
+  }
+  #plan-pre-pago .owl-pagination{
+    display:block !important;
+    top: -576px;
+  }
+  #recarga-post-pago .owl-pagination{
+    display:block !important;
+    top: -460px;
+  }
+}
+#recarga-post-pago .owl-pagination{
+  display: none;
+}
+#plan-post-pago .owl-pagination{
+  display: none;
+}
+#plan-pre-pago .owl-pagination{
+  display: none;
+}
+.owl-pagination {
+    position: relative;
+    top: -57px;
+    text-align: center;
+    height: 0;
+}
+.owl-controls .owl-page, .owl-controls .owl-buttons div {
+    cursor: pointer;
+}
+.owl-page {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #F28B00;
+    margin: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.owl-pagination .active {
+    background: #05AADD;
+    box-shadow: 0 0 0 2px #47a3da;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}

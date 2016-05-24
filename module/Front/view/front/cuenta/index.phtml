@@ -1,0 +1,495 @@
+
+  <?php  $this->headLink()
+						->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+						 ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+						 ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+						 ->prependStylesheet($this->linkCdn('/css/general/general.css'))
+						 ?>
+<?php  $this->headScript()                                    
+			->prependFile($this->linkCdn('/js/dashboard/dashboard.js'))
+			->prependFile($this->linkCdn('/js/general/general.js')); ?> 
+			​
+
+	<!--
+	<div class="container-alert">
+			<div class="alert alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  Para poder ver sus Saldos, Últimas Recargas, Comprobantes de Pago y Cuentas Asociadas deberá activar su cuenta. Esta activación deberá hacerla desde su cuenta de correo que registró al momento de crear su usuario web en e-pass.
+			</div>
+	</div>-->
+	<?php echo $this->partial('layout/render/dashboard'); ?>
+	<div id="tab-content-cuenta" class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="resumen">
+			<div class="container-fluid">
+				<div class="col-md-3 sinPadding-left sinPadding-right"> 
+					<div class="col-md-12 box-background">
+						<div class="row item">
+							<div class="col-xs-10  col-sm-10 col-md-9">
+								<p class="title-item">Saldo Disponible</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-3">
+								<img class="img-responsive" src="<?php echo$this->basePath('/images/8c24584b-e3a9-4133-bc9b-9493621299c4.png') ?>">
+							</div>
+						</div>
+						<div class="row">
+								<div class="col-md-6">
+									<p class="number-item"><span class="supernumber-item">S/.</span> 100.00 </p>
+								</div>
+								<div class="col-md-6 sinPadding-left dotted-left">
+									<a class="link-item" href="">Realizar Recargar</a>
+									<a class="link-item" href="">Ver Últimas Recargas</a>
+								</div>
+						</div>
+					</div>
+					<div class="col-md-12 box-background">
+						<div class="row item">
+							<div class="col-xs-10  col-sm-10 col-md-9">
+								<p class="title-item">Mis Vehículos</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-3">
+								<img class="img-responsive" src="<?php echo $this->basePath('/images/f95271b2-2f4a-4b8a-ab4d-7815fba5a053.png') ?>">
+							</div>
+						</div>
+						<div class="row">
+								<div class="col-md-6">
+									<p class="number-item">2 </p>
+								</div>
+								<div class="col-md-6 sinPadding-left dotted-left">
+									<a class="link-item" href="">Ver Detalle Vehículos</a>
+								</div>
+						</div>
+					</div>
+					<div class="col-md-12 box-background">
+						<div class="row item">
+							<div class="col-xs-10  col-sm-10 col-md-9">
+								<p class="title-item">Cuentas Asociadas</p>
+							</div>
+							<div class="col-xs-2 col-sm-2 col-md-3">
+								<img class="img-responsive" src="<?php echo$this->basePath('/images/ee17e1ad-3eb8-4bc6-95c3-afbdc10dfe68.png') ?>">
+							</div>
+						</div>
+						<div class="row">
+								<div class="col-md-6">
+									<p class="number-item"> 2 </p>
+								</div>
+								<div class="col-md-6 sinPadding-left dotted-left">
+									<a class="link-item" href="">Realizar Recargar</a>
+									<a class="link-item" href="">Ver Cuentas  Asociadas</a>
+								</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 conPadding-left conPadding-right">
+					<div class="box-background">
+						<div class="item">
+							<p class="title-item">Datos Principales <i class="fa fa-user fa-3"></i></p>
+						</div>
+						<div class="row content-datos">
+								<div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+									<label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-6">Nombres: </label>
+									<label for="cuenta" class="col-xs-12 col-sm-12 col-md-6"> Jhon </label>
+								</div>
+								<div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+									<label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-6">Apellidos: </label>
+									<label for="cuenta" class="col-xs-12 col-sm-12 col-md-6"> Smith Miller </label>
+								</div>
+								<div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+									<label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-6">Tipo Documento: </label>
+									<label for="cuenta" class="col-xs-12 col-sm-12 col-md-6"> DNI </label>
+								</div>
+								<div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+									<label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-6">Nro Documento: </label>
+									<label for="cuenta" class="col-xs-12 col-sm-12 col-md-6"> 9487456123 </label>
+								</div>
+								<div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+									<label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-6">Usuario: </label>
+									<label for="cuenta" class="break-word col-xs-12 col-sm-12 col-md-6"> jhonsmithmiller@gmail.com </label>
+								</div>
+								<div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+									<label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-6">Plan: </label>
+									<label for="cuenta" class="col-xs-12 col-sm-12 col-md-6"> Individual </label>
+								</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 sinPadding-left sinPadding-right">
+					<div class="box-background">
+						<div class="item">
+							<p class="title-item">Últimas Recargas </p>
+						</div>
+						<br>
+						<div>
+							<table class="table table-center table-size table-responsive table-personalizada">
+									<thead>
+										<tr>
+											<th class="td-center">Fecha de Recarga</th>
+											<th class="td-center">Monto de Recarga</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="td-center">15/02/2016</td>
+											<td class="td-center">S/. 65.00 </td>
+										</tr>
+										 <tr>
+											<td class="td-center">02/01/2016</td>
+											<td class="td-center">S/. 245.00 </td>
+										</tr>
+										<tr>
+											<td class="td-center">12/12/2015</td>
+											<td class="td-center">S/. 35.00 </td>
+										</tr>
+										<tr>
+											<td class="td-center">10/10/2015</td>
+											<td class="td-center">S/. 25.00 </td>
+										</tr>
+										<tr>
+											<td class="td-center">10/10/2015</td>
+											<td class="td-center">S/. 25.00 </td>
+										</tr>
+										<tr>
+											<td class="td-center">10/10/2015</td>
+											<td class="td-center">S/. 25.00 </td>
+										</tr>
+										<tr>
+											<td class="td-center">10/10/2015</td>
+											<td class="td-center">S/. 25.00 </td>
+										</tr>
+										<tr>
+											<td class="td-center">10/10/2015</td>
+											<td class="td-center">S/. 25.00 </td>
+										</tr>
+									</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="misdatos">
+			<div class="container-fluid">
+				<div class="col-md-12 sinPadding-right sinPadding-left">
+					<form  id="form_dashboard_datos"  method="post" >
+						<div class="box-background box-padding">
+							<div class=" row">
+								<div class="col-md-4">
+									<div class="subContenedorFormularioEpass separate">
+									<span class="spanEncima">Datos Principales</span>
+									<div class="row ">
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Nombre :</label>
+												<input id="nombre" name="nombre" type="text" class="required imputEpass col-xs-12 col-sm-8 col-md-9" value="Jhon"/>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Apellidos: </label>
+												<input id="apellidos" name="apellidos" type="text" class="required imputEpass col-xs-12 col-sm-8 col-md-9 disabled-input" value="Smith"/> 
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Tipo de Documento</label>
+												<select id="tipo" name="tipo" class="imputEpass col-xs-12 col-sm-8 col-md-9 selectpicker disabled-input required">
+													<option>seleccione</option>
+													<option>DNI</option>
+													<option>RUC</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Nro Documento:</label>
+												<input id="nro_documento" name="nro_documento" type="text" class="required digits imputEpass col-xs-12 col-sm-4 col-md-9" value="123456789"/> 
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+											  <label for="correo" class="spanEpass col-xs-12 col-sm-4 col-md-3">Correo :</label>
+											  <input id="correo" name="correo" placeholder="Ingrese correo" class="required email slSinMarg imputEpass col-xs-12 col-sm-8 col-md-9 "/>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="subContenedorFormularioEpass separate">
+									<span class="spanEncima">Dirección</span>
+									<div class="row">
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Departamento:</label>
+												 <select id="tipo"  class="required selectpicker col-xs-12 col-sm-8 col-md-9">
+													<option>La Libertad</option>
+													<option>Piura</option>
+													<option>Lima</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="nombre" class="spanEpass ccol-xs-12 col-sm-4 col-md-3">Provincia:</label>
+                                                                                                <select id="tipo"  class="required selectpicker col-xs-12 col-sm-8 col-md-9 ">
+													<option>Trujillo</option>
+													<option>Virú</option>
+													<option>Chepén</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="nombre" class="spanEpass col-xs-12 col-sm-4 col-md-3">Distrito:</label>
+												 <select id="tipo"  class="required selectpicker col-xs-12 col-sm-8 col-md-9 ">
+													<option>Trujillo</option>
+													<option>La Esperanza</option>
+													<option>El Porvenir</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="calle" class="spanEpass col-xs-12 col-sm-4 col-md-3">Calle/Av/Jr:</label>
+												<input id="calle" type="text" class="required imputEpass col-xs-12 col-sm-8 col-md-9" value="Av. Las Gavidias"/>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="numero" class="spanEpass col-xs-12 col-sm-4 col-md-3">Numero:</label>
+												<input id="numero" type="text" class="required imputEpass col-xs-12 col-sm-8 col-md-9" value="325"/>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="dpto" class="spanEpass col-xs-12 col-sm-4 col-md-3">Dpto / Int: </label>
+												<input id="dpto" type="text" class="required imputEpass col-xs-12 col-sm-8 col-md-9" placeholder="Ingrese Dpto. Int."/> 
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="urbanizacion" class="spanEpass col-xs-12 col-sm-4 col-md-3">Urbanización:</label>
+												<input id="urbanizacion" type="text" class="required imputEpass col-xs-12 col-sm-8 col-md-9" value="325"/>
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+											  <label for="referencia" class="spanEpass col-xs-12 col-sm-4 col-md-3">Referencia :</label>
+											  <textarea placeholder="Ingrese una referencia" class="required col-xs-12 col-sm-8 col-md-9"></textarea>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="subContenedorFormularioEpass separate">
+									<span class="spanEncima">Contraseña</span>
+									<div class="row">
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="password" class="spanEpass col-xs-12 col-sm-6 col-md-5">Nueva Clave:</label>
+												<input id="password" name="password" type="password" class="required imputEpass col-xs-12 col-sm-6 col-md-7" />
+											</div>
+										</div>
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+												<label for="n_clave" class="spanEpass col-xs-12 col-sm-6 col-md-5">Repetir Clave:</label>
+												<input id="n_clave" name="n_clave" type="password" class="required imputEpass col-xs-12 col-sm-6 col-md-7" /> 
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-8">
+									<button type="submit" class="btn btn-border"    >Actualizar</button>
+									<button type="button" class="btn btn-border"    >Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="recargadirecta">
+			<div class="container-fluid">
+				<div class="col-md-12">
+					<div class="sinPadding-right sinPadding-left">
+						<div class="row">
+							<div class="col-md-6 box-background box-padding">
+								<div class="subContenedorFormularioEpass separate">
+									<span class="spanEncima">Datos de Recarga</span>
+									<div class="row box-padding-extremo">
+										<div class="form-inline">
+											<div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+												<label for="tag" class="spanEpass col-xs-12 col-sm-12 col-md-6">Contrato:</label>
+												<input id="tag" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-6 " value="02014515"/>
+											</div>
+											<div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+												<label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-6">Plan:</label>
+												<input id="placa" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-6 " value="ADF874"/> 
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="subContenedorFormularioEpass separate">
+									<span class="spanEncima">Paquetes del Plan</span>
+									<div id="paquetesPlan-recargaDirecta" class="row ">
+										<div class="col-md-12" >
+												<div class="hidden-xs col-sm-1 col-md-1 margencito flecha-container">
+													<a class="btn prev2">
+														<i class="fa fa-angle-left flecha-size"></i>
+													</a>
+												</div>
+												<div class="col-xs-12 col-sm-10 col-md-10">
+													<div id="carusel-recarga">
+														<div id="owl-demo" class="owl-carousel">
+														<?php for ($i=0;$i<6;$i++) { ?>
+															<div class="item">
+																<!--************** paquete ePass **************//-->
+															<div class="paqueteEpass">
+															  <div class="paqueteEpass-Titulo bgceleste"><span>Paquete 1</span></div>
+															  <div class="contenedorContenido borderCeleste">
+															    <div class="paqueteEpass-Contenido">
+															      <div class="paqueteEpass-Contenido-Precio bgceleste"><span class="soles">S/.</span>
+															        <div class="precio"><span>50.00 </span><span> *</span></div>
+															      </div>
+															      <div class="paqueteEpass-Contenido-Recarga"><span class="colorceleste">Sólo Recarga</span></div>
+															      <div class="paqueteEpass-Contenido-bloque3 dashedCeleste"><span>Tasa Recarga</span><span class="saldo-monto"> S/.2.00</span></div>
+															      <div class="paqueteEpass-Contenido-bloque1 sinDashed"><span>Saldo para uso</span><span class="saldo-monto">S/. 33.0</span></div>
+															      <div class="paqueteEpass-Contenido-VerMas bgCelesteTransparent"><span class="bgceleste">Afíliate</span></div>
+															    </div>
+															  </div>
+															</div>
+															<!--************** paquete ePass **************//-->
+															</div>
+														<?php } ?>	
+														</div>
+													</div>
+												</div>
+												<div class="hidden-xs col-sm-1 col-md-1 margencito flecha-container">
+													<a class="btn next2">
+														<i class="fa fa-angle-right flecha-size"></i>
+													</a> 
+												</div>
+										</div>
+									</div>
+									<div class="msg-observacion">
+										<p>(*)Los Planes de Recarga no incluyen el Costo del TAG. Si el usuario ya está afiliado, sólo deberá recargar su TAG</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 sinPadding-right" >
+								<div class="col-md-12 box-background box-padding">
+									<div class="subContenedorFormularioEpass ">
+										<span class="spanEncima"> Método de Pago</span>
+										<div class="row box-padding-extremo">
+												<div class="separate conPadding-left">Eliga el Medio de Pago para realizar la recarga</div>
+												<div class="row separate">
+													<div class=" col-xs-12 col-sm-6 col-md-6 separate">
+														<div class="col-xs-1 col-sm-1 col-md-1">
+															<input name="medio_de_pago" type="radio" id="tarjeta_visa" >
+														</div>
+														<div class="col-xs-5 col-sm-5 col-md-5">
+															<label for="tarjeta_visa" >
+																<div class="contenedor-img-tarejta">
+																	<img  class="img_medio_pago" src="<?php echo $this->linkCdn('/img/visa2.png') ?>" >
+																</div>								
+															</label>
+														</div>
+														<span class="description-pago">Paga con tu tarjeta VISA</span>
+													</div>
+													<div class=" col-xs-12 col-sm-6 col-md-6">
+														<div class="col-xs-1 col-sm-1 col-md-1">
+															<input name="medio_de_pago" type="radio" id="tarjeta_master_card" class="tarjeta_radio_label">
+														</div>
+														<div class="col-xs-5 col-sm-5 col-md-5">
+															<label for="tarjeta_master_card" class="tarjeta_radio_label label-animation">
+																<div class="contenedor-img-tarejta">
+																	<img  class="img_medio_pago_master_card" src="<?php echo $this->linkCdn('/img/master_card.png') ?>" >
+																</div>
+															</label>
+														</div>
+														<span class="description-pago">Paga con tu tarjeta Master Card</span>	
+													</div>					
+												</div>
+												<div class="row">
+													<div class=" col-xs-12 col-sm-6 col-md-6 separate">	
+														<div class="col-xs-1 col-sm-1 col-md-1">
+															<input name="medio_de_pago" type="radio" id="tarjeta_american_expres" class="tarjeta_radio_label">
+														</div>
+														<div class="col-xs-5 col-sm-5 col-md-5">
+															<label for="tarjeta_american_expres" class="tarjeta_radio_label label-animation">
+																<div class="contenedor-img-tarejta">
+																	<img  class="img_medio_pago_americanexpress" src="<?php echo $this->linkCdn('/img/american_express.jpg') ?>" >
+																</div>
+															</label>
+														</div>
+														<span class="description-pago">Paga con tu tarjeta American Express</span>		
+													</div>
+													<div class=" col-xs-12 col-sm-6 col-md-6">
+														<div class="col-xs-1 col-sm-1 col-md-1">
+															<input name="medio_de_pago" type="radio" id="tarjeta_diners_club" class="tarjeta_radio_label">
+														</div>
+														<div class="col-xs-5 col-sm-5 col-md-5">
+																<label for="tarjeta_diners_club" class="tarjeta_radio_label label-animation">
+																<div class="contenedor-img-tarejta">
+																	<img  class="img_medio_pago_dinersclub" src="<?php echo $this->linkCdn('/img/diners_club.png') ?>">
+																</div>		
+															
+															</label>
+														</div>
+														<span class="description-pago">Paga con tu Diners Club</span>						
+															
+														
+													</div>
+												</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12 box-background box-padding">
+									<div class="subContenedorFormularioEpass">
+										<span class="spanEncima">Confirma tu Pago</span>
+										<div class="row box-padding-extremo">
+											<div class="form-inline">
+												<div class="bloqueInput col-xs-6 col-sm-6 col-md-6 form-group">
+													<label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-6">Plan:</label>
+													 <label for="nombre" class="col-xs-12 col-sm-12 col-md-6">Individual:</label>
+												</div>
+												<div class="bloqueInput col-xs-6 col-sm-6 col-md-6 form-group">
+													<label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-6">Paquete:</label>
+													 <label for="nombre" class="col-xs-12 col-sm-12 col-md-6"> S/ 50.00</label>
+												</div>
+											</div>
+											<div class="row">
+												<button type="submit" class="btn submit_sgtpaso btn_center"> Pagar </button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <script>
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

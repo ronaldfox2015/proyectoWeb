@@ -1,0 +1,1374 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27/02/2016, 02:44:29 PM
+    Author     : juan
+*/
+@font-face {
+  font-family: "IOS8-Icons-Regular";
+  src: url("../fonts/IOS8-Icons-Regular.eot?#iefix") format("embedded-opentype"), 
+       url("../fonts/IOS8-Icons-Regular.woff") format("woff"), 
+       url("../fonts/IOS8-Icons-Regular.ttf")  format("truetype");
+}
+@font-face {
+  font-family: "materialdesignjim-Regular";
+  src: url("../fonts/materialdesignjim-Regular.eot?#iefix") format("embedded-opentype"), 
+       url("../fonts/materialdesignjim-Regular.woff") format("woff"), 
+       url("../fonts/materialdesignjim-Regular.ttf")  format("truetype");
+}
+
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('../fonts/Gotham-Book.woff2') format('woff2'),
+       url('../fonts/Gotham-Book.woff') format('woff'),
+       url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('../fonts/Gotham-Light.woff2') format('woff2'),
+       url('../fonts/Gotham-Light.woff') format('woff'),
+       url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-BookItalic';
+  src: url('../fonts/Gotham-BookItalic.woff2') format('woff2'),
+       url('../fonts/Gotham-BookItalic.woff') format('woff'),
+       url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*===============================================================================
+    GENERIC INFO STYLES
+=================================================================================*/
+.error{
+    font-size: 1em !important;
+    color: #FF5454 !important;
+}
+.italic{
+    font-family: Gotham-BookItalic;
+}
+body{
+    color: #757873;
+    font-family: Gotham-Book;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: Gotham-Book;
+}
+.line{
+    border-bottom: 1px #009fe3 dotted;
+    height: 10px;
+    clear: both;
+    margin-top: 20px;
+}
+
+h2,h3{
+    color: #009FE3;
+}
+h2{
+    font-size: 23px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 16px;
+}
+h2 span{
+    color: #CEDF00;
+}
+.container{
+    font-size: 18px;
+}
+
+a{
+    color: #009fe3;
+}
+
+.v-center {
+	display:table;
+}
+.v-center > div[class*='col-']
+{
+    display: table-cell;
+    vertical-align:middle;
+    float:none;
+}
+.logo{
+    width: 276px;
+    height: auto;
+}
+.input-group{
+    width: 100%;
+}
+
+.alert-danger {
+    background-color: #da291c;
+    border-color: #ebccd1;
+     color: #fff;
+}
+.modal-dialog .alert-success {
+    background-color: transparent;
+     color: #fff;     
+}
+
+.alert {
+    padding: 8px;
+    margin-bottom: 0px;
+    
+    border-radius: 4px;
+    text-align:center;
+   
+}
+.alert .alert-message{
+    
+    text-align: center;
+}
+.alert-message >p
+{
+    margin: 0;
+}
+.modal-dialog .modal-body .btn{
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/*================================
+    BOOTSTRAP EXTENDS STYLES
+==================================*/
+
+@media (max-width: 768px) {
+    .text-xs-left { text-align: left; }
+    .text-xs-right { text-align: right; }
+    .text-xs-center { text-align: center; }
+    .text-xs-justify { text-align: justify; }
+    .v-center-xs {
+	display:table;
+    }
+    .v-center-xs > div[class*='col-']{
+        display: table-cell;
+        vertical-align:middle;
+        float:none;
+    }
+}
+@media (min-width: 768px) { /*sm*/
+
+    .text-sm-left { text-align: left; }
+    .text-sm-right { text-align: right; }
+    .text-sm-center { text-align: center; }
+    .text-sm-justify { text-align: justify; }
+    .v-center-sm {
+	display:table;
+    }
+    .v-center-sm > div[class*='col-']{
+        display: table-cell;
+        vertical-align:middle;
+        float:none;
+    }
+}
+@media (min-width: 992px) { /*md*/
+    .text-md-left { text-align: left; }
+    .text-md-right { text-align: right; }
+    .text-md-center { text-align: center; }
+    .text-md-justify { text-align: justify; }
+    .v-center-md {
+	display:table;
+    }
+    .v-center-md > div[class*='col-']{
+        display: table-cell;
+        vertical-align:middle;
+        float:none;
+    }    
+
+}
+@media (min-width: 1200px) { /*lg*/
+    .text-lg-left { text-align: left; }
+    .text-lg-right { text-align: right; }
+    .text-lg-center { text-align: center; }
+    .text-lg-justify { text-align: justify; }
+    .v-center-lg {
+	display:table;
+    }
+    .v-center-lg > div[class*='col-']{
+        display: table-cell;
+        vertical-align:middle;
+        float:none;
+    }    
+}
+
+
+/*===============================================================================
+    HEADER STYLES
+=================================================================================*/
+#logo{
+    width: 276px;
+    height: auto;
+}
+
+/******menu principal***************/
+#menu_principal{
+    border: none;
+    margin: 0;
+}
+#menu_principal .navbar-nav>li:not(:last-child){
+    border-right: solid 2px #757873;
+}
+#menu_principal .navbar-nav>li a{
+    color: #757873;
+    font-size: 1.1em;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: none;
+}
+#menu_principal .navbar-nav li a:hover, #menu_principal .navbar-nav li.active a{
+    border-bottom: 2px solid #05AADD;
+}
+#menu_principal .navbar-nav>li.iniciar_sesion a{
+    color:#F28B00;
+}
+#menu_principal .navbar-nav>li.iniciar_sesion a:hover{
+    border-bottom: 2px solid #F28B00;
+}
+#menu_principal #navbar-collapse-principal{
+    padding-top: 32px;
+}
+#menu_principal #navbar-collapse-admin{
+    padding-top: 21px;
+}
+/******menu secundario***************/
+#menu_secundario{
+    background-color: #05AADD;
+    background-image: none;
+    margin: 0;
+    border:none;
+    border-radius: 0;
+}
+#menu_secundario .navbar-collapse{
+    padding: 0;
+}
+#menu_secundario .navbar-nav>li a{
+    color: #fff;
+    font-size: 1.2em;
+    background: none;
+}
+#menu_secundario .navbar-nav>li:hover, #menu_secundario .navbar-nav>li.active{
+    background-color: #0094c7;
+}
+@media screen and (max-width: 1100px){
+    #logo{
+        width: 7em;
+    }
+    #logo img
+    {
+      width: 7em;
+      margin-left: 0.5em;
+    }
+}
+@media (min-width: 992px) and (max-width: 1100px){
+   #menu_principal #navbar-collapse-principal{
+        padding-top: 16px;
+    }
+    #menu_secundario .navbar-nav>li a{
+        font-size: 1.1em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media (min-width: 992px){
+   #menu_secundario .navbar-nav {
+        margin: 0 auto;
+        display: table;
+        table-layout: auto;
+        float: none;
+        width: 100%;
+    }
+    #menu_secundario .navbar-nav>li {
+        display: table-cell;
+        float: none;
+        text-align: center;
+    }
+} 
+
+@media (max-width: 992px) {
+
+    /*****CHANGE COLLAPSE MENU FOR TABLET********************/
+    #menu_principal .navbar-header ,
+    #menu_secundario .navbar-header 
+    {
+        float: none;
+    }
+    #menu_principal .navbar-left, #menu_principal .navbar-right ,
+     #menu_secundario .navbar-left, #menu_secundario .navbar-right 
+    {
+        float: none !important;
+    }
+    #menu_principal .navbar-toggle ,
+    #menu_secundario .navbar-toggle 
+    {
+        display: block;
+    }
+    #menu_principal .navbar-collapse ,
+    #menu_secundario .navbar-collapse 
+    {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    #menu_principal .navbar-fixed-top ,
+    #menu_secundario .navbar-fixed-top 
+    {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    #menu_principal .navbar-collapse.collapse ,
+    #menu_secundario .navbar-collapse.collapse 
+    {
+        display: none!important;
+    }
+    #menu_principal .navbar-nav ,
+    #menu_secundario .navbar-nav 
+    {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    #menu_principal .navbar-nav>li ,
+    #menu_secundario .navbar-nav>li 
+    {
+        float: none;
+    }
+    #menu_principal .navbar-nav>li>a ,
+    #menu_secundario .navbar-nav>li>a 
+    {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #menu_principal .collapse.in,
+    #menu_secundario .collapse.in
+    {
+        display:block !important;
+    }
+
+    /************************/
+}
+
+
+/*===============================================================================
+    FOOTER STYLES
+=================================================================================*/
+footer{
+    clear: both;
+    font-size: 12px;
+    color: #009fe3;
+}
+footer .footer_barra{
+    background-image: url(../img/footer_barra.png);
+    background-repeat: repeat-x;
+    height: 6px;
+    
+}
+footer #atencion_cliente{
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+footer #atencion_cliente img{
+    width: 100%;
+}
+footer #atencion_cliente #atencion_cliente_text{
+    position: absolute;
+    left: 7%;
+    top: 20%;
+    font-size: 30px;
+}
+
+footer .content{
+    padding: 20px;
+    font-size: 1.2em;
+    margin-right: 0;
+}
+footer .img_logo{
+    width: 99px;
+    height: 25px;
+}
+footer #libro_reclamacion{
+
+}
+footer #libro_reclamacion img{
+    width: 63px;
+}
+.align-text{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+.align-right{
+    text-align: right;
+}
+.align-center{
+    text-align: center;
+}
+.footer-separate{
+    margin-bottom: 0.5em;
+}
+.footer-img{
+    width: 63px;
+    height: 34px;
+}
+.libro_reclamacion_text{
+    display: inline-block;
+}
+.sinPadding{
+    padding: 0;
+}
+.sinPadding-left{
+    padding-left: 0;
+}
+.footer_item{
+    /*height: 70px;*/
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+footer .footer_item:not(:last-child){
+    border-right: dotted 3px #009fe3;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    footer #atencion_cliente #atencion_cliente_text{
+        left: 8%;
+        top: 17%;
+        font-size: 20px;
+    }
+    footer .footer_item{
+        height: 86px;
+    }
+    footer .footer_item:nth-child(1), 
+    footer .footer_item:nth-child(2) 
+    {
+         border-bottom: dotted 3px #009fe3;
+    }
+}
+@media (max-width: 768px) {
+    footer .footer_item{
+         border-bottom: dotted 3px #009fe3;
+         border-right: none !important;
+    }
+    footer #atencion_cliente #atencion_cliente_text{
+        left: 6%;
+        top: 17%;
+        font-size: 17px;
+    }
+}
+@media (max-width: 558px) {
+    footer #atencion_cliente #atencion_cliente_text{
+        left: 10%;
+        top: 11%;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+    footer #atencion_cliente #atencion_cliente_text{
+        left: 2%;
+        top: 5%;
+    }
+    footer #atencion_cliente img{
+        width: auto;
+        height: 65px;
+        left: -50px;
+        position: relative;
+    }
+}
+
+/*================================
+    RECOVER PASSWORD  STYLES
+==================================*/
+
+#recoverPasswordModal{
+    color: #fff;
+    text-align: center;
+}
+#recoverPasswordModal .modal-dialog{
+    width: 400px;
+}
+#recoverPasswordModal .modal-content .modal-body{
+    background-color: #F28B00;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+#recoverPasswordModal .modal-body .btn{
+    font-size: 15px;
+    font-weight: bold;
+}
+#recoverPasswordModal .modal-body h4{
+    text-align: left;
+}
+#recoverPasswordModal .modal-body h2, #recoverPasswordModal .modal-body h3, #recoverPasswordModal .modal-body a{
+    color: #fff
+}
+#recoverPasswordModal .form-group{
+    text-align: left;
+}
+#recoverPasswordModal .modal-body .btn{
+   color: #f28b00;
+}
+#recoverPasswordModal .glyphicon{
+    color: #F28B00;
+}
+/******************************************/
+/*confirmacion popup******/
+.confirmacion_popup{
+    color: #fff;
+    text-align: center;
+}
+.orange-confirmacion{
+    background-color: #F28B00;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.lightblue-confirmacion{
+    background-color: #05AADD;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.red-confirmacion{
+    background-color: #e0333d;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.confirmacion_popup .modal-body .btn{
+    font-size: 15px;
+    font-weight: bold;
+}
+.red-confirmacion .btn{
+   color: #e0333d;
+}
+.orange-confirmacion .btn{
+   color: #f28b00;
+}
+.lightblue-confirmacion .btn{
+    color: #05AADD;
+    width: 50%;
+}
+.lightblue-confirmacion .aqui{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+.aqui:hover {
+    color: white !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.aqui {
+    color: white !important;
+    text-decoration: underline;
+}
+.mensaje-confirmacion{
+    margin: 1em;
+    padding: 1em 2em 1em 2em;
+    font-size: 1.1em;
+}
+.logo-confirmacion{
+        width: 244px;
+}
+.padding-btn{
+    padding-bottom:1em;
+}
+@media screen and (min-width: 768px){
+    .confirmacion_popup .modal-dialog {
+        width: 495px;
+        margin: 30px auto;
+    }
+}
+
+
+
+
+/*********************************************/
+
+/*================================
+    LOGIN  STYLES
+==================================*/
+/*******generic*************/
+#loginModal{
+    color: #fff;
+    text-align: center;
+}
+#loginModal .modal-body, #loginModal .modal-body > .row{
+    padding: 0;
+    margin: 0;
+}
+#loginModal .form-group{
+    text-align: left;
+}
+#loginModal .modal-body h4{
+    text-align: left;
+}
+#loginModal .modal-body h2, #loginModal .modal-body h3, #loginModal .modal-body a{
+    color: #fff
+}
+#loginModal .modal-body a{
+  text-decoration: underline;   
+}
+#loginModal #login, #loginModal #recarga{
+    padding: 20px;
+    vertical-align: top;
+}
+#loginModal .modal-body form .tipos{
+    min-height: 34px; 
+    padding-left: 15px;
+}
+#loginModal .modal-body form .tipos > div{
+    padding: 0;
+}
+
+#loginModal.modal-recarga #login, #loginModal.modal-login #recarga{
+    display: none;
+}
+#loginModal.modal-login #login, #loginModal.modal-recarga #recarga{
+   width: 100%; 
+}
+#loginModal.modal-login #login{
+    border-bottom-right-radius: 6px;
+}
+
+#loginModal.modal-recarga #recarga{
+    border-bottom-left-radius: 6px;
+}
+#loginModal .modal-body .btn{
+    font-size: 15px;
+    font-weight: bold;
+}
+/********login*******************/
+#loginModal #login{
+    background-color: #F28B00;
+     border-bottom-left-radius: 6px;
+}
+#loginModal #login .glyphicon{
+    color: #F28B00;
+}
+#loginModal #login .btn{
+   color: #f28b00;
+}
+/*****recarga**********/
+#loginModal #recarga{
+    background-color: #05AADD;
+    border-bottom-right-radius: 6px;
+}
+#loginModal  #recarga .glyphicon{
+    color: #05AADD;
+}
+#loginModal #recarga .btn{
+    color:#05AADD;
+}
+
+#modal_recargadirecta .modal-dialog {
+    width: 400px;
+    text-align: center;
+}
+#modal_recargadirecta .modal-body{
+    background-color: #05AADD;
+    
+    color: #fff;
+}
+#modal_recargadirecta .modal-body h2,
+#modal_recargadirecta .modal-body h3, 
+#modal_recargadirecta .modal-body a{
+   color: #fff; 
+}
+
+#modal_recargadirecta .form-group{
+    text-align: left;
+}
+#modal_recargadirecta .modal-body h4{
+    text-align: left;
+}
+#modal_recargadirecta .modal-body form .tipos{
+    min-height: 34px; 
+    padding-left: 15px;
+}
+#modal_recargadirecta .glyphicon{
+    color: #05AADD;
+}
+#modal_recargadirecta .btn{
+    color:#05AADD;
+}
+#modal_recargadirecta .form-group{
+    text-align: left;
+}
+#modal_recargadirecta .modal-body form .tipos > div{
+    padding: 0;
+}
+#modal_recargadirecta .modal-body .btn{
+    font-size: 15px;
+    font-weight: bold;
+}
+@media (min-width: 992px) {
+    #loginModal .modal-dialog{
+        width: 800px;
+    }
+    #loginModal.modal-recarga .modal-dialog, #loginModal.modal-login .modal-dialog{
+        width: 400px;
+    }
+}
+
+
+/*===============================================================================
+    BANNER STYLES
+=================================================================================*/
+#banner{
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-bottom: 7px solid #CEDF00;
+}
+
+#banner img{
+    width: 100%;
+}
+#banner #box{
+    position: absolute;
+    top: 29%;
+    right: 20px;
+    background-color: rgba(5, 170, 221, 0.7);
+    padding: 20px; 
+    color: #fff;
+    font-size: 26px;
+}
+#banner #box a{
+    color: #fff;
+    text-decoration: underline;
+}
+
+#banner .barra_verder{
+    background-color: #CEDF00;
+    height: 7px;
+}
+
+#banner.banner-donde #box{
+    right: 20px;
+    left: auto;
+}
+#banner.banner-quees #box{
+    bottom: 5px;
+    top: auto;
+}
+#banner.banner-beneficios #box{
+    top: 17px;
+    left: 15px;
+    width: 33%;
+}
+#banner.banner-como #box{
+    top: auto;
+    left: auto;
+    bottom: 10px;
+    right: 10px;
+}
+
+@media (max-width: 992px) {
+    #banner.banner-beneficios #box{
+        top: 14px;
+        left: 10px;
+        font-size: 22px;
+        width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    #banner #box{
+        font-size: 20px;
+        padding: 7px;
+        top: 10%;
+    }
+    #banner.banner-donde #box{
+        top: 2%;
+        right: 2px;
+    }
+}
+@media (max-width: 558px) {
+    #banner #box{
+        font-size: 12px !important;
+    }
+    #banner.banner-beneficios #box{
+        top: 2px;
+        width: 50%;
+    }
+}
+
+/*===============================================================================
+    CONTENT INFO STYLES
+=================================================================================*/
+.info{
+    position: relative;
+    padding-right: 175px;
+    padding-bottom: 20px;
+    min-height: 140px;    
+}
+.info .info_content{
+    text-align: justify;
+}
+.info .info_content img{
+    max-width: 80%;
+}
+.info .info_img{
+    position: absolute;
+    right: 25px;
+    top: 0%;
+    width: 133px;
+    text-align: center;
+}
+.info .top_img{
+    top:35%;
+}
+.info .medios_pago img{
+    margin: 20px;
+    width: 90px;
+}
+.info .info_content .info_adicional{
+    font-size: 0.7em;
+    margin-top: 20px;
+}
+.item{
+    margin-top: 10px;
+    position: relative;
+}
+.item_text{
+    display: inline-block;
+    padding-left: 40px;
+    text-align: left;
+}
+#adquirir_beneficios .icon_car{
+    position: absolute;
+    top: 115px;
+    right: 0px;
+}
+.pasos{
+    margin-top: 20px;
+    min-height: 92px;
+}
+.pasos-left{
+    float: left;
+    margin-right: 20px;
+}
+.pasos_text{
+    padding-top: 15px;
+    height: 92px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.circle_pasos{
+    border: 8px solid #f28b00;
+    border-radius: 50px;
+    display: inline-block;
+    height: 92px;
+    line-height: 24px;
+    padding-top: 15px;
+    text-align: center;
+    vertical-align: middle;
+    width: 92px;
+}
+.arrows{
+    width: 80px;
+    display: inline-block;
+}
+.container.preguntas_frecuentes{
+    font-size: 18px;
+    
+}
+.container.preguntas_frecuentes h3{
+    margin-top: 28px;
+    margin-bottom: 6px;
+}
+table#tasa-recarga {
+    font-size: 12px;
+    width: 100%;
+    margin-top: 25px;
+}
+table#tasa-recarga td, table#tasa-recarga th {
+    border: 1px solid #DDDDDD;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+table#tasa-recarga td{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+table#tasa-recarga th {
+ background-color: #CEDF00;   
+}
+table#tasa-recarga th.th-azul{
+    background-color: #009FE3;
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    .pasos{
+        min-height: 70px;
+    }
+    .arrows{
+        width: 80px;
+    }
+    .circle_pasos{
+        width: 70px;
+        height: 70px;
+        padding-top: 10px;
+        border-width: 6px;
+    }
+    .pasos_text{
+        height: 70px;
+        padding-right: 15px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .info {
+        padding-right: 0; 
+    }
+    .icon.info_img {
+        font-size: 30pt !important;
+        line-height: 30pt !important;
+    }
+    .info .info_img {
+        right: 0;
+        top: -4%;
+        width: 42px;
+        display: none;
+    }
+    #adquirir_beneficios .icon_car{
+        display: none;
+    }
+    .v-center > div[class*='col-'] {
+        display: block; 
+        float: left;
+    }
+    .container.preguntas_frecuentes h3{
+        font-size: 18px;
+    }
+    .container.preguntas_frecuentes{
+        font-size: 16px;
+    }
+    table#tasa-recarga td, table#tasa-recarga th {
+        padding: 3px;
+    }
+    
+    .pasos{
+        margin-top: 15px;
+    }
+
+    .pasos_text{
+        padding-top: 2px;
+        height: 50px;
+        text-align: justify;
+    }
+    .arrows{
+        width: 40px;
+    }
+    .circle_pasos{
+        width: 50px;
+        height: 50px;
+        padding-top: 9px;
+        border-width: 4px;
+        font-size: 15px;
+        line-height: 15px;
+        padding-left: 2px;
+    }
+}
+
+@media (max-width: 558px) {
+    .pasos-left{
+        float: none;
+    }
+    .pasos_text{
+      height: auto;   
+    }
+}
+/*===============================================================================
+    ICONS INFO STYLES
+=================================================================================*/
+.icon{
+   display: inline-block; 
+   line-height: 0px;
+   text-decoration: none;
+}
+.icon.item_icon{
+    color: #009FE3;   
+    font-family: IOS8-Icons-Regular,Arial;
+    font-size: 22.0pt;   
+    position: absolute;
+    line-height: 22pt;
+}
+.icon.icon_phone{
+    color: #fff;   
+    font-family: IOS8-Icons-Regular,Arial;
+    font-size: 26pt;   
+}
+.icon.icon_email{
+    color: #fff;   
+    font-family: IOS8-Icons-Regular,Arial;
+    font-size: 26pt;   
+}
+.icon.icon_car{
+    color: #F28B00;   
+    font-family: materialdesignjim-Regular,Arial;
+    font-size: 60pt;  
+}
+.icon.icon_foco{
+    color: #F28B00;   
+    font-family: materialdesignjim-Regular,Arial;
+    font-size: 60pt;  
+    line-height: 60pt;
+    transform: rotate(180deg);
+}
+.icon.icon_row{
+    color: #F28B00;   
+    font-family: materialdesignjim-Regular,Arial;
+    font-size: 80pt;  
+    line-height: 80pt;
+    transform: rotate(180deg);
+}
+.info_img.people_group, .info_img.card_send{
+    width: 106px;
+}
+
+/*===============================================================================
+    GENERIC  STYLES
+=================================================================================*/
+.error{
+    font-size: 13px !important;
+    color: #da291c!important;
+}
+.separate{
+    margin-bottom: 2em;
+}
+.disabled-input{
+    background: #CCCACA !important; 
+    pointer-events: none;
+    cursor: default;  
+}
+.btn-confirmacion{
+    background: #05AADD;
+    color: white;
+    width: 9em;
+}
+.modal-header,.modal-footer{
+    border:none;
+}
+ .modal-footer{
+    margin: 0;
+    padding-top: 0;
+    text-align: center;
+}
+.title-mensaje-confirmacion{
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+.description-mensaje-confirmacion{
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+.description-mensaje-confirmacion-izq{
+    color: black;
+    font-size: 16px;
+}
+.padding-modal{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.txtalgn-center
+{
+    text-align: center;
+}
+.modal_post_pago_consulta_descripcion
+{
+    background: #05AADD;
+    color: white;    
+   
+}
+.modal_phone
+{
+    text-align: center;
+    font-size: 2em;
+}
+.modal_post_pago_consulta_header
+{
+    background: white;
+}
+.modal-body_post_pago_text
+{
+    font-size: 1.2em;
+    padding: 1em;
+    text-align: center;
+}
+.btn-cerrar-modal
+{
+    width: 14em;
+    padding: 0.3em 1em;
+    font-size: 1.2em;
+    color: #05AADD;
+    border-radius: 5px;
+}
+.modal_recuperar_contrasenia_descripcion
+{
+    background: #f28b00;
+    color: white;
+    width: 75%;
+    margin: 0 auto;
+}
+.recuperar-title
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.contenedor-Form-recupcontra
+{
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+}
+.contenedor-Form-recupcontra input
+{
+    width: 100%;
+}
+.color-orange
+{
+    color:#f28b00;
+}
+.color-lighblue
+{
+    color: #05AADD;
+}
+.alto-box{
+    height: 430px;
+}
+.active-aside{
+    color:#757873 !important;
+}
+.item .fa{
+    color: #F28B00;
+    font-size: 3em;
+    padding: 0.1em;
+}
+/******estilo paginacion datatable ************/
+.dataTables_paginate {
+    text-align: center;
+    float: none;
+    margin-top: 10px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+
+    padding: 5px 10px 5px 10px;
+    margin-left: 2px;
+    text-align: center;
+    cursor: pointer;
+    color: #333 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+    text-decoration: none;
+    background: rgba(242, 139, 0, 0.54);
+    color:white !important;
+
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: rgba(5, 170, 221, 0.55);
+    color:white !important;
+    text-decoration: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active{
+    cursor: default;
+    color: #666 !important;
+}
+.bg-modal-transparent
+{
+    background-color: rgba(171, 171, 171, 0.631373);
+}
+.modal-backdrop{
+    background: #999 !important;
+    opacity: 0.5 !important;
+}
+
+.error-validacion{
+    border: 2px solid rgba(255, 45, 45, 0.88) !important;
+}  
+
+.border-celeste-modal
+{
+    border: 3px solid #05AADD
+}
+.ltr-stron
+{
+    font-weight: bold;
+    color: #383737;
+}
+.contenedor-modal-comprobante
+{
+    padding: 2em 0em;
+    border-radius:8px; 
+}
+.monto-modal
+{
+    font-size: 1.3em;
+    padding: 1em 0em;
+}
+.padModalText
+{
+    padding: 0em 2em;
+}
+.texto-asterisco-modal
+{
+    margin-top: 1em;
+}
+.btn-x-modal-celeste
+{
+    opacity: 1;
+    background: #05AADD !important;
+    color: white;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+}
+.bgselect{
+    background: #f28b00 !important;
+}
+.borderselect{
+    border:2px solid #f28b00 !important;
+}
+.dashedselect {
+    border-bottom: 2px dashed #f28b00 !important;
+}
+.bgselectTransparent {
+      border-top: 2px solid rgba(242, 139, 0, 0.33) !important;
+    background: rgba(242, 139, 0, 0.33) !important;
+}
+.colorselect{
+    color: #f28b00;
+}
+.color-white{
+    background: #fff !important;
+}
+.inline-block-middle
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+.icon_peaje1-top
+{
+    margin-top: 0.6em;
+}
+.icon_foco-top
+{
+    margin-top: 0.8em;
+}
+.icon_peaje-top
+{
+    margin-top: 2.5em;
+}
+.tick-316
+{
+    padding-right:12px !important;
+}
+.modal_comprobante_afilacion_contenedor
+{
+    
+}
+.click_achi
+{
+    cursor: pointer;
+}
+.tick-289
+{
+    
+}
+.algn-left
+{
+    text-align: left;
+}
+.inputColor
+{
+    color: #555 !important;
+}
+.epas-line
+{
+    display: inline-block;
+}
+.text-algn-right
+{
+    text-align: right;
+}
+.wid10
+{
+    width: 10em;
+}
+#div_errores
+{
+    text-align: center;
+    padding-top:2em;
+}
+
+.contenedor-boton-pago
+{
+    margin-top:1.2em;
+}
+
+.btn_sgtePaso
+{
+  position: relative;  
+}
+.btn-pagar-a
+{
+    position: absolute;
+    right: 0;
+}
+/*
+@media (max-width: 1300px){
+    .btn_sgtePaso
+    {
+        left: 35% !important;
+    }
+}
+*/
+
+@media (max-width: 1000px){
+    .contenedor-boton-pago
+    {
+        margin-top: 0em;
+        height: 2.3em;
+    }
+
+@media screen and (max-width: 1200px){
+  .paqueteEpass
+  {
+    font-size: 12px !important; 
+  }
+  .precio{
+    font-size: 2.5em !important;
+  }
+
+}
+.sinFwB
+{
+    font-weight: normal;
+}
+.sinMargBoostrap
+{
+    margin-right: 0;
+    margin-left: 0;
+}

@@ -1,0 +1,501 @@
+
+<?php  $this->headLink()
+    ->prependStylesheet($this->linkCdn('/css/reclamaciones/reclamaciones.css'));
+?>
+<?php  $this->inlineScript()
+    ->prependFile($this->linkCdn('/js/reclamaciones/reclamaciones.js')); ?>
+
+
+<div class="TituloAsep">Libro de Reclamaciones de &nbsp;<i class=italic>e-pass</i></div>
+<div class="contenedorRela">
+    <!--
+    <div class="nroDeReclamo">
+        <div class="inline-blockh">N° Hoja de Reclamaciones</div>
+        <div class="inline-blockh linea_reclamo"></div>
+    </div>-->
+    <div class="fechaReclamaciones"><?php echo date('d/m/y') ?></div>
+</div>
+<div class="contenedor-formulario">
+    <div class="texto_reclamaciones">La atención es únicamente para los reclamos o quejas referentes a los productos o servicios que brinda la empresa a sus clientes</div>
+    <!--************** formulario reclamacionesEpass **************//-->
+    <?php
+    $form = $this->form;
+    $form->prepare();
+    $form->setAttribute('id', 'form_reclamaciones');
+    echo $this->form()->openTag($form);
+    ?>
+    <div class="contenedorFormularioEpass">
+        <div class="subContenedorFormularioEpass"><span class="spanEncima">Identificación del consumidor reclamante</span>
+            <div class="contenedorInputsEpass row">
+                <div class="form-inline moverAquiLosRadios">
+                    <div class="col-xs-12 col-sm-12 col-md-12 radioSelectedCliente">
+                        <?php
+                        $consumerType = $form->get('consumer_type');
+                        $consumerType->setAttribute('class', '');
+                        $consumerType->setAttribute('required', 'required');
+                        echo $this->formRow($consumerType);
+                        echo $this->formElementerrors($consumerType);
+                        ?>
+                    </div>
+                    <div class="formularioEmpresa">
+                        <div class="form-inline">
+                            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+                            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                                <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Empresa :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-10">
+                                    <?php
+                                    $company = $form->get('company');
+                                    $company->setAttribute('class', ' required slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker');
+                                    $company->setAttribute('placeholder', 'Ingrese nombre de Empresa');
+                                    $company->setAttribute('maxlength', 120);
+                                    echo $this->formElement($company);
+                                    echo $this->formElementerrors($company);
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+                            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                                <label for="razon_social" class="spanEpass col-xs-12 col-sm-12 col-md-2">Razón Social :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-10">
+                                    <?php
+                                    $businessName = $form->get('business_name');
+                                    $businessName->setAttribute('class', 'required slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker');
+                                    $businessName->setAttribute('placeholder', 'Ingrese razón social');
+                                    $businessName->setAttribute('maxlength', 120);
+                                    echo $this->formElement($businessName);
+                                    echo $this->formElementerrors($businessName);
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+                            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Ruc :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-8">
+                                    <?php
+                                    $ruc = $form->get('ruc');
+                                    $ruc->setAttribute('class', ' required digits imputEpass col-xs-12 col-sm-12 col-md-8');
+                                    $ruc->setAttribute('placeholder', 'Ingrese número de documento');
+                                    echo $this->formElement($ruc);
+                                    echo $this->formElementerrors($ruc);
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formularioPersonaNatural">
+                        <div class="formularioPersonaNaturalAOcultar">
+                            <div class="form-inline clear">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+                                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                        <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Nombres Completos:</label>
+                                        <div class="col-xs-12 col-sm-12 col-md-8">
+                                            <?php
+                                            $firstName = $form->get('first_name');
+                                            $firstName->setAttribute('class', 'required imputEpass col-xs-12 col-sm-12 col-md-8');
+                                            $firstName->setAttribute('placeholder', 'Ingrese nombre completo');
+                                            $firstName->setAttribute('maxlength',20);
+                                            $firstName->setAttribute('minlength',2);
+                                            echo $this->formElement($firstName);
+                                            echo $this->formElementerrors($firstName);
+                                            ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+                                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                        <label for="apellidos" class="spanEpass col-xs-12 col-sm-12 col-md-4">Apellidos completos :</label>
+                                        <div class="col-xs-12 col-sm-12 col-md-8">
+                                            <?php
+                                            $lastName = $form->get('last_name');
+                                            $lastName->setAttribute('class', ' required imputEpass col-xs-12 col-sm-12 col-md-8');
+                                            $lastName->setAttribute('placeholder', 'Ingrese apellidos completos');
+                                            $lastName->setAttribute('maxlength',20);
+                                            echo $this->formElement($lastName);
+                                            echo $this->formElementerrors($lastName);
+                                            ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-inline">
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+                                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                        <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tipo de Documento :</label>
+                                        <div class="col-xs-12 col-sm-12 col-md-8">
+                                            <?php
+                                            $documentType = $form->get('document_type');
+                                            $documentType->setAttribute('class', 'required imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker');
+                                            echo $this->formElement($documentType);
+                                            echo $this->formElementerrors($documentType);
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+                                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                        <label for="nro_documento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Nro Documento :</label>
+                                        <div class="col-xs-12 col-sm-12 col-md-8">
+                                            <?php
+                                            $documentNumber = $form->get('document_number');
+                                            $documentNumber->setAttribute('class', 'required digits imputEpass col-xs-12 col-sm-12 col-md-8');
+                                            $documentNumber->setAttribute('placeholder', 'Ingrese número de documento');
+                                            echo $this->formElement($documentNumber);
+                                            echo $this->formElementerrors($documentNumber);
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline clear">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+                                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                    <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Teléfono fijo :</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-8">
+                                        <?php
+                                        $homePhone = $form->get('home_phone');
+                                        $homePhone->setAttribute('class', 'required imputEpass col-xs-12 col-sm-12 col-md-8');
+                                        $homePhone->setAttribute('placeholder', 'Ingrese Teléfono');
+                                        $homePhone->setAttribute('maxlength', '15');
+                                        echo $this->formElement($homePhone);
+                                        echo $this->formElementerrors($homePhone);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+                                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                    <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Celular :</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-8">
+                                        <?php
+                                        $mobilePhone = $form->get('mobile_phone');
+                                        $mobilePhone->setAttribute('class', 'required digits imputEpass col-xs-12 col-sm-12 col-md-8');
+                                        $mobilePhone->setAttribute('placeholder', 'Ingrese Celular');
+                                        echo $this->formElement($mobilePhone);
+                                        echo $this->formElementerrors($mobilePhone);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+                            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                                <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Correo :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-10">
+                                    <?php
+                                    $email = $form->get('email');
+                                    $email->setAttribute('class', ' required email slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpickerr');
+                                    $email->setAttribute('placeholder', 'Ingrese correo');
+                                    echo $this->formElement($email);
+                                    echo $this->formElementerrors($email);
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*            </div>
+                                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                    <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Departamento :</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-8">
+                                        <?php
+                                        $address1 = $form->get('address_1');
+                                        $address1->setAttribute('class', ' required imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker');
+                                        echo $this->formElement($address1);
+                                        echo $this->formElementerrors($address1);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+                                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                    <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Provincia :</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-8">
+                                        <?php
+                                        $address2 = $form->get('address_2');
+                                        $address2->setAttribute('class', 'required imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker');
+                                        echo $this->formElement($address2);
+                                        echo $this->formElementerrors($address2);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+                                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+                                    <label for="" class="spanEpass col-xs-12 col-sm-12 col-md-4">Distrito :</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-8">
+                                        <?php
+                                        $address3 = $form->get('address_3');
+                                        $address3->setAttribute('class', 'required imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker');
+                                        echo $this->formElement($address3);
+                                        echo $this->formElementerrors($address3);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+                        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                            <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Dirección :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-10">
+                                <?php
+                                $address4 = $form->get('address_4');
+                                $address4->setAttribute('class', 'required slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker');
+                                $address4->setAttribute('placeholder', 'Ingrese su Dirección');
+                                $address4->setAttribute('maxlength',200);
+                                echo $this->formElement($address4);
+                                echo $this->formElementerrors($address4);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-inline">
+                        <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*                       </div>
+                        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                            <label for="address_1" class="spanEpass col-xs-12 col-sm-12 col-md-2">Referencia :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-10">
+                                <?php
+                                $address5 = $form->get('address_5');
+                                $address5->setAttribute('class', 'slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker');
+                                $address5->setAttribute('rows', 4);
+                                $address5->setAttribute('maxlength', 200);
+                                $address5->setAttribute('placeholder', 'Ingrese una referencia');
+                                echo $this->formElement($address5);
+                                echo $this->formElementerrors($address5);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    <div class="subContenedorFormularioEpass top3em"><span class="spanEncima">Datos Informativos</span>
+        <div class="contenedorInputsEpass row">
+            <div class="form-inline">
+                <div class="bloqueInput">
+                    <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group"> <span class="colorCeleste fwbold">Tipo</span>
+
+                        <div class="contenedorRadioReclamacion top10px">
+                            <?php
+                            $type = $form->get('type');
+                            $type->setAttribute('class', ' required');
+                            echo $this->formElement($type);
+                            echo $this->formElementerrors($type);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group paddingTD"><span class="colorCeleste">Área de Atención:</span><span class="marg1">Atención al cliente</span></div>
+            </div>
+            <div class="form-inline">
+                <div class="col-xs-12 col-sm-12 col-md-12 relative35">*</div>
+                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                    <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-12">Descripción del servicio :</label>
+                    <?php
+                    $description = $form->get('description');
+                    $description->setAttribute('class', 'required textarea col-xs-12 col-sm-12 col-md-12');
+                    $description->setAttribute('rows', '3');
+                    $description->setAttribute('placeholder', 'Ingrese una descripción');
+                    $description->setAttribute('required', 'required');
+                    echo $this->formElement($description);
+                    echo $this->formElementerrors($description);
+                    ?>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="col-xs-12 col-sm-12 col-md-12 relative35">*</div>
+                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                    <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-12">Detalle de reclamo o queja :</label>
+                    <?php
+                    $detail = $form->get('detail');
+                    $detail->setAttribute('class', 'required textarea col-xs-12 col-sm-12 col-md-12');
+                    $detail->setAttribute('rows', '3');
+                    $detail->setAttribute('placeholder', 'Ingrese el detalle del reclamo o queja');
+                    $detail->setAttribute('required', 'required');
+                    echo $this->formElement($detail);
+                    echo $this->formElementerrors($detail);
+                    ?>
+                </div>
+            </div>
+            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                <div class="contenedorRadioReclamacion top10px">
+                    <?php
+                    $acceptTerms = $form->get('accept_terms');
+                    $acceptTerms->setAttribute('class', 'required inline-blockTop');
+                    $acceptTerms->setAttribute('required', 'required');
+                    echo $this->formElement($acceptTerms);
+                    echo $this->formElementerrors($acceptTerms);
+                    ?><span class="marg1 colorCeleste inline-blockTop spanCheck fwbold">
+                            Declaro ser el usuario del servicio y acepto el contenido del presente formulario
+                            manifestando bajo declaración jurada la veracidad de los hechos descritos.
+                        </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <div class="btn_siguientePaso">
+        <?= $this->formRow($form->get('submit')) ?>
+    </div>
+    </div>
+    
+
+    
+    <?= $this->form()->closeTag(); ?>
+    <!--************** formulario reclamacionesEpass **************//-->
+</div>
+
+
+<script type="text/javascript">
+    var departamentos = [];
+    var provincias = [];
+    var currentDepartamento = 0;
+    var currentProvincia = 0;
+    var currentDistrito = 0;
+    var ID_DEPARTAMENTO_LIMA = 15;
+    var ID_PROVINCIA_LIMA = 128;
+    var ID_DISTRITO_LIMA = 1252;
+    // Init
+   // loadSelectDepartamentos(ID_DEPARTAMENTO_LIMA);
+
+    $('#address_1').change(function () {
+        var index = $(this).children('option:selected').val();
+        loadSelectProvincias(index, 0);
+    });
+    $('#address_2').change(function () {
+        var index = $(this).children('option:selected').val();
+        loadSelectDistritos(index, 0);
+    });
+
+    function loadSelectProvincias(indexDepartamento, indexDefault) {
+        console.log('loadSelectProvincias default', indexDefault);
+        var idDpto = indexDepartamento;
+
+        var html = '<option value="">Seleccionar Provincia</option>';
+        var select = '<option value="">Seleccionar Provincia</option>';
+        var obj;
+        if (idDpto !== '0') {
+            $.ajax({
+                url: '/alinkedlist?LIST=4&DEPINDEX=' + idDpto,
+                success: function (data) {
+                    provincias = data;
+                    $.each(data, function (index,val) {
+                        html += '<option value="' + val.INDEX + '">' + val.TEXT + '</option>';
+                    });
+                    $('#address_2').html(html);
+                    $('#address_2 option[value="' + indexDefault + '"]').attr("selected", true);
+                    $('#address_3').html(select);
+
+                    if (indexDefault == ID_PROVINCIA_LIMA) {
+                        loadSelectDistritos(indexDefault, ID_DISTRITO_LIMA);
+                    } else {
+                        loadSelectDistritos(indexDefault, 0);
+                    }
+                }
+            });
+        }
+    }
+
+    function loadSelectDistritos(indexProvincia, indexDefault) {
+        //var name = $(this).children('option:selected').val();
+        //var idProvin = getIdProvincia(name);
+        var idProvin = indexProvincia; //$(this).children('option:selected').val();
+
+        var html = '<option value="">Seleccionar Distrito</option>';
+        var obj;
+        if (idProvin != '0') {
+            $.ajax({
+                url: '/alinkedlist?LIST=5&DEPINDEX=' + idProvin,
+                success: function (data) {
+                    obj = data;
+                    $.each(obj, function (i, val) {
+                        html += '<option value="' + val.INDEX + '">' + val.TEXT + '</option>';
+                    });
+                    $('#address_3').html(html);
+                    $('#address_3 option[value="' + indexDefault + '"]').attr("selected", true);
+                }
+            });
+        }
+    }
+
+    function loadSelectDepartamentos(indexDefault) {
+        var html = '<option value="">Seleccionar Departamento</option>';
+        var selectProvincias = '<option value="">Seleccionar Provincia</option>';
+        var selectDistritos = '<option value="">Seleccionar Distrito</option>';
+        var obj;
+
+        $.ajax({
+            url: '/alinkedlist?LIST=3',
+            success: function (data) {
+                departamentos = data;
+                $.each(data, function (index, val) {
+                    html += '<option value="' + val.INDEX + '">' + val.TEXT + '</option>';
+                });
+                $('#address_1').html(html);
+                $('#address_2').html(selectProvincias);
+
+                $('#address_1 option[value="' + indexDefault + '"]').attr("selected", true);
+
+                if (indexDefault == ID_DEPARTAMENTO_LIMA) {
+                    loadSelectProvincias(indexDefault, ID_PROVINCIA_LIMA);
+                } else {
+                    loadSelectProvincias(indexDefault, 0);
+                }
+            }
+        });
+    }
+
+    function getIdDepartamento(name) {
+        console.log('Name', name);
+        if (departamentos != null) {
+            for(var i = 0; i < departamentos.length; i++) {
+                if (name == departamentos[i].TEXT) {
+                    console.log('Index departamento', departamentos[i].INDEX);
+                    return departamentos[i].INDEX;
+                }
+            }
+        }
+
+        return 0;
+    }
+
+    function getIdProvincia(name) {
+        console.log('Name provincia', name);
+        if (provincias != null) {
+            for(var i = 0; i < provincias.length; i++) {
+                if (name == provincias[i].TEXT) {
+                    console.log('Index provincia', provincias[i].INDEX);
+                    return provincias[i].INDEX;
+                }
+            }
+        }
+        return 0;
+    }
+
+</script>

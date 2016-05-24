@@ -1,0 +1,105 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?php echo $this->partial('renders/seo_tags'); ?>
+
+    <?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->linkCdn('/img/ico.png') ))
+        ->prependStylesheet($this->linkCdn('/css/general/general.css'))
+        ->prependStylesheet('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')        
+        ->prependStylesheet($this->linkCdn('/css/main.css'))
+        ->prependStylesheet($this->linkCdn('/css/bootstrap.min.css')) ?>
+
+  
+
+    <!-- Scripts -->
+    <?php echo  $this->headScript()
+        ->prependFile($this->linkCdn('/js/jquery.expander.js'))
+        ->prependFile($this->linkCdn('/js/bootstrap.min.js'))
+        ->prependFile($this->linkCdn('/js/jquery.message_es.js'))
+         ->prependFile($this->linkCdn('/js/lazyload.js'))
+        ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js')
+        ->prependFile($this->linkCdn('/js/jquery.validate.min.js'))
+        ->prependFile($this->linkCdn('/js/jquery.cookie.js'))
+        ->prependFile($this->linkCdn('/js/jquery.min.js'))
+        ->prependFile($this->linkCdn('/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+        ->prependFile($this->linkCdn('/js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+    ; ?>
+
+    <meta name="status_auth" content="<?= $this->session_active_helper() ?>">
+
+
+</head>
+<body <?php echo ($this->layout()->pago)?'onload="document.frm.submit();"':'';?>>
+    <?php echo $this->googleAnalytics(); ?>
+    <!-- header -->
+    <!-- Preload-->
+        <div id="pagetransition">
+          <div class="square black"></div>
+          <div class="square white"></div>
+          <div class="square gold"></div>
+          <div class="square grey"></div>
+          
+          <div class="vic-gb"></div>
+        </div>
+
+        <div id="bg"></div>
+    <!-- Preload-->
+    <!--input para flag4-->
+    <input id="cerificadorFlag4" value="no" type="hidden" />
+    <!--input para flag4-->
+    <?php
+        if ($this->currentRoute()->matchRoute('reclamaciones') || $this->terminos) {
+            echo $this->partial('renders/header_reclamaciones');
+        }
+        else if ($this->currentRoute()->matchController('cuenta')) {
+            echo $this->partial('renders/header_cuenta');
+        }
+
+        else {
+            echo $this->partial('renders/header');
+        }
+    ?>
+    <!-- ./header -->
+
+    <?php echo $this->partial('renders/flash_messages') ?>
+
+    <?php echo $this->content; ?>
+    <!-- footer -->
+    <?php
+        if ($this->currentRoute()->matchRoute('reclamaciones') ) {
+
+        } else {
+            echo $this->partial('renders/footer');
+        }
+    ?>
+    <!-- ./footer -->
+
+
+
+<?php echo $this->partial('renders/modal_login_recarga') ?>
+<?php echo $this->partial('renders/modal_recarga_directa') ?>
+<?php echo $this->partial('renders/modal_login') ?>
+
+
+<?php echo $this->partial('renders/modal_post_pago_consulta') ?>
+<?php echo $this->partial('renders/modal_pasos_recarga_automatica') ?>
+<?php //echo $this->partial('renders/modal_recuperar_contra') ?>
+<?php echo $this->partial('renders/modal_post_pago_recarga_consulta') ?>
+<?php echo $this->partial('renders/modal_afiliate') ?>
+<?php echo $this->partial('renders/modal_recarga') ?>
+<?php echo $this->partial('renders/consultas') ?>
+<?php echo $this->popup(); ?>    
+    <?php echo $this->inlineScript()            
+            
+             ->prependFile($this->linkCdn('/js/general/general.js'))
+            ->prependFile($this->linkCdn('/js/main.js'))
+    ?>
+</body>
+</html>

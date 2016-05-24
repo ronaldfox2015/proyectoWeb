@@ -1,0 +1,632 @@
+input,textarea,select
+{
+  color: #757873;
+  outline:none;
+}
+
+.align-center
+{
+  text-align: left !important;
+}
+.txt-center
+{
+  text-align: center;
+}
+input[type="radio"]
+{
+  margin: 0;
+  margin-right: 1em;
+}
+textarea
+{
+  resize: none;
+}
+.radioEnvioRetiro
+{
+  cursor:pointer;
+}
+.form-venta,.form-domicilio
+{
+  display: none;
+}
+.contenidoAfiliate
+{
+	padding: 4em 10.5%;
+}
+.titulo
+{
+	   font-size: 1.6em;
+    color: #327D94;
+    /* font-weight: bold; */
+    margin-bottom: 0.5em;
+}
+.letraAfiliate
+{
+	    font-size: 1.1em;
+    color: #434344;
+    margin-bottom: 1.3em;
+}
+.contenidoAfiliate
+{
+	background: #EFEFEF;
+}
+.contenedorComponenteCuadroFlecha,.contenedorComponenteFormularioEpass
+{
+	
+}
+label
+{
+	font-weight: normal;
+}
+/******** publicidad ePassFlecha*******/
+.titulo-epassFlecha {
+    color: #009fd7;
+    text-align: left;
+    text-decoration: none;
+    font-family: Gotham Bold, Arial;
+    font-size: 1.3em;
+    font-style: normal;
+    position: absolute;
+    width: 10.3em;
+    top: -13px;
+    left: 13px;
+    background: #EFEFEF;
+}
+.mrgbottom2em
+{
+  margin-bottom: 2em;
+}
+.img_medio_pago
+{
+  height: 2.5em;
+}
+.span-metodo-de-pago-subtitulo
+{
+  margin-bottom: 1em;
+}
+.radio-medio-pago
+{
+  margin-top: 1em;
+}
+.medio-pago-descripcion
+{
+  display: inline-block;
+  margin-top: 0.5em;
+}
+.img_medio_pago_master_card
+{
+    height: 3.8em;
+    margin-top: -9px;
+}
+.medio-pago-descripcion-mastercard
+{
+  
+}
+.tarjeta_radio_label
+{
+  cursor: pointer;
+}
+.contenedor-img-tarejta {
+    display: inline-block;
+    width: 9em;
+}
+.img_medio_pago_americanexpress
+{
+    height: 4em;
+    margin: 0 auto;
+    margin-left: 1.1em;
+    margin-top: -0.5em;
+}
+.img_medio_pago_dinersclub
+{
+  margin-top: -18px;
+  height: 6em;
+}
+.top-1em
+{
+  margin-top: 4em;
+}
+.ContenedorCuadroFlecha {
+    border: 1px solid #B8BBB6;
+    border-radius: 6px;
+    padding-top: 1em;
+    position: relative;
+    padding-bottom: 0.7em;
+}
+.titulo-Naranja {
+  color: #f28b00;
+  text-align: center;
+  text-decoration: none;
+  font-family: Gotham Bold, Arial;
+  font-size: 2em ;
+  font-style: normal;
+}
+.contenedorFormularioEpass
+{
+  margin-top:2em;
+}
+.titulo-Naranja,
+.flechaConCss {
+  display: inline-block;
+  vertical-align: middle;
+  width: inherit;
+}
+.contenedorPubli {
+  text-align: center;
+}
+.flechaConCss i {
+  color: #f28b00;
+  font-size: 6em;
+  padding: 0em 1em;
+}
+@media screen and (max-width: 815px) {
+  .flechaConCss i {
+    padding: 0em 0.5em;
+  }
+  .bloqueInput > div
+  {
+    padding: 0;
+  }
+  .txt-center
+  {
+    text-align: left;
+    margin-left: 1em;
+  }
+
+}
+@media screen and (max-width: 680px) {
+  .flechaConCss i {
+    padding: 0;
+    font-size: 2em;
+    transform: rotate(90deg);
+  }
+  .flechaConCss {
+    display: block;
+  }
+  .titulo-epassFlecha {
+    font-size: 1.3em;
+  }
+  .titulo-Naranja {
+    font-size: 1.5em;
+  }
+
+}
+/******** publicidad ePassFlecha*******/
+
+/**********Formulario ePass************/
+.contenedorFormularioEpass {
+  padding: 2em 1em;
+  border: 1px solid #B8BBB6;
+  border-radius: 5px;
+}
+.subContenedorFormularioEpass {
+  padding: 1em;
+  border: 1px solid #B8BBB6;
+  position: relative;
+  border-radius: 5px;
+}
+.spanEpass {
+  color: #05aadd;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.spanEncima {
+  color: #05aadd;
+  position: absolute;
+  top: -12px;
+  background: #EFEFEF;
+  font-size: 1.2em;
+}
+.bloqueInput input {
+  font-size: 1em;
+  padding: 0.4em 1em;
+  
+}
+.spanEpass,
+.imputEpass {
+  display: inline-block;
+  vertical-align: middle;
+}
+.imputEpass {
+border: 1px solid #A9A9A9;
+background: white;
+}
+.bloqueInput label {
+  margin-bottom: 0px;
+  
+  font-size: 1.1em;
+  margin-top: 0.4em;
+}
+.form-inline {
+  padding: 2em 0em;
+}
+.selectpicker {
+  padding: 0.4em 0.4em;
+  background: #fff;
+  color: #757873;
+}
+.slSinMarg {
+  margin-left: -4px;
+}
+.slSinMarg4
+{
+  margin-left: 3.5%;
+  width: 79.6%;
+}
+.top3em {
+  margin-top: 3em;
+}
+.cont_check {
+  padding: 0em;
+  padding-left: 2em;
+  color: #757873;
+  border: none;
+}
+.marg {
+  margin-left: 1em;
+  font-size: 0.9em;
+}
+.cont_check a {
+  font-size: 0.9em;
+  color: #242524;
+  text-decoration: underline;
+}
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+.submit_sgtpaso {
+  text-align: center;
+  padding: 0.5em 0em;
+  padding-right: 2em;
+}
+.submit_sgtpaso:hover {
+  animation: animationButton 1s infinite;
+}
+.submit_sgtpaso {
+
+      text-decoration: none;
+    background: #cedf00;
+    width: 13em;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #757873;
+
+}
+.btn_siguientePaso
+{
+  text-align: center;
+  margin-top: 1em;
+}
+.btn_siguientePaso a
+{
+  background: #CEDF00;
+  padding: 0.3em 0em;
+  color: #757873;
+  width: 17em;
+  display: inline-block;
+  border-radius: 0.4em;
+  cursor: pointer;
+  text-decoration: none;  
+}
+.btn_siguientePaso a:hover
+{
+  animation: animationButton 1s infinite;
+}
+.btn_siguientePaso a > i
+{
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+.btn_siguientePaso a > i,.btn_siguientePaso a > span
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn-pagar
+{
+  height: 2.6em;
+  padding-top: 0.6em !important;
+}
+@media screen and (max-width: 992px) {
+  .slSinMarg {
+    margin-left: 0px;
+  }
+  .marg {
+    margin-left: 0px;
+  }
+  .span_check {
+    width: 90%;
+    margin-left: 1em;
+  }
+  .btn_siguientePaso {
+    margin-top: 1em;
+  }
+  .letraAfiliate
+  {
+    font-size: 1.1em;
+  }
+  .contenedor-img-tarejta
+  {
+    display: block;
+  }
+  .tarjeta_radio_label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+@-moz-keyframes animationColorRadioSelected {
+  50% {   
+    color: #009fd7;
+  }
+}
+@-webkit-keyframes animationColorRadioSelected {
+  50% {
+    color: #009fd7;
+  }
+}
+@-o-keyframes animationColorRadioSelected {
+
+  50% {
+    color: #009fd7;
+  }
+ 
+}
+@keyframes animationColorRadioSelected {
+
+  50% {
+    color: #009fd7;
+  }
+ 
+}
+.animacionRadioSelected
+{
+  animation: animationColorRadioSelected 1s infinite;
+}
+@media screen and (max-width: 767px){
+  .contenedor-img-tarejta
+  {
+    display: inline-block;
+  }
+  .mgtop4
+  {
+    margin-top: 4em;
+  }
+}
+@media screen and (max-width: 500px){
+  .medio-pago-descripcion
+  {
+    display: block;
+  }
+}
+@-moz-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+  100% {
+    background: #333;
+  }
+}
+@-webkit-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+  100% {
+    background: #333;
+  }
+}
+@-o-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+  100% {
+    background: #333;
+  }
+}
+@keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+  100% {
+    background: #333;
+  }
+}
+.contenedorFormularioEpass
+{
+  position: relative;
+}
+.span-metodo-de-pago
+{
+  position: absolute;
+    top: -40px;
+    left: -4px;
+    background: #EFEFEF;
+    display: inline-block;
+    color: #009fd7;
+    font-size: 1.3em;
+}
+/**********Formulario ePass************/
+
+@media screen and (max-width: 1010px) {
+	.contenedorComponenteCuadroFlecha,.contenedorComponenteFormularioEpass
+	{
+		padding: 1em 0em;
+	}
+	.contenidoAfiliate
+	{
+		padding: 1em 1em;
+	}
+
+}
+.btn-enviar{
+  float: right;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 15em;
+    background: #CEDF00;
+    color: #464343;
+}
+.contenidoContactanos{
+    padding-left: 15%;
+    padding-right: 17%;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+.center-label{
+    margin-top: -1em;
+}
+.titulo-contactanos{
+  text-align: center;
+  color:#05AADD;
+  font-size: 2em;
+}
+.textarea-contactanos{
+  font-size:14px;
+  height: 100px; 
+}
+@media screen and (max-width: 1000px) {
+  .contenidoContactanos
+  {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .center-label{
+    margin-top: 0em;
+  }
+  .titulo-Naranja
+  {
+    font-size: 2em;
+  }
+  .flechaConCss i
+  {
+    font-size: 4em;
+  }
+
+}
+.btn_siguientePaso > button:after
+{
+    content: " >";
+    font-weight: bold;
+    margin-left: 1em;
+    position: absolute;
+    font-size: 1.5em;
+    top: 3px;
+}
+.disabled-style {
+    background: #757873;
+    color: white;
+}
+.titulo-epassFlecha-paso1
+{
+  
+}
+.top2
+{
+  margin-top: 2em;
+}
+.titulo-vehiculos
+{
+  font-size: 1.3em;
+}
+.botoneras
+{
+  padding: 0em 2em;
+}
+#vehiculo2,#vehiculo3
+{
+  display: none;
+}
+@-moz-keyframes animationCerrarVehiculo {
+
+  50% {
+    color: #0094c7;
+  }
+  
+}
+@-webkit-keyframes animationCerrarVehiculo {
+
+  50% {
+    color: #0094c7;
+  }
+
+}
+@-o-keyframes animationCerrarVehiculo {
+
+  50% {
+    color: #0094c7;
+  }
+
+}
+@keyframes animationCerrarVehiculo {
+
+  50% {
+    color: #0094c7;
+  }
+}
+.cerrarVehiculo
+{
+ color: #d9534f; 
+}
+#cerrarVehiculo2 > i:hover,#cerrarVehiculo3>i:hover
+{
+  animation: animationCerrarVehiculo 1s infinite;
+}
+#agregarOtroVehiculo
+{
+  background: #05AADD;
+}
+.cerrarVehiculo
+{
+    position: absolute;
+    top: -5px;
+    right: 4px;
+    font-size: 2em;
+    cursor: pointer;
+}
+.error_metodo_pago
+{
+  display: none;
+}
+#contadorVehiculos
+{
+  text-align: center;
+
+  font-size: 40px;
+  color: #327D94;
+}
+.btn-aumentarVehiculo
+{
+  text-align: center;
+}
+.btn-add-car
+{
+  margin-top: 0em;
+}
+.top2em
+{
+  margin-top: 2em;
+}
+.txt-fact
+{
+  font-size: 13px;
+  margin-top: 1em;
+}

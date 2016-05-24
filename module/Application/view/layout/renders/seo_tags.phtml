@@ -1,0 +1,9 @@
+<?php
+    $nameRoute = $this->currentRoute()->getRoute();
+    $tags = $this->seoConfig($nameRoute);
+?>
+<meta name="keywords" content="<?= $tags['keywords'] ?>">
+<meta name="description" content="<?= $tags['description'] ?>">
+<meta name="robots" content="index,follow">
+<link rel="author" href="humans.txt" />
+<title><?= $tags['title'] ?></title>

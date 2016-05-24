@@ -1,0 +1,345 @@
+input[type="text"],select,textarea
+{
+    width: 100% !important;
+    outline:none;
+}
+.contenedorRela
+{
+  position: relative;  
+}
+.TituloAsep,.contenedorRela,.contenedor-formulario
+{
+  font-family: Gotham-Light;
+}
+.contenedor-formulario,.contenedorRela
+{
+  background: #E8E8E8;
+  font-size: 1.1em;
+}
+.texto_reclamaciones
+{
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+.contenedor-formulario
+{
+  padding: 1em 8% 2em 8%;
+}
+.linea_reclamo
+{
+  border-bottom: 1px solid #757873;
+  margin-left:2em;
+  width:14em;
+}
+.fechaReclamaciones
+{
+  position: absolute;
+  right:32px;
+  top: 32px;
+}
+.inline-blockh
+{
+  display: inline-block;
+  vertical-align: bottom;
+}
+.contenedorRela
+{
+  padding: 2em;
+}
+/************titulo asep*****************/
+.TituloAsep {
+  background: #2ca7df;
+  width: 100%;
+  padding: 0.5em 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+@media screen and (max-width: 453px) {
+  .TituloAsep {
+    font-size: 2em;
+  }
+  .contenedor-formulario
+  {
+      padding: 1em 4px;
+  }
+}
+/************titulo asep*****************/
+/****************reclamaciones e-pass************/
+.fwbold
+{
+  font-weight: bold;
+}
+label,.spanEncima,.spanRadio {
+  font-weight: bold;
+}
+textarea {
+  resize: none;
+}
+.textarea {
+  height: 6em;
+  padding-left: 1em;
+}
+.formularioPersonaNatural {
+  margin-top: 1em;
+}
+.paddingTD {
+  padding-top: 2em;
+  padding-bottom: 0.3em;
+  padding-left: 1.2em;
+}
+.letraChica {
+  font-size: 0.8em;
+}
+.marg1 {
+  margin-left: 1em;
+}
+.colorCeleste {
+  color: #05aadd;
+}
+input[type="radio"] {
+  cursor: pointer;
+}
+.radiosSelectores {
+  position: relative;
+  top: 27%;
+  left: 1.3%;
+  z-index: 9;
+}
+.formularioEmpresa {
+  display: none;
+}
+.spanRadio {
+  margin-left: 1em;
+  color: #05aadd;
+}
+.contenedorFormularioEpass {
+  padding: 2em 1em;
+  border: 1px solid #B8BBB6;
+  border-radius: 5px;
+  padding-bottom: 1em;
+}
+.subContenedorFormularioEpass {
+  padding: 1em;
+  border: 1px solid #B8BBB6;
+  position: relative;
+  border-radius: 5px;
+}
+.spanEpass {
+  color: #05aadd;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.spanEncima {
+  color: #05aadd;
+  position: absolute;
+  top: -12px;
+  background: #E8E8E8
+}
+.color_fondo {
+  color: #fff;
+}
+.bloqueInput input {
+  font-size: 1em;
+  padding: 0.4em 1em;
+}
+.spanEpass,
+.imputEpass {
+  display: inline-block;
+  vertical-align: middle;
+}
+.bloqueInput label {
+  margin-bottom: 0px;
+  padding: 0.3em;
+  font-weight: normal;
+}
+.top10px {
+  margin-top: 10px;
+}
+.selectpicker {
+      padding: 0.4em 0.4em;
+    background: #fff;
+    color: #757873;
+}
+.slSinMarg {
+  margin-left: -4px;
+}
+.clear {
+  clear: both;
+}
+.sinpad {
+  padding-left: 0;
+  padding-right: 0;
+}
+.asteridcoValidaciones {
+  text-align: right;
+  color: #E8E8E8;
+  position: relative;
+  top: 10px;
+}
+.relative35 {
+  text-align: right;
+  color: #E8E8E8;
+  position: relative;
+  top: 35px;
+}
+.top3em {
+  margin-top: 3em;
+}
+.cont_check {
+  padding: 0em;
+  padding-left: 2em;
+  color: #757873;
+  border: none;
+}
+.spanCheck {
+  width: 88%;
+  font-weight: normal;
+}
+.marg {
+  margin-left: 1em;
+  font-size: 0.9em;
+}
+.cont_check a {
+  font-size: 0.9em;
+  color: #757873;
+  text-decoration: underline;
+}
+.inline-blockTop {
+  display: inline-block;
+  vertical-align: top;
+}
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn_siguientePaso {
+  text-align: right;
+  padding: 1em 2em 1em 0em;
+  margin-top: 1em;
+}
+.btn_siguientePaso a:hover {
+  animation: animationButton 1s infinite;
+}
+.btn_siguientePaso a {
+  text-decoration: none;
+  background: #cedf00;
+  padding: 1em 3em;
+  border-radius: 11px;
+  cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+  .slSinMarg {
+    margin-left: 0px;
+  }
+  .marg {
+    margin-left: 0px;
+  }
+  .span_check {
+    width: 90%;
+    margin-left: 1em;
+  }
+  .btn_siguientePaso {
+    margin-top: 1em;
+  }
+  .asteridcoValidaciones {
+    top: 40px;
+    margin-top: -2em;
+  }
+}
+@-moz-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+  100% {
+    background: #333;
+  }
+}
+@-webkit-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+  100% {
+    background: #333;
+  }
+}
+@-o-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+  100% {
+    background: #333;
+  }
+}
+@keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+    color:white;
+  }
+  100% {
+    background: #333;
+  }
+}
+/****************reclamaciones e-pass************/
+.radioSelectedCliente label {
+    display: inline-block;
+    vertical-align: top;
+    color: #05aadd;
+    font-weight: normal;
+}
+.radioSelectedCliente label:nth-child(2)
+{
+  margin-left: 2em;
+}
+.radioSelectedCliente label > input
+{
+  margin-right: 1em;
+}
+.btn_siguientePaso > input[type="submit"]
+{
+  padding: 0.3em 4em;
+    border: none;
+    outline: none;
+    background: #CEDF00;
+    border-radius: 4px;
+}
+.btn_siguientePaso > input[type="submit"]:hover
+{
+  animation: animationButton 1s infinite;
+}
+.contenedorRadioReclamacion > label
+{
+  display: block;
+  color: #05aadd;
+}
+.contenedorRadioReclamacion > label >input[type="radio"]
+{
+  margin-right: 1em;
+}
+.contenedor-terminos-y-condiciones {
+    padding: 4em 12% 2em 12%;
+    font-size: 1.2em;
+    color: #524F4F;
+}
+.posit-Epass-Container{
+  display: none;
+}

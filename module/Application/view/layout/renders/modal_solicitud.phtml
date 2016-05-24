@@ -1,0 +1,92 @@
+<!-- Modal -->
+<?php if(isset($this->formSolicitud)){?>
+<div class="modal fade modal-fondo" id="modal_solicitud" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog top-modal-login-container" role="document">
+    <div class="modal-content modal-70 bg-transparent">
+      <div class="modal-header modal_post_pago_consulta_header modal-radius-top">
+        <button id="btn-cerrar-limpiar-email-plan-individual" type="button" class="close close-modal-flotante " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title txtalgn-center" id="myModalLabel">
+            <img class="logo_login" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-radius-bottom modal-body modal_recuperar_contrasenia_descripcion full-zkte-mod">
+          <?php
+              $form = $this->formSolicitud;
+              $form->prepare();
+              $form->setAttribute('id', 'form-crear-solicitud');
+              echo $this->form()->openTag($form);
+          ?>
+          
+          <div class="form-group">
+              <label for="">Tema</label>
+              <select id="req_theme" name="req_theme" class="col-md-12 imputEpass selectpicker required  form-control" type="text" required>
+                  <option value="">Seleccione un tema</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label for="">Subtema</label>
+              <select type="text" name="req_subtheme" id="req_subtheme" class="col-md-12 imputEpass selectpicker required  form-control" required>
+                  <option value="">Seleccione Subtema</option>
+              </select>
+          </div>
+
+          <?php
+              $text = $form->get('theme');
+              $text->setAttribute('type', 'hidden');
+              $text->setAttribute('id', 'theme');
+              echo $this->formRow($text);
+          ?>
+
+          <div class="form-group">
+              <label for="">Asunto</label>
+              <?php
+                  $subject = $form->get('subject');
+                  $subject->setAttribute('required', 'required');
+                  $subject->setAttribute('class', 'col-md-12 imputEpass required form-control');
+                  echo $this->formRow($subject);
+                  echo $this->formElementerrors($subject);
+              ?>
+          </div>
+
+          <div class="form-group">
+              <label for="">Observaciones</label>
+              <?php
+                  $body = $form->get('body');
+                  $body->setAttribute('required', 'required');
+                  $body->setAttribute('class', 'col-md-12 imputEpass required form-control');
+                  echo $this->formRow($body);
+                  echo $this->formElementerrors($body);
+              ?>
+                        <br>
+          </div>
+
+          <?php
+              $formatName = ucwords($this->userData->name . ' ' .  $this->userData->lastname);
+
+              $name = $form->get('name');
+              $name->setValue($formatName);
+              $name->setAttribute('type', 'hidden');
+              echo $this->formRow($name);
+              echo $this->formElementerrors($name);
+          ?>
+
+          <?php
+              $email = $form->get('email');
+              $email->setValue($this->userData->email);
+              $email->setAttribute('type', 'hidden');
+              echo $this->formRow($email);
+              echo $this->formElementerrors($email);
+          ?>
+          <?php
+              $submit = $form->get('submit');
+              $submit->setAttribute('class', 'btn btn-modal');
+              echo $this->formRow($submit);
+          ?>
+
+          <?= $this->form()->closeTag(); ?>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>

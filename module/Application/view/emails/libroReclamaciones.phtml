@@ -1,0 +1,121 @@
+<style >
+    td{
+
+    margin: 15px;
+    padding: 8px;	
+    }
+</style>
+<div class="contenedor" style="width: 500px;
+    border:2px solid #05AADD;
+    padding:2em;
+    margin:0 auto;
+    font-size: 12px;
+    font-family: 'Arial';
+    color:#333333">
+<div class="div-img" style="text-align: center;">
+    <img src="<?=$this->view->linkCdn('/img/epass.png');?>" class="img" style="width: 100px">
+</div>
+<div class="body-mensaje" style="padding:1em;">
+
+
+            <table border="1" style="border-collapse: collapse;width: 100%;font-size: 14px;margin-bottom: 10px;line-height: 20px;">
+                    <thead style="background: #05AADD;color: white;">
+                            <th colspan="4" style="text-align: center ">Datos del Cliente</th>
+                    </thead>
+                    <tbody>
+                            <?php if($this->consumer_type == "natural") {?>
+                            <tr>
+                                    <td style="font-weight: bold">Tipo de consumidor</td>
+                                    <td> <?php echo $this->consumer_type ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Nombres</td>
+                                    <td> <?php echo $this->first_name ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Apellidos</td>
+                                    <td> <?php echo $this->last_name ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Tipo de documento</td>
+                                    <td> <?php echo $this->document_type ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Número de documento</td>
+                                    <td> <?php echo $this->document_number ?></td>
+                            </tr>
+                            <?php }else{?>
+                                <tr>
+                                    <td style="font-weight: bold">Empresa</td>
+                                    <td> <?php echo $this->company ?></td>
+                                </tr>
+                                <tr>
+                                        <td style="font-weight: bold">Razon social</td>
+                                        <td> <?php echo $this->business_name ?></td>
+                                </tr>
+                                <tr>
+                                        <td style="font-weight: bold">Ruc</td>
+                                        <td> <?php echo $this->ruc ?></td>
+                                </tr>
+                            <?php }?>
+                            <tr>
+                                    <td style="font-weight: bold">Telefono fijo</td>
+                                    <td> <?php echo $this->home_phone ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Celular</td>
+                                    <td> <?php echo $this->mobile_phone ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Email</td>
+                                    <td> <?php echo $this->email ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Departamento</td>
+                                    <td> <?php echo $this->address_1 ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Provincia</td>
+                                    <td> <?php echo $this->address_2 ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Distrito</td>
+                                    <td> <?php echo $this->address_3 ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Dirección</td>
+                                    <td> <?php echo $this->address_4 ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Referencia</td>
+                                    <td> <?php echo $this->address_5 ?></td>
+                            </tr>
+                    </tbody>
+            </table>
+            <table border="1" style="border-collapse: collapse;width: 100%;font-size: 14px;margin-bottom: 50px;line-height: 20px;">
+                    <thead style="background: #05AADD;color: white;">
+                            <th colspan="4" style="text-align: center ">Datos de Reclamación</th>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                    <td style="font-weight: bold">Tipo</td>
+                                    <td> <?php echo $this->type ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Descripcion del servicio</td>
+                                    <td> <?php echo $this->description ?></td>
+                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">Detalle de reclamo o queja</td>
+                                    <td> <?php echo $this->detail ?></td>
+                            </tr>
+                            <?php if($this->acceptterms){ ?>
+                            <tr>
+                                    <td> Declaro ser el usuario del servicio y acepto el contenido del presente formulario manifestando bajo declaración jurada la veracidad de los hechos descritos. </td>
+                            </tr>
+                            <?php } ?>
+                    </tbody>
+            </table>
+
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<?php  $this->headLink()
+    ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+?>
+<?php  $this->inlineScript()
+    ->prependFile($this->linkCdn('/js/afiliate/afiliate.js'));
+?>
+<?php
+$pago = $this->dataPago;
+$class = ($pago['isEmpresa']) ? '' : 'disabled-input';
+?>
+<form name="frmPago" id="form_pago_deybe" method="post" action="/application/pasarela/generate">
+<div class="contenidoAfiliate">
+    <div class="titulo">Afiliación</div>
+    <p class="letraAfiliate">
+        Para obtener nuestro servicio, sólo tiene que completar el siguiente formulario. Una vez que termine el proceso de afiliación, en un plazo no mayor de 72 horas recibirá su <i class=italic>e-pass</i>.
+    </p>
+    <div class="contenedorComponenteCuadroFlecha">
+        <!--************** publicidad epassFlecha **************//-->
+        <div class="ContenedorCuadroFlecha">
+            <div class="titulo-epassFlecha">Paquete Seleccionado</div>
+            <div class="contenedorPubli">
+                <div class="titulo-Naranja"><?php if($pago['title'] == 'Pre-Pago') {echo 'Plan ';}else {echo 'Cuenta ';}?><?php echo $pago['title']; ?></div>
+                <div class="flechaConCss"><i class="fa fa-long-arrow-right"></i></div>
+                <div class="titulo-Naranja">Paquete de S/. <?php echo $pago['costoTotal']; ?> </div>
+            </div>
+        </div>
+        <!--************** publicidad epassFlecha **************//-->
+    </div>
+    <div class="contenedorComponenteFormularioEpass">
+        <!--************** formulario ePass **************//-->
+        <div class="contenedorFormularioEpass">
+            <div class="subContenedorFormularioEpass cont_check">
+
+                <div class="row">
+                    <div class="span-metodo-de-pago">Método Pago</div>
+                    <div class="span-metodo-de-pago-subtitulo">Eliga el Medio de Pago para realizar la recarga
+                    <span class="error error_metodo_pago"> (Por favor seleccione un método de pago)</span></div>
+                    <div class="row">
+                        <div class=" col-xs-12 col-sm-6 col-md-6">
+                            <span class="label-animation">
+                                <input name="medio_de_pago" value="visa" type="radio" id="tarjeta_visa" class="tarjeta_radio_label">
+                                <label for="tarjeta_visa" class="tarjeta_radio_label">
+                                    <div class="contenedor-img-tarejta">
+                                        <img  class="img_medio_pago" src="<?php echo $this->basePath('static/img/visa2.png') ?>" >
+                                    </div>
+                                    <span class="medio-pago-descripcion">Paga con tu tarjeta VISA</span>
+                                </label>
+                            </span>                            
+                        </div>
+                        <div class=" col-xs-12 col-sm-6 col-md-6 mgtop4">
+                            <span class="label-animation">
+                                <input name="medio_de_pago" value="master" type="radio" id="tarjeta_master_card" class="tarjeta_radio_label">
+                                <label for="tarjeta_master_card" class="tarjeta_radio_label">
+                                    <div class="contenedor-img-tarejta">
+                                        <img  class="img_medio_pago_master_card" src="<?php echo $this->basePath('static/img/master_card.png') ?>" >
+                                    </div>
+                                    <span class="medio-pago-descripcion medio-pago-descripcion-mastercard">Paga con tu tarjeta MasterCard</span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row top-1em">
+                        <div class=" col-xs-12 col-sm-6 col-md-6">
+                            <span class="label-animation">
+                                <input name="medio_de_pago" value="amex" type="radio" id="tarjeta_american_expres" class="tarjeta_radio_label">
+                                <label for="tarjeta_american_expres" class="tarjeta_radio_label">
+                                    <div class="contenedor-img-tarejta">
+                                        <img  class="img_medio_pago_americanexpress" src="<?php echo $this->basePath('static/img/american_express.jpg') ?>" >
+                                    </div>
+                                    <span class="medio-pago-descripcion">Paga con tu tarjeta American Express</span>
+                                </label>
+                            </span>
+                        </div>
+                        <div class=" col-xs-12 col-sm-6 col-md-6 mgtop4">
+                            <span class="label-animation">
+                                <input name="medio_de_pago" value="diners" type="radio" id="tarjeta_diners_club" class="tarjeta_radio_label">
+                                <label for="tarjeta_diners_club" class="tarjeta_radio_label">
+                                    <div class="contenedor-img-tarejta">
+                                        <img  class="img_medio_pago_dinersclub" src="<?php echo $this->basePath('static/img/diners_club.png') ?>">
+                                    </div>
+                                    <span class="medio-pago-descripcion">Paga con tu Diners Club</span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subContenedorFormularioEpass comprobanteContainer"><span class="spanEncima">Datos Fiscales</span>
+                        <div class="row">
+                            <div class="form-inline">
+                                <div class="col-xs-12 col-sm-12 col-md-12 radioSelectedCliente">
+                                        <span>Desde una: </span>
+                                        <?php if($pago['isEmpresa']){?>
+                                            <label>
+                                                <input name="medio_de_pago_dash" type="radio" checked=""  value="factura">Factura
+                                            </label>
+                                        <?php }else{?>
+                                            <label>
+                                                <input name="medio_de_pago_dash" type="radio" checked=""  value="boleta">Boleta
+                                            </label>
+                                            <label>
+                                                <input name="medio_de_pago_dash" type="radio"  value="factura">Factura
+                                            </label>
+                                        <?php }?>
+
+                                    </div>
+                                    
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    <label for="periodo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Ruc :</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-10">
+                                        <input id="comp_ruc" name="comp_ruc"  maxlength="11"  type="text" class="soloNumeros <?=$class?> imputEpass col-md-12" value="<?php echo ($pago['isEmpresa'])?$pago['txtNumDocumento']:''; ?>" >
+                                    </div>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-5 form-group">
+                                    <label for="medio_pago" class="spanEpass col-xs-12 col-sm-12 col-md-4"> Razón Social :</label>
+                                    <div class="col-xs-12 col-sm-12 col-md-8">
+                                        <input id="comp_raz_soc" name="comp_raz_soc"   maxlength="100" type="text" class=" <?=$class?> imputEpass col-md-12" value="<?php echo ($pago['isEmpresa'])?$pago['txtRazonSocial']:''; ?>">
+                                    </div>
+                                </div>
+                                <div class="bloqueInput col-xs-12 col-sm-4 col-md-3 form-group">
+                                    <div class="btn_siguientePaso btn_siguientePaso-modificado col-xs-12 col-sm-6 col-md-3 " >
+                                        <a class="btn-pagar" onclick="validacionPago(event);" >Pagar</a>
+                                    </div>
+                                </div>
+                                <div class="txt-fact col-xs-12 col-sm-12 col-md-12">
+                                            Los Datos de Facturación que has completado serán utilizados para emitir los comprobantes de pago correspondientes. Esta información podrá ser modificada en tu Cuenta. E-pass aplicará dichos cambios a todas las transacciones que realices con el saldo vigente a partir de la modificación.
+                                        </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+    
+    <!--************** formulario ePass **************//-->
+</div>
+</div>
+</form>

@@ -1,0 +1,169 @@
+<?php
+
+$environment = 'dev';
+$mongoEnvironment = 'dev';
+
+$db = array(
+    'pro' => array(
+        'hostname' => '',
+        'database' => '',
+        'username' => '',
+        'password' => '',
+        'port' => '',
+    ),
+    'dev' => array(
+        'hostname' => '10.128.0.4', // ip-interno: 10.128.0.4 ip-extreno: 104.197.247.250
+        'database' => 'db_epass_dev',
+        'username' => 'u_epass_dev',
+        'password' => 'aewusee7Oogeej',
+        'port' => '3306',
+    ),
+    'local' => array(
+        'hostname' => '127.0.0.1',
+        'database' => 'epass',
+        'username' => 'root',
+        'password' => 'root',
+        'port' => '3306',
+    )
+);
+
+$mongo = array(
+    'pro' => array(
+        'dbname' => '',
+        'host' => '',
+        'port' => '',
+        'username' => '',
+        'password' => ''
+    ),
+    'dev' => array(
+        'dbname' => 'mdb_epass_dev',
+        'host' => '10.128.0.4', // ip-interno: 10.128.0.4 ip-extreno: 104.197.247.250
+        'port' => '27017',
+        'username' => 'u_epass_dev',
+        'password' => 'Yuedahziev6aeW',
+    ),
+    'local' => array(
+        'dbname' => 'admin',
+        'host' => '127.0.0.1',
+        'port' => '27017',
+        'username' => '',
+        'password' => '',
+        'connectTimeoutMS' => -1
+    ),
+);
+
+
+return array(
+    'zendesk' => [
+        'subdomain' => 'epass-test',
+        'username'  => 'martin.cruz@clicksandbricks.pe',
+        'token'     => 'vXMTzKG1SVuBysCXVNa2DqgYUegG4pkUIyFBt9Le',
+        'custom_fields' => [
+            'theme' => 30725898,
+            'subtheme' => 30729878
+        ]
+    ],
+    'mpe' => [
+        'url'      => 'http://testcrm.epass.pe/axis2/services/TDLTollSys_WebCRM.wsdl',
+        'location' => 'http://testcrm.epass.pe/axis2/services/TDLTollSys_WebCRM',
+        'option'   => [
+            'encoding' => 'UTF-8'
+        ]
+    ],
+    'memcached' => [
+        'host' => '104.197.247.250',
+        'port' => '11211',
+    ],
+    'db'=> array(
+        'adapters'=>array(
+            'adapter' => array_merge(array(
+                'driver' => 'pdo_mysql',
+                'options' => array('buffer_results' => true),
+                'driver_options' => array(
+                    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'utf8\''
+                )
+            ),$db[$environment]),
+            'adapter2' => array(
+                'driver'         => 'Pdo',
+                'dsn'            => 'dblib:host=mpe;dbname=TOLLMPE',
+                'charset'        =>  'UTF-8',
+                'username'       => 'u_mpe_dev',
+                'password'       => 'eiJah6eD5pee1t',
+                'pdotype'        => 'dblib',
+            ),
+        )
+    ),
+
+
+    'mongodb' => array(
+        'db' => $mongo[$mongoEnvironment]
+    ),
+    'service_manager' => array(
+        'factories' => array(
+            'Zend\Db\Adapter\Adapter' => function ($sm) use ($db, $environment) {
+                $adapter = new BjyProfiler\Db\Adapter\ProfilingAdapter(array(
+                    'driver'    => 'pdo_mysql',
+                    'dsn'       => 'mysql:dbname='.$db[$environment]['database'].';host='.$db[$environment]['hostname'],
+                    'database'  => $db[$environment]['database'],
+                    'username'  => $db[$environment]['username'],
+                    'password'  => $db[$environment]['password'],
+                    'hostname'  => $db[$environment]['hostname'],
+                ));
+
+                if (php_sapi_name() == 'cli') {
+                    $logger = new Zend\Log\Logger();
+                    // write queries profiling info to stdout in CLI mode
+                    $writer = new Zend\Log\Writer\Stream('php://output');
+                    $logger->addWriter($writer, Zend\Log\Logger::DEBUG);
+                    $adapter->setProfiler(new BjyProfiler\Db\Profiler\LoggingProfiler($logger));
+                } else {
+                    $adapter->setProfiler(new BjyProfiler\Db\Profiler\Profiler());
+                }
+                if (isset($dbParams['options']) && is_array($dbParams['options'])) {
+                    $options = $dbParams['options'];
+                } else {
+                    $options = array();
+                }
+                $adapter->injectProfilingStatementPrototype($options);
+                return $adapter;
+            },
+        ),
+    ),
+    'mail' => array(
+        'transport' => array(
+            'options' => array(
+                'name' => 'localhost.localdomain',
+                'host' => '10.242.81.156',
+                'port' => 25,
+            ),
+        ),
+        'fromEmail' => 'contacto@epass.pe',
+        'fromName' => 'e-pass',
+        'enabled' => true,
+        'list.allowed' => array(
+            'enabled' => true,
+            'domains' => array(
+                'epass.pe',
+            ),
+            'emails' => array(
+                'vladimir@clicksandbricks.pe',
+                'rgarcia@clicksandbricks.pe',
+                'dchavez@clicksandbricks.pe',
+                'karina.salazar@clicksandbricks.pe',
+                'renzo.tejada@clicksandbricks.pe',
+                'christian.gonzales@clicksandbricks.pe',
+                'jhon.campos@clicksandbricks.pe',
+                'martin.cruz@clicksandbricks.pe',
+                'ronald.cutisaca@clicksandbricks.pe',
+                'cesar.velasquez@clicksandbricks.pe',
+                'daniel.moreno@clicksandbricks.pe',
+                'samuel.marquez@clicksandbricks.pe',
+                'juan.sanchez@clicksandbricks.pe',
+                'aespinoza@clicksandbricks.pe'
+            )
+        ),
+        'dir' => __DIR__ . '/../email',
+        'show_log' => true
+    ),
+
+    );

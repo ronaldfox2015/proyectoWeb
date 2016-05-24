@@ -1,0 +1,132 @@
+<div class="container-fluid">
+    <div class="col-md-3 sinPadding-left sinPadding-right"> 
+        <div class="col-md-12 box-background">
+            <div class="row item">
+                <div class="col-xs-10  col-sm-10 col-md-9">
+                    <p class="title-item">Saldo Disponible</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-3">
+                    <img class="img-responsive" src="<?php echo $this->linkCdn('/img/saldo_disponible.png')?>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="number-item"><span class="supernumber-item">S/.</span> <?= $this->saldo_disponible ?> </p>
+                </div>
+                <div class="col-md-6 sinPadding-left dotted-left">
+                    <a id="tab-recarga-directa" class="link-item cursorPointer" onclick="activeRecargaDirecta()" aria-controls="profile" role="tab" data-toggle="tab">Realizar Recarga</a>
+                    <a id="link-ultimas-recargas" onclick="verResumen()" class="link-item aside-item-active" >Ver Últimas Recargas</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 box-background">
+            <div class="row item">
+                <div class="col-xs-10  col-sm-10 col-md-9">
+                    <p class="title-item">Mis Vehículos</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-3">
+                    <img class="img-responsive" src="<?php echo $this->linkCdn('/img/vehiculos.png') ?>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="number-item"><?= $this->mis_vehiculos ?>  </p>
+                </div>
+                <div class="col-md-6 sinPadding-left dotted-left">
+                    <a class="link-item" href="/mis-vehiculos">Ver Detalle Vehículos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 box-background">
+            <div class="row item">
+                <div class="col-xs-10  col-sm-10 col-md-9">
+                    <p class="title-item">Cuentas Asociadas</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-3">
+                    <img class="img-responsive" src="<?php echo$this->linkCdn('/img/cuentas_asociadas.png') ?>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="number-item"> <?= $this->cuentas_asociadas ?> </p>
+                </div>
+                <div class="col-md-6 sinPadding-left dotted-left">
+                    <a id="link-cuentas-asociadas" class="link-item cursorPointer" onclick="verCuentasAsociadas()">Ver Cuentas  Asociadas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="datos_resumen" class="col-md-4 conPadding-left conPadding-right">
+        <div class="box-background alto-box">
+            <div class="item">
+                <div class="row ">
+                    <div class="col-xs-6  col-sm-4 col-md-5">
+                        <p class="title-item">Datos Principales</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-8 col-md-7">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row content-datos">
+                <?php if (!$this->individual) { ?>
+                    <div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+                        <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-5">Razón Social: </label>
+                        <label for="cuenta" class="col-xs-12 col-sm-12 col-md-7"> <?= $this->plans['txtRazonsocial'] ?></label>
+                    </div>
+                <?php } else { ?>
+                    <div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+                        <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-5">Nombres: </label>
+                        <label for="cuenta" class="col-xs-12 col-sm-12 col-md-7"> <?= $this->name ?> </label>
+                    </div>
+                    <div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+                        <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-5">Apellidos: </label>
+                        <label for="cuenta" class="col-xs-12 col-sm-12 col-md-7"> <?= $this->lastname ?></label>
+                    </div>
+                <?php } ?>
+                <div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+                    <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-5">Tipo Documento: </label>
+                    <label for="cuenta" class="col-xs-12 col-sm-12 col-md-7"> <?= $this->document_type ?> </label>
+                </div>
+                <div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+                    <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-5">Nro Documento: </label>
+                    <label for="cuenta" class="col-xs-12 col-sm-12 col-md-7"> <?= $this->document_number ?> </label>
+                </div>
+                <div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+                    <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-5">Usuario: </label>
+                    <label style="word-wrap:break-word" for="cuenta" class="break-word col-xs-12 col-sm-12 col-md-7"> <?= $this->email ?> </label>
+                </div>
+                <div class="bloqueInput col-xs-6 col-sm-4 col-md-12 form-group">
+                    <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-5">Cuenta: </label>
+                    <label for="cuenta" class="col-xs-12 col-sm-12 col-md-7"> <?php echo $this->session_data_helper()->planTitle?> </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ultimas_recargas_resumen" class="col-md-5 sinPadding-left sinPadding-right">
+        <div class="box-background alto-box">
+            <div class="item">
+                <p class="title-item">Últimas Recargas </p>
+            </div>
+            <br>
+            <table class="table table-center table-size table-responsive table-personalizada datatable">
+                <thead>
+                    <tr>
+                        <th class="td-center">Fecha de Recarga</th>
+                        <th class="td-center">Monto Recargado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->solo_recargas as $key => $v) {
+                    /*foreach ($this->ultimas_recargas as $key => $v) {*/ ?>
+                        <tr>
+                            <td class="td-center"><?= $v['date'] ?></td>
+                            <td class="td-right">S/ <?= number_format($v['req_Amount'],
+                            2, '.', ''); ?> </td>
+                        </tr>
+<?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

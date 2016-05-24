@@ -1,0 +1,100 @@
+<?php   $this->headLink()
+    ->prependStylesheet($this->linkCdn('/css/empresa/empresa.css'))
+?>
+<?php  $this->inlineScript()
+    ->prependFile($this->linkCdn('/js/empresa/empresa.js'));
+?>
+
+<div class="titleEnPersona" id="href_planes_prepago">
+    ¿Qué paquete deseas Recargar?
+</div>
+
+<div class="col-md-12 ">
+    <div class="hidden-xs col-sm-1 col-md-1 margencito txtalgnright_flecha_prev ">
+        <a class="btn prevRecarga">
+            <i class="fa fa-angle-left flechaSlider flechaSlider-left span-color-orange"></i>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 separate">
+        <div id="demo">
+            <div class="row">
+                <div class="span12">
+                    <div id="recarga-post-pago" class="owl-carousel">
+                                <?php foreach ($this->paquetes['corporativo'] as $index => $paquete): ?>
+                                    <div class="item">
+                                            <div class="paqueteEpass paqueteEpass-recarga">
+                                                <div class="prepago-red">Pre-Pago</div>
+                                                <div class="paqueteEpass-Titulo"><span>Paquete <?= $index + 1 ?></span></div>
+                                                <div class="contenedorContenido">
+                                                    <div class="paqueteEpass-Contenido">
+
+                                                        <div class="paqueteEpass-Contenido-Precio "><span class="soles">S/.</span>
+                                                            <div class="precio"><span><?= number_format($paquete->total, 2) ?></span><span> *</span></div>
+                                                        </div>
+
+                                                        <div class="paqueteEpass-Contenido-Recarga">
+                                                            <span>Solo Recarga</span>
+                                                        </div>
+
+                                                        <div class="paqueteEpass-Contenido-bloque1  maspadding">
+                                                            <span>Tasa Recarga</span><span class="saldo-monto">S/. <?= number_format($paquete->tasaRecarga, 2) ?></span>
+                                                        </div>
+
+                                                        <div class="paqueteEpass-Contenido-bloque3 sinDashed maspadding">
+                                                            <span>Saldo para Uso</span><span class="saldo-monto"> S/. <?= number_format($paquete->saldoUso, 2) ?></span>
+                                                        </div>
+
+                                                        <div class="paqueteEpass-Contenido-VerMas">
+                                                            <span class="" onclick="recargaEvent()">Recargar</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                <?php endforeach ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden-xs col-sm-1 col-md-1 margencito">
+        <a class="btn nextRecarga">
+            <i class="fa fa-angle-right flechaSlider flechaSlider-right span-color-orange"></i>
+        </a> 
+    </div>
+</div>
+<br>
+<div class="col-xs-12 col-sm-12 col-md-12 margencito">
+    <div class="paqueteEpass paqueteEpass-recarga">
+        <div class="paqueteEpass-TituloPlomo"><span>Paquete</span></div>
+        <div class="contenedorContenidoPlomo">
+            <div class="paqueteEpass-Contenido">
+                <div class="paqueteEpass-Contenido-PrecioPlomo">
+                    <div class="precioPlomo"><span>Post-Pago</span></div>
+                </div>
+                <div class="paqueteEpass-Contenido-RecargaPlomo"><span>Consulta </span><a  data-toggle="modal" data-target="#modal_post_pago_recarga_consulta">aquí </a><span>nuestros Paquetes Post-Pago Empresas que tenemos para ti.</span>
+                </div>
+                <div class="paqueteEpass-Contenido-VerMasPlomo"><span data-toggle="modal" data-target="#modal_post_pago_recarga_consulta">Consultar</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="texto-asterisco">
+    (*) El costo del TAG por vehículo afiliado al contrato será adicionado al monto del paquete elegido y el mismo será cobrado al concluir su afiliación
+</div>
+
+<div class="row col-md-12 publicidadEpass baner_afiliate" >
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="publicidadEpass-Texto">Si no cuentas con el TAG de <i class=italic>e-pass</i>, ¡Qué esperas!</div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 center">
+        <div class="publicidadEpass-Button">
+            <a href="<?php echo $this->url('empresas') ?>">
+                <span>Afíliate Aquí</span>
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

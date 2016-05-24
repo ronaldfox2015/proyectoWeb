@@ -1,0 +1,193 @@
+<header>
+    <nav id="menu_principal" class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-admin" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a id="logo" class="navbar-brand" href="<?php echo '/' ?>">
+                    <img src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-admin"> 
+                <?php // <-- Add this !!
+//                echo $this->navigation('navigation')
+//                        ->menu()
+//                        ->setMinDepth(0)
+//                        ->setMaxDepth(0)
+//                        ->setUlClass('nav navbar-nav navbar-right');
+//                ?>
+             <ul class="nav navbar-nav navbar-left">
+                    <li><a title="Mi Cuenta" href="">Mi Cuenta</a></li>
+                    <li><a title="Reportes" href="">Reportes</a></li>
+                    <li><a title="Mis Vehículos" href="">Mis Vehículos</a></li>
+                    <li><a title="Comprobantes de Pago" href="">Comprobantes de Pago</a></li>
+                    <li class="iniciar_sesion"><a title="Iniciar Sesión" href="">Cerrar Sesión</a></li>
+                    
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+    </nav>
+
+
+</header>
+  <div class="row header-sesion content-bienvenido">
+    <div class="col-xs-12 col-sm-6 col-md-4"> 
+      <p class="header-bienvenido">
+        <span class="span-bienvenido">¡Bienvenido!</span><br>
+        <span class="span-nombre-usuario">Jhon Smith </span>
+      </p>
+
+      <button class="btn btn-orange" data-toggle="modal" data-target="#cambiar_cuenta"> Cambiar Cuenta </button>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-5">
+      <button class="btn btn-recargar-zkte" onclick="activeRecargaDirecta()">
+         <i class="fa fa-refresh"></i> Recargar
+      </button>
+     </div>
+  </div>
+
+
+<div id="cambiar_cuenta" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+          <div class="row padding-modal">
+              <p class="title-mensaje-confirmacion">Cambiar Cuenta</p>
+              <p class=".description-mensaje-confirmacion-izq"> Seleccione la cuenta que desea visualizar </p>
+              <table class="table table-responsive table-personalizada">
+                  <thead>
+                      <tr>
+                          <th>Seleccionar </th>
+                          <th>Cuenta</th>
+                          <th>Tipo</th>
+                          <th>Plan</th>
+                          <th>Paquete</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                            <td class="td-center"><input type="radio" name="dia" value="samuel"/></td>
+                            <td>0.105064</td>
+                            <td>Pre - Pago</td>
+                            <td>Individual</td>
+                            <td>Paquete 1 - S/. 50.00</td>
+                        </tr>
+                        <tr>
+                            <td class="td-center"><input type="radio" name="dia" value="daniel"/></td>
+                            <td>0.105064</td>
+                            <td>Pre - Pago</td>
+                            <td>Individual</td>
+                            <td>Paquete 1 - S/. 50.00</td>
+                        </tr>
+                  </tbody>
+              </table>           
+        </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn  btn-confirmacion" data-toggle="modal" data-target="#caducidad_cuenta" data-dismiss="modal" >Aceptar</button>
+          <button type="button" class="btn  btn-confirmacion" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal confirmacion cuenta-->
+<div class="modal fade confirmacion_popup" id="confirmacion_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body orange-confirmacion">
+            <div class="mensaje-confirmacion">
+              ¿Está seguro que desea acceder a la nueva cuenta seleccionada?
+            </div>
+            <div class="row padding-btn">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <button type="submit" class="col-xs-12 col-sm-12 col-md-12 btn btn-default" data-dismiss="modal">Cancelar</button>
+              </div>
+              <div class="col-xs-6  col-sm-6  col-md-6">
+                <button type="submit" class="col-xs-12 col-sm-12 col-md-12 btn btn-default">Aceptar</button>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal agradecimiento/ envio correo-->
+<div class="modal fade confirmacion_popup" id="agradecimiento_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body lightblue-confirmacion">
+            <div class="mensaje-confirmacion">
+              Se te ha enviado un mail a tu correo <span id="correo">jhonsmithmiller@gmail.com</span> con el enlace para que Actives tu Cuenta de Usuario Web en e-pass.
+            </div>
+            <div class="row padding-btn">
+                <button type="submit" class=" btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal activacion/cuenta-->
+<div class="modal fade confirmacion_popup" id="activacion_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body lightblue-confirmacion">
+            <div class="mensaje-confirmacion">
+              Acabas de realizar la activación de tu Cuenta de Usuario Web en e-pass.
+              Por favor inicia sesión con tu usuario y contraeña que ingresaste en tu registro.
+            </div>
+            <div class="row padding-btn">
+                <button type="submit" class=" btn btn-default" data-dismiss="modal">Iniciar Sesión</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal caducidad de fecha de cuenta-->
+<div class="modal fade confirmacion_popup" id="caducidad_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body lightblue-confirmacion">
+            <div class="mensaje-confirmacion">
+              El proceso de activación de cuenta ha caducado. Deberás realizar nuevamente el proceso solicitándolo <a class="aqui" href="#">Aquí</a>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

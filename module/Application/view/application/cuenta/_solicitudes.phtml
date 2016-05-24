@@ -1,0 +1,75 @@
+
+<div class="contenedor box-padding">
+    <div class="item">
+        <div class="row ">
+            <div class="col-xs-12  col-sm-12 col-md-12">
+                <p class="title-item">Mis Solicitudes</p>
+            </div>
+        </div>
+    </div>
+    <div class="">
+
+        <div class="">
+
+            <div class="form-inline">
+                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                </div>
+                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                </div>
+                <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                    <button class="btn btn-border" onclick="crearSolicitud()"> Crear una Solicitud</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 contenedor-administrador">
+            <table class="table table-width table-size table-personalizada datatable-default">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fecha de Solicitud </th>
+                        <!--<th>Tipo de Solicitud</th>
+                        <th>Requerimiento</th>
+                        <th>Descripción</th>-->
+                        <th>Tema</th>
+                        <th>Subtema</th>
+                        <th>Observaciones</th>
+                        <th>Estado</th>
+                        <th>Fecha de Última <br>Modificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->LisSolicitudes as $solicitud): ?>
+                        <tr>
+                            <td><?= $solicitud['id'] ?></td>
+                            <td><?= date('d/m/Y', strtotime($solicitud['created_at'])) ?></td>
+                            <td><?= $solicitud['theme'] ?></td>
+                            <td><?= $solicitud['subtheme'] ?></td>
+                            <td><?php if(strlen($solicitud['body'])>20){$cont=1;
+                                for($i=0;$i<=strlen($solicitud['body']);$i++){
+                                        if($solicitud['body'][$i]==' '){
+                                            if($cont=='4'){
+                                                $pos=$i;
+                                                break;    
+                                            }
+                                            $cont++;
+                                        }
+
+                                    }?>
+                                <p class="expander"><?php echo substr($solicitud['body'],0,$pos);?><span class="read-more"><a href="#">[...]</a></span><span class="details"><?=substr($solicitud['body'],$pos,strlen($solicitud['body']));?></span>
+                                </p>
+                                <?php }else {
+                                    echo $solicitud['body'];
+                                    } ?>
+                            </td>
+                            <td><?= $solicitud['status'] ?></td>
+                            <td><?= date('d/m/Y', strtotime($solicitud['updated_at'])) ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+<?php echo $this->partial('renders/modal_status_solicitudes'); ?>

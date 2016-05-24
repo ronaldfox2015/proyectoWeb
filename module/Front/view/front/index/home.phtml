@@ -1,0 +1,172 @@
+  <?php  $this->headLink()
+                        ->prependStylesheet($this->linkCdn('/css/component.css'))
+                         ?>
+ <?php  $this->headScript()
+            ->prependFile($this->linkCdn('/js/jquery.cbpFWSlider.min.js'))
+            ->prependFile($this->linkCdn('/js/modernizr.custom.js'))
+            ->prependFile($this->linkCdn('/js/home/clases.js'))
+            ->prependFile($this->linkCdn('/js/home/home.js'))
+        ; ?>
+        
+        
+
+            
+            <div id="cbp-fwslider" class="cbp-fwslider">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="https://epass.pe/rdl/img/slider/1A.jpg" alt="img01" alt="img01"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://epass.pe/rdl/img/slider/1A.jpg" alt="img01" alt="img02"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://epass.pe/rdl/img/slider/1A.jpg" alt="img01" alt="img03"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://epass.pe/rdl/img/slider/1A.jpg" alt="img01" alt="img04"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://epass.pe/rdl/img/slider/1A.jpg" alt="img01" alt="img05"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="lineaVerde"></div>
+
+
+        
+                <div class="col-md-12 sinPaddingRight">
+                    <div class="col-xs-12 col-sm-5 col-md-5">
+                        <div>un cuadro</div>
+                    </div>
+                    <div class=" col-xs-12 col-sm-5 col-md-5 ">
+                        <div>otro cuadro</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-md-2 sinPaddingRight">
+                        <!--************** posit ePass **************//-->
+                        <div class="posit-Epass-Container">
+                          <div class="posit-Epass-Consulta-Oculta">
+                            <div><i class="fa fa-hand-o-down"></i></div>
+                              <div class="posit-Epass-Consulta-Oculta-background">
+                                    <div class="letras-90deg">S</div>
+                                    <div class="letras-90deg">A</div>
+                                    <div class="letras-90deg">T</div>
+                                    <div class="letras-90deg">L</div>
+                                    <div class="letras-90deg">U</div>
+                                    <div class="letras-90deg">S</div>
+                                    <div class="letras-90deg">N</div>
+                                    <div class="letras-90deg">O</div>
+                                    <div class="letras-90deg">C</div>
+                              </div>                    
+                            
+                            
+                          </div>
+                          <div class="posit-Epass">
+                            <div class="posit-Epass-Consulta"> 
+                              <div class="posit-Epass-Titulo"> Consultas</div>
+                              <a href="#" class="infoConsultasHref">
+                                  <div class="posit-Epass-MisSaldos">
+                                    <div class="posit-Epass-titulo">Mis Saldos</div>
+                                    <div class="posit-Epass-MisSaldos-Contenido"><span class="ePass-flecha"><i class="fa fa-angle-right"></i></span><span><i class="fa fa-hand-o-up"></i></span><span class="ePass-flecha"><i class="fa fa-angle-left"></i></span></div>
+                                  </div>
+                              </a>
+                              <a href="#" class="infoConsultasHref">
+                                  <div class="posit-Epass-MisSaldos">
+                                    <div class="posit-Epass-titulo">Mis Datos</div>
+                                    <div class="posit-Epass-MisSaldos-Contenido"><span class="ePass-flecha"><i class="fa fa-angle-right"></i></span><span><i class="fa fa-credit-card"></i></span><span class="ePass-flecha"> <i class="fa fa-angle-left"></i></span></div>
+                                  </div>
+                                </a>
+                              <a href="#" class="infoConsultasHref" data-toggle="modal" data-whatever="recarga" data-target="#loginModal">
+                                  <div class="posit-Epass-MisSaldos">
+                                    <div class="posit-Epass-titulo" >Recargar</div>
+                                    <div class="posit-Epass-MisSaldos-Contenido"><span class="ePass-flecha"><i class="fa fa-angle-right"></i></span><span><i class="fa fa-refresh"></i></span><span class="ePass-flecha"> <i class="fa fa-angle-left">      </i></span></div>
+                                  </div>
+                              </a>
+                              <div class="posit-Epass-Footer">Cerrar</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--************** posit ePass **************//-->
+                    </div>
+                <!-- FLECHITAS -->    
+                </div>
+                <div class="col-md-12">
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="contenedor-FlechaImg">
+                            <img src="<?php echo $this->linkCdn('/img/flecha-verde.jpg') ?>" >
+                        </div>
+                    </div>
+                    <div class=" col-xs-4 col-sm-4 col-md-4 ">
+                        <div class="contenedor-FlechaImg">
+                            <img src="<?php echo $this->linkCdn('/img/flecha-azul.jpg') ?>" >
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="contenedor-FlechaImg">
+                            <img src="<?php echo $this->linkCdn('/img/flecha-naranja.jpg') ?>" >
+                        </div>
+                    </div>
+                   
+                </div>
+                <!-- FIN FLECHITAS -->
+
+                <!-- TITULO ¿QUÉ ES e-Pass? -->
+                <div class="col-md-12 marginFlechitas">
+                    <div class="col-xs-12 col-sm-3 col-md-4">
+                        <div class="backgroundPuntitos"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="preguntaEpassTitulo">¿Qué es e-pass?</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-4">
+                        <div class="backgroundPuntitos"></div>
+                    </div>
+                </div>
+               <!-- Video -->
+                    <div class="col-md-12">
+                        <div class="col-xs-1 col-sm-2 col-md-2">
+                        </div>
+                        <div class="col-xs-12 col-sm-8 col-md-8">
+                             <div class="video-Epass">
+                                <iframe  src="https://www.youtube.com/embed/ZA60FXbFgi8" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-xs-1 col-sm-2 col-md-2">
+                        </div>
+                    </div>
+                <!-- Video -->
+                    
+                
+                
+           
+        
+        
+        <script>
+            $( function() {
+                /*
+                - how to call the plugin:
+                $( selector ).cbpFWSlider( [options] );
+                - options:
+                {
+                    // default transition speed (ms)
+                    speed : 500,
+                    // default transition easing
+                    easing : 'ease'
+                }
+                - destroy:
+                $( selector ).cbpFWSlider( 'destroy' );
+                */
+
+                $( '#cbp-fwslider' ).cbpFWSlider();
+
+            } );
+        </script>

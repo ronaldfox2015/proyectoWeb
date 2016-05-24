@@ -1,0 +1,10 @@
+<div class="">
+    <?php
+    if(!$this->currentRoute()->matchRoute('cuenta')){
+        echo $this->flashMessenger()->renderCurrent('error', array('alert', 'alert-danger'));
+        echo $this->flashMessenger()->renderCurrent('success', array('alert', 'alert-success'));
+    }
+    echo $this->flashMessenger()->renderCurrent('warning', array('alert', 'alert-warning'));
+    echo $this->flashMessenger()->renderCurrent('default', array('alert', 'alert-info'));
+    ?>
+</div>

@@ -1,0 +1,79 @@
+<style >
+		td{
+
+		margin: 15px;
+  		padding: 8px;
+		}
+	</style>
+		<div class="contenedor" style="width: 500px;
+			border:2px solid #05AADD;
+			padding:2em;
+			margin:0 auto;
+			font-size: 12px;
+			font-family: 'Arial';
+			color:#333333">
+		<div class="div-img" style="text-align: center;">
+			<img src="<?=$this->view->linkCdn('/img/epass.png');?>" class="img" style="width: 100px">
+		</div>
+		<div class="body-mensaje" style="padding:1em;">
+			<div class="bienvenido">
+				<h3 style="color:#333333">Estimado Cliente </h3>
+			</div>
+			<div class="descripcion-cuerpo" style="font-size: 1.1em;
+    			line-height: 1.7em;
+    			color: #3C3B3B;">
+				<p>
+					Muchas gracias por afiliarte al Plan <span><?php echo $this->plan; ?> </span>en e-pass. Te brindamos los datos del proceso de afiliación que has realizado.
+				</p>
+				<table border="1" style="border-collapse: collapse;width: 100%;font-size: 14px;margin-bottom: 10px;line-height: 20px;">
+					<thead style="background: #05AADD;color: white;">
+						<th colspan="4" style="text-align: center ">Datos del Plan</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="font-weight: bold">Plan</td>
+							<td><?php echo $this->plan; ?></td>
+							<td style="font-weight: bold">Monto</td>
+							<td ><?php echo $this->monto; ?></td>
+						</tr>
+						<tr>
+							<td style="font-weight: bold">Número de Contrato</td>
+							<td><?php echo $this->contrato; ?></td>
+							<td style="font-weight: bold">Número de Transacción</td>
+							<td ><?php echo $this->transaccion; ?></td>
+						</tr>
+						<tr>
+							<td style="font-weight: bold">Tipo de Pago</td>
+							<td><?php echo $this->tarjeta; ?></td>
+							<td style="font-weight: bold">Fecha</td>
+							<td ><?php echo $this->day ?></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table border="1" style="border-collapse: collapse;width: 100%;font-size: 14px;margin-bottom: 10px;line-height: 20px;">
+					<thead style="background: #05AADD;color: white;">
+						<th colspan="4" style="text-align: center ">Datos del Cliente</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="font-weight: bold">Nombre y Apellidos</td>
+							<td><?php echo $this->nombre; ?></td>
+						</tr>
+						<tr>
+							<td style="font-weight: bold">Tipo de Documento</td>
+							<td><?php echo $this->tipo_documento; ?></td>
+						</tr>
+						<tr>
+							<td style="font-weight: bold">Número</td>
+							<td><?php echo $this->numero_documento; ?></td>
+						</tr>
+					</tbody>
+				</table>
+				<p style="margin-bottom: 50px;">No olvides que cuando obtengas tu TAG deberás seguir las siguientes instrucciones de uso: <a style="color: #009fe3;text-decoration: underline;" href="<?php echo $this->url .'/como-poner-tu-epass'; ?>">¿cómo colocar tu epass?</a></p>
+
+				<p style="font-size: 10px;padding-top: 10px;border-top: 3px solid gray;">	Este correo fue enviado de manera automática. Si no realizaste esta operación por favor envíanos un mensaje a atencionalcliente@epass.pes
+				</p>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,215 @@
+  <?php  $this->headLink()
+                        ->prependStylesheet($this->linkCdn('/css/administrador/micuenta.css'))
+                         ->prependStylesheet($this->linkCdn('/css/administrador/reportes.css'))
+                          ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'))
+                         ?>
+ <?php   ?>
+
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#vehiculos" aria-controls="home" role="tab" data-toggle="tab">Mis Vehículos</a></li>
+        </ul>
+
+      <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="vehiculos">
+                <div class="contenedor">
+                    <div>
+                        <span class="title-administrador">Mis Vehículos</span>
+                    </div>
+                    <div class="contenedor-administrador">
+                        <span class="descripcion-administrador">En esta sección podrá visualizar los vehículos asociados</span> 
+                    </div>
+                    <div class="contenedor-administrador">
+                        <div class="subContenedorFormularioEpass"><span class="spanEncima">Criterios de Búsqueda</span>
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-4">Cuenta: </label>
+                                          <input id="cuenta" name="cuenta" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-4">Placa: </label>
+                                          <input id="placa" name="placa" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="tag" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tag: </label>
+                                          <input id="tag" name="tag" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="estado" class="spanEpass col-xs-12 col-sm-12 col-md-4">Estado :</label>
+                                        <select id="estado" name="estado" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                            <option>Seleccione</option>
+                                        </select>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="marca" class="spanEpass col-xs-12 col-sm-12 col-md-4">Marca :</label>
+                                        <input id="marca" name="marca" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <label for="modelo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Modelo :</label>
+                                        <input id="modelo" type="text" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                                    </div>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                    </div>
+                                    <div class="bloqueInput col-xs-12 col-sm-4 col-md-4 form-group">
+                                        <button class="btn btn-buscar"> Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-administrador">
+                        <div class="subContenedorFormularioEpass"><span class="spanEncima">Resultados de la Búsqueda</span>
+                            <div class="contenedorInputsEpass">
+                                <table class="table table-responsive table-personalizada">
+                                    <thead>
+                                        <tr>
+                                            <th>Editar </th>
+                                            <th>Cuenta </th>
+                                            <th>Placa</th>
+                                            <th>Tag</th>
+                                            <th>Estado Actual</th>
+                                            <th>Marca</th>
+                                            <th>Modelo</th>
+                                            <th>Color</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="td-center title-item">
+                                                <i data-toggle="modal" data-target="#editar_vehiculo" class="fa fa-pencil"></i>
+                                            </td>
+                                            <td>00.105064</td>
+                                            <td>00.105064</td>
+                                            <td>989999</td>
+                                            <td>Vehículo con Tag</td>
+                                            <td>Toyota</td>
+                                            <td>Punto</td>
+                                            <td>Gris</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-center title-item">
+                                                <i data-toggle="modal" data-target="#editar_vehiculo" class="fa fa-pencil"></i>
+                                            </td>
+                                            <td>00.105064</td>
+                                            <td>00.105064</td>
+                                            <td>989999</td>
+                                            <td>Vehículo con Tag</td>
+                                            <td>Toyota</td>
+                                            <td>Punto</td>
+                                            <td>Negro</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-center title-item">
+                                                <i data-toggle="modal" data-target="#editar_vehiculo" class="fa fa-pencil"></i>
+                                            </td>
+                                            <td>00.105064</td>
+                                            <td>00.105064</td>
+                                            <td>989999</td>
+                                            <td>Vehículo con Tag</td>
+                                            <td>Toyota</td>
+                                            <td>Punto</td>
+                                            <td>Blanco</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="editar_vehiculo" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <div class="subContenedorFormularioEpass"><span class="spanEncima">Edición de Vehículo</span>
+                <div class="row">
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="cuenta" class="spanEpass col-xs-12 col-sm-12 col-md-4">Cuenta :</label>
+                            <input id="cuenta" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="placa" class="spanEpass col-xs-12 col-sm-12 col-md-4">Placa:</label>
+                            <input id="placa" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="tag" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tag :</label>
+                            <input id="tag" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="estado" class="spanEpass col-xs-12 col-sm-12 col-md-4">Estado:</label>
+                            <input id="estado" type="text" class="disabled-input imputEpass col-xs-12 col-sm-12 col-md-8"/>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="marca" class="spanEpass col-xs-12 col-sm-12 col-md-4">Marca :</label>
+                            <select id="marca"  class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                <option>Seleccione</option>
+                            </select>
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="modelo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Modelo:</label>
+                            <select id="modelo"  class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                <option>Seleccione</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-inline separate">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="color" class="spanEpass col-xs-12 col-sm-12 col-md-4">Color :</label>
+                            <select id="color"  class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+                                <option>Seleccione</option>
+                            </select>
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-confirmacion" data-toggle="modal" data-target="#mensaje_confirmacion" data-dismiss="modal" >Actualizar</button>
+                        <button type="button" class="btn btn-confirmacion" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="mensaje_confirmacion" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <p class="title-mensaje-confirmacion">Mensaje de Confirmación</p>
+            <p class="description-mensaje-confirmacion"> ¿Está seguro de editar el vehículo con la placa "A41DR" ? </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-confirmacion" data-dismiss="modal">Aceptar</button>
+            <button type="button" class="btn btn-confirmacion" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

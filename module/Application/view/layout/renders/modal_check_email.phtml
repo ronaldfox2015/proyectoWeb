@@ -1,0 +1,25 @@
+<div class="modal fade confirmacion_popup" id="check_email_activacion_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body lightblue-confirmacion">
+            <div class="mensaje-confirmacion">
+              Acabas de realizar la activación de tu Cuenta de Usuario Web en e-pass.
+              Por favor inicia sesión con el usuario y contraseña que ingresaste en tu registro.
+            </div>
+            <div class="row padding-btn">
+                <button type="submit" class=" btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#modal_only_login">Iniciar Sesión</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#check_email_activacion_cuenta').modal('show');
+</script>

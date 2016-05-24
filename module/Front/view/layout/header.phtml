@@ -1,0 +1,66 @@
+<header>
+    <nav id="menu_principal" class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-principal" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a id="logo" class="navbar-brand" href="<?php echo '/' ?>">
+                    <img src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-principal"> 
+                <?php // <-- Add this !!
+//                echo $this->navigation('navigation')
+//                        ->menu()
+//                        ->setMinDepth(0)
+//                        ->setMaxDepth(0)
+//                        ->setUlClass('nav navbar-nav navbar-right');
+//                ?>
+             <ul class="nav navbar-nav navbar-right">
+                    <li><a title="Afiliate" href="">Afiliate</a></li>
+                    <li><a title="Recarga" href="">Recarga</a></li>
+                    <li><a title="Descargar Comprobante" href="<?php echo $this->basePath() ?>/ruta3">Descargar Comprobante</a></li>
+                    <li><a title="Personas" href="<?php echo $this->basePath() ?>/front/index/persona">Personas</a></li>
+                    <li><a title="Empresas" href="<?php echo $this->basePath() ?>/front/index/empresa">Empresas</a></li>
+                    <li class="iniciar_sesion"><a title="Iniciar Sesión" data-toggle="modal" data-whatever="login" data-target="#loginModal" href="">Iniciar Sesión</a></li>
+                    
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    
+    <nav id="menu_secundario" class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-secundario" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-secundario"> 
+             <ul class="nav navbar-nav ">
+                    <li><a title="Inicio" href="<?php echo $this->basePath() ?>/front/index/home">Inicio</a></li>
+                    <li><a title="¿Qué es e-pass?" href="<?php echo $this->basePath() ?>/front/index/quees">¿Qué es e-pass?</a></li>
+                    <li><a title="Beneficios" href="<?php echo $this->basePath() ?>/front/index/beneficios">Beneficios</a></li>
+                    <li><a title="¿Dónde adquirir tu e-pass?" href="<?php echo $this->basePath() ?>/front/index/donde">¿Dónde adquirir tu e-pass?</a></li>
+                    <li><a title="Empresas" href="<?php echo $this->basePath() ?>/front/index/como">¿Cómo colocar tu e-pass?</a></li>
+                    <li><a title="Preguntas Frecuentes" href="<?php echo $this->basePath() ?>/front/index/preguntas">Preguntas Frecuentes</a></li>                    
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+</header>
+
+<?php echo $this->partial('layout/render/login'); ?>

@@ -1,0 +1,243 @@
+<?php  $this->headLink()
+            ->prependStylesheet($this->linkCdn('/css/reclamaciones/reclamaciones.css'))
+?>
+ <?php  $this->headScript()         
+            ->prependFile($this->linkCdn('/js/reclamaciones/reclamaciones.js'))
+        ; ?>
+<!-- titulo asep-->
+<div class="TituloAsep">Libro de Reclamaciones de e-pass</div>
+<div class="contenedorRela">
+	<div class="nroDeReclamo">
+		<div class="inline-blockh">N° Hoja de Reclamaciones</div>
+		<div class="inline-blockh linea_reclamo"></div>
+	</div>
+	<div class="fechaReclamaciones">26/02/16</div>
+</div>
+<div class="contenedor-formulario">
+	<div class="texto_reclamaciones">La atención es únicamente para los reclamos o quejas referentes a los productos o servicios que brinda la empresa a sus clientes</div>
+	<!--************** formulario reclamacionesEpass **************//-->
+	<div class="contenedorFormularioEpass">
+	  <div class="subContenedorFormularioEpass"><span class="spanEncima">Identificación del consumidor reclamante</span>
+	    <div class="contenedorInputsEpass row">
+	      <div class="form-inline moverAquiLosRadios">
+	        <div class="col-xs-12 col-sm-12 col-md-2">
+	          <input type="radio" value="radioPersonaNatural" name="dePrueba" class="radioPersonaNatural radioSelectedCliente"/><span class="spanRadio">Persona Natural</span>
+	        </div>
+	        <div class="col-xs-12 col-sm-12 col-md-2">
+	          <input type="radio" value="radioEmpresa" name="dePrueba" class="radioEmpresa radioSelectedCliente"/><span class="spanRadio">Empresa                </span>
+	          <div class="col-xs-12 col-sm-12 col-md-2"></div>
+	          <div class="col-xs-12 col-sm-12 col-md-2"></div>
+	          <div class="col-xs-12 col-sm-12 col-md-2"></div>
+	          <div class="col-xs-12 col-sm-12 col-md-2"></div>
+	        </div>
+	        <div class="formularioEmpresa">
+	          <div class="form-inline">
+	            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+	            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+	              <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Empresa :</label>
+	              <input id="correo" placeholder="Ingrese nombre de empresa" class="slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker"/>
+	            </div>
+	          </div>
+	          <div class="form-inline">
+	            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+	            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+	              <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Razón Social :</label>
+	              <input id="correo" placeholder="Ingrese razón social" class="slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker"/>
+	            </div>
+	          </div>
+	          <div class="col-xs-12 col-sm-6 col-md-6">
+	            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+	            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	              <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Ruc :</label>
+	              <input id="nombre" type="text" placeholder="Ingrese número de documento" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="formularioPersonaNatural">
+	          <div class="formularioPersonaNaturalAOcultar">
+	            <div class="form-inline clear">                                       
+	              <div class="col-xs-12 col-sm-6 col-md-6">
+	                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+	                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                  <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Nombre Completo :</label>
+	                  <input id="nombre" type="text" placeholder="Ingrese nombre completo" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	                </div>
+	              </div>
+	              <div class="col-xs-12 col-sm-6 col-md-6">
+	                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+	                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                  <label for="apellidos" class="spanEpass col-xs-12 col-sm-12 col-md-4">Apellidos completos :</label>
+	                  <input id="apellidos" type="text" placeholder="Ingrese apellidos completos" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	                </div>
+	              </div>
+	            </div>
+	            <div class="form-inline">
+	              <div class="col-xs-12 col-sm-6 col-md-6">
+	                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+	                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                  <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tipo de Documento :</label>
+	                  <select id="docunento" placeholder="Ingrese nombre completo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+	                    <option>seleccione</option>
+	                    <option>DNI</option>
+	                    <option>RUC</option>
+	                  </select>
+	                </div>
+	              </div>
+	              <div class="col-xs-12 col-sm-6 col-md-6">
+	                <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad">*</div>
+	                <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                  <label for="nro_documento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Nro Documento :</label>
+	                  <input id="nro_documento" type="text" placeholder="Ingrese numero documento" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="form-inline clear">
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Teléfono fijo :</label>
+	                <input id="nombre" type="text" placeholder="Ingrese teléfono fijo" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	              </div>
+	            </div>
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Celular :</label>
+	                <input id="nombre" type="text" placeholder="Ingrese celular" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="form-inline">
+	            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+	            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+	              <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Correo :</label>
+	              <input id="correo" placeholder="Ingrese correo" class="slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker"/>
+	            </div>
+	          </div>
+	          <div class="form-inline">
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*            </div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Departamento :</label>
+	                <select id="docunento" placeholder="Ingrese nombre completo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+	                  <option>seleccione</option>
+	                  <option>DNI</option>
+	                  <option>RUC</option>
+	                </select>
+	              </div>
+	            </div>
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Provincia :</label>
+	                <select id="docunento" placeholder="Ingrese nombre completo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+	                  <option>seleccione</option>
+	                  <option>DNI</option>
+	                  <option>RUC</option>
+	                </select>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="form-inline">
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Distrito :</label>
+	                <select id="docunento" placeholder="Ingrese nombre completo" class="imputEpass col-xs-12 col-sm-12 col-md-8 selectpicker">
+	                  <option>seleccione</option>
+	                  <option>DNI</option>
+	                  <option>RUC</option>
+	                </select>
+	              </div>
+	            </div>
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Calle/ Av/ Jr :</label>
+	                <input id="nombre" type="text" placeholder="Ingrese Calle/ Av/ Jr" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="form-inline">
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Número</label>
+	                <input id="nombre" type="text" placeholder="Ingrese número" class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	              </div>
+	            </div>
+	            <div class="col-xs-12 col-sm-6 col-md-6">
+	              <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones sinpad ">*</div>
+	              <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group sinpad">
+	                <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Dpto/ Int</label>
+	                <input id="nombre" type="text" placeholder="Ingrese Dpt. Int." class="imputEpass col-xs-12 col-sm-12 col-md-8"/>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="form-inline">
+	            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*</div>
+	            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+	              <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Urbanización :</label>
+	              <input id="correo" placeholder="Ingrese urbanización" class="slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker"/>
+	            </div>
+	          </div>
+	          <div class="form-inline"> 
+	            <div class="col-xs-12 col-sm-12 col-md-12 asteridcoValidaciones">*                       </div>
+	            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+	              <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Referencia :</label>
+	              <textarea id="correo" placeholder="Ingrese una referencia" class="slSinMarg imputEpass col-xs-12 col-sm-12 col-md-10 selectpicker"></textarea>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="subContenedorFormularioEpass top3em"><span class="spanEncima">Datos del Reclamación</span>
+	    <div class="contenedorInputsEpass row">         
+	      <div class="form-inline">
+	        <div class="bloqueInput">
+	          <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group"> <span class="colorCeleste fwbold">Tipo</span>
+	            <div class="contenedorRadioReclamacion top10px">
+	              <input type="radio" class="blockTop"/>
+	              <div class="inline-blockTop spanCheck marg1"><span class=" colorCeleste fwbold">Reclamo</span><span class="marg1 colorCeleste letraChica">(Disconformidad relacionada a los productos y/o servicio)</span></div>
+	            </div>
+	            <div class="contenedorRadioReclamacion">
+	              <input type="radio" class="blockTop"/>
+	              <div class="inline-blockTop spanCheck marg1"><span class=" colorCeleste fwbold">Queja</span><span class="marg1 colorCeleste letraChica">(Disconformidad no relacionada a los productos y/o servicios o malestar o descontento a la atención al público)</span></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="form-inline">
+	        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group paddingTD"><span class="colorCeleste fwbold">Area de Atención:</span><span class="marg1">Area de Atención:</span></div>
+	      </div>
+	      <div class="form-inline">
+	        <div class="col-xs-12 col-sm-12 col-md-12 relative35">*</div>
+	        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+	          <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-12">Descripción del servicio :</label>
+	          <textarea placeholder="Ingrese una descripción" class="textarea col-xs-12 col-sm-12 col-md-12"></textarea>
+	        </div>
+	      </div>
+	      <div class="form-inline">
+	        <div class="col-xs-12 col-sm-12 col-md-12 relative35">*</div>
+	        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+	          <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-12">Detalle de reclamo o queja :</label>
+	          <textarea placeholder="Ingrese el detalle de reclamo o queja" class="textarea col-xs-12 col-sm-12 col-md-12"></textarea>
+	        </div>
+	      </div>
+	      <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">                        
+	        <div class="contenedorRadioReclamacion top10px">
+	          <input type="checkbox" class="inline-blockTop"/><span class="marg1 colorCeleste inline-blockTop spanCheck fwbold">Declaro ser el usuario del servicio y acepto el contenido del presente formulario manifetando bajo declaración jurada la veracidad de los hechos descritos                            </span>
+	        </div>
+	        <div class="contenedorRadioReclamacion">
+	          <input type="checkbox" class="inline-blockTop"/><span class="marg1 colorCeleste inline-blockTop spanCheck fwbold">No soy un robot</span>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="btn_siguientePaso"><a href="#">Enviar                       </a></div>
+	</div>
+	<!--************** formulario reclamacionesEpass **************//-->
+</div>
+<!-- titulo asep-->

@@ -1,0 +1,373 @@
+.gota-text-cuenta
+{
+  font-size: 0.7em;
+}
+.pack-epass-bggreen
+{
+  background: #CEDF00 !important;
+}
+.btn
+{
+  padding: 0px;
+}
+.container
+{
+  font-size: 14px !important;
+}
+.txtalgnright_flecha_prev
+{
+  text-align: right;
+}
+@-webkit-keyframes animationFlechasSlide {
+
+  50% {
+    -ms-transform: translate(10px,0px); /* IE 9 */
+    -webkit-transform: translate(10px,0px); /* Safari */
+    transform: translate(10px,0px);
+  }
+ 
+}
+@-o-keyframes animationFlechasSlide {
+ 
+  50% {
+    -ms-transform: translate(10px,0px); /* IE 9 */
+    -webkit-transform: translate(10px,0px); /* Safari */
+    transform: translate(10px,0px);
+  }
+ 
+}
+@keyframes animationFlechasSlide {
+  
+  50% {
+    -ms-transform: translate(10px,0px); /* IE 9 */
+    -webkit-transform: translate(10px,0px); /* Safari */
+    transform: translate(10px,0px);
+  }
+  
+}
+
+
+
+
+@-webkit-keyframes animationFlechasSlideLeft {
+
+  50% {
+    -ms-transform: translate(-10px,0px); /* IE 9 */
+    -webkit-transform: translate(-10px,0px); /* Safari */
+    transform: translate(-10px,0px);
+  }
+ 
+}
+@-o-keyframes animationFlechasSlideLeft {
+ 
+  50% {
+    -ms-transform: translate(-10px,0px); /* IE 9 */
+    -webkit-transform: translate(-10px,0px); /* Safari */
+    transform: translate(-10px,0px);
+  }
+ 
+}
+@keyframes animationFlechasSlideLeft {
+  
+  50% {
+    -ms-transform: translate(-10px,0px); /* IE 9 */
+    -webkit-transform: translate(-10px,0px); /* Safari */
+    transform: translate(-10px,0px);
+  }
+  
+}
+.flechaSlider-right
+{
+  animation: animationFlechasSlide 1s infinite;
+}
+.flechaSlider-left
+{
+  animation: animationFlechasSlideLeft 1s infinite;
+}
+.carousel-control.left,.carousel-control.right
+{
+  background-image: none;
+  height: 2em;
+  margin-top: 230px;
+}
+.margencito
+{
+	margin-bottom: 1em;
+}
+.titleEnPersona
+{
+	text-align: center;
+    color: #757873;
+    font-size: 3.5em;
+    padding: 16px 21%;
+    clear: both;
+}
+.flechaSlider-left
+{
+  position: relative;  
+}
+.flechaSlider-right
+{
+  position: relative;
+}
+.flechaSlider
+{
+  color: #05AADD;
+  font-size: 6em !important;
+  font-weight:bold;
+  position: relative;
+  cursor: pointer;
+  top: 2.5em;
+}
+.dashedLine {
+    border-bottom: 2px dashed #757873;
+    /* height: 4em; */
+    clear: both;
+    padding: 1.5em 0em;
+    margin-bottom: 1.5em;
+}
+.texto-asterisco
+{
+	color: #757873;
+	clear: both;
+	padding-top: 3em;
+	padding-right:4%;
+	padding-left:4%;
+	padding-bottom:0.5em;
+  font-size: 1em;
+}
+
+.publicidadEpass {
+  background: #6f6f6e;
+  padding: 1em 8%;
+  color: #fff;
+}
+.publicidadEpass-Texto {
+  font-size: 2em;
+  text-align: right;
+}
+.publicidadEpass-Button {
+
+}
+.publicidadEpass-Texto,
+.publicidadEpass-Button {
+  display: inline-block;
+  vertical-align: top;
+}
+.publicidadEpass-Button a {
+  text-decoration: none;
+  background: #fff;
+  color: #79788A;
+  padding: 0.5em 1em;
+  border-radius: 16px;
+  font-size: 2em;
+  cursor: pointer;
+  
+}
+@-moz-keyframes animationButtonCeleste {
+
+  50% {
+    background: #2a6496;
+    color: white;
+  }
+ 
+}
+@-webkit-keyframes animationButtonCeleste {
+
+  50% {
+    background: #05AADD;
+    color: white;
+  }
+ 
+}
+@-o-keyframes animationButtonCeleste {
+ 
+  50% {
+    background: #05AADD;
+    color: white;
+  }
+ 
+}
+@keyframes animationButtonCeleste {
+  
+  50% {
+    background: #05AADD;
+    color: white;
+  }
+  
+}
+.publicidadEpass-Button a:hover
+{
+	animation: animationButtonCeleste 1s infinite;
+}
+.publicidadEpass-Button i {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 2em;
+  position: relative;
+  top: 12px;
+}
+footer
+{
+	clear: both;
+}
+
+@media screen and (max-width: 992px) {
+  .publicidadEpass
+  {
+    
+  }
+  .publicidadEpass-Texto
+  {
+    text-align: center ;
+  }
+  .center
+  {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 770px) {
+  .contenedor-gotas-personas
+  {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 650px) {
+  .titleEnPersona
+  {
+    font-size: 2em;
+  }
+  .publicidadEpass-Texto,.publicidadEpass-Button a
+  {
+    font-size: 2em ;
+  }
+  .next
+  {
+    position: relative;
+    right: 30px;
+  }/*
+  .letras-90deg
+  {
+    display: inline-block;
+    vertical-align: top;
+    transform:rotate(0deg) !important;
+  }*/
+
+}
+@media screen and (max-width: 450px) {
+
+  .publicidadEpass-Texto,.publicidadEpass-Button a
+  {
+    font-size: 1.5em ;
+  }
+  .publicidadEpass
+  {
+    height: 11em;
+  }
+
+}
+
+/** pagination slider persona**/
+@media screen and (max-width: 760px) {
+  #plan-familiar .owl-pagination{
+    display:block !important;
+    top: -488px;
+  }
+  #plan-individual .owl-pagination{
+    display:block !important;
+    top: -539px;
+  }
+  #recarga-individual .owl-pagination{
+     display:block !important;
+     top: -389px;
+  }
+  #recarga-familiar .owl-pagination{
+     display:block !important;
+     top: -389px;
+  }
+  
+}
+#plan-individual .owl-pagination{
+  display: none;
+}
+#plan-familiar .owl-pagination{
+  display: none;
+}
+#recarga-familiar .owl-pagination{
+  display: none;
+}
+#recarga-individual .owl-pagination{
+  display: none;
+}
+.owl-pagination {
+    position: relative;
+    top: -57px;
+    text-align: center;
+    height: 0;
+}
+.owl-controls .owl-page, .owl-controls .owl-buttons div {
+    cursor: pointer;
+}
+.owl-page {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #F28B00;
+    margin: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.owl-pagination .active {
+    background: #05AADD;
+    box-shadow: 0 0 0 2px #47a3da;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.title-mensaje-prox{
+    text-align: center;
+    color: #757873;
+    font-size: 2em !important;
+    padding: 0px 20% 40px 20%;
+    clear: both;
+}
+
+@media screen and (max-width: 760px) {
+  .title-mensaje-prox{
+    font-size: 1.5em !important;
+    padding-left:1em;
+    padding-right: 1em; 
+    padding-bottom: 2em;
+  }
+}
+.position-hover{
+    position: relative;
+}
+.background-none{
+  background: none ;
+
+}
+.gota-texto-hover{
+    position: absolute;
+    top: 0;
+    padding-top: 39%;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: white;
+        height: 16.7em;
+    width: 16.65em;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: all ease 0.5s;
+    font-weight: bold;
+    text-shadow: 3px 3px #423e3e;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    text-align: center;
+    line-height: 1.2em;
+}
+.gota-texto-hover:hover
+{
+  opacity: 1;
+}

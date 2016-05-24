@@ -1,0 +1,86 @@
+<!-- Modal -->
+<div class="modal fade modal-fondo" id="modal_only_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog top-modal-login-container" role="document">
+    <div class="modal-content modal-70 bg-transparent">
+      <div class="modal-header modal_post_pago_consulta_header modal-radius-top">
+        <button id="btn-cerrar-limpiar-email-plan-individual" type="button" class="close close-modal-flotante " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title txtalgn-center" id="myModalLabel">
+            <img class="logo_login" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-radius-bottom modal-body modal_recuperar_contrasenia_descripcion full-zkte-mod">
+       <div class="row v-center">
+           
+            <div id="login" class="col-md-10">
+                
+                <div class="alert alert-danger alert-dismissible hidden" role="alert">                  
+                  <div class="alert-message"> </div>
+                </div>
+
+                <h2 class="title-inicia-sesion-modal">Inicia tu Sesión</h2>
+                <h4 class="subtitile-inicio-sesion">El correo ingresado ya se encuentra afiliado en e-pass. Por favor inicie sesión.</h4>
+                <form class="form-login" action="/login" method="POST">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon color-orange" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            <input type="text" class="form-control required email" placeholder="Correo" name="username" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon color-orange"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                            <input type="password" class="form-control required" placeholder=" Contraseña" name="password" >
+                        </div>                  
+                    </div>
+                    <button value="modal_preloader_only_login" type="submit" id="btn-login-preloader" class="btn btn-default btn-cerrar-modal-2 color-orange recarga-tag-show-proload">Ingresar</button>
+                    <label class="recordar-contra">
+                        <input type="checkbox" id="remember" > Recordar mi contraseña
+                    </label>
+                </form>
+
+                
+                <a class="href_modal_olvidelacontra" href="#" data-dismiss="modal" data-toggle="modal" data-target="#recoverPasswordModal" >Olvidé mi contraseña</a>
+            </div>
+           
+           
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="recoverPasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body">
+            <div class="alert alert-danger alert-dismissible hidden" role="alert">
+                  <div class="alert-message"> </div>
+            </div>
+            <h2>Recuperación de Contraseña</h2>
+            <h5>Por favor ingresa tu correo  con el que te registraste</h5>
+            <form id="form-recoverpassword" action="/login/recuperar" method="POST">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                        <input type="text" class="form-control required email" placeholder="Correo" name="username" >
+                    </div>
+                </div>
+                 <button type="submit" class="btn btn-default">Continuar</button>
+             </form>
+            <div class="alert alert-success hidden">
+                <div class="alert-message"></div>
+                <a type="button" href="/" class="btn btn-default">Continuar</a>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

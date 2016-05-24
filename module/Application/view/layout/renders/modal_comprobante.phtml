@@ -1,0 +1,64 @@
+<div class="modal fade" id="modal_comprobante_pago_afiliacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal_comprobante_afilacion_contenedor" role="document">
+    <div class="modal-content border-celeste-modal">
+      <div class="modal-header">
+        <button type="button" class="close btn-x-modal-celeste" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title txtalgn-center" id="myModalLabel">
+            <img class="logo_login" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="border-celeste-modal contenedor-modal-comprobante">
+          <div class="row">
+            <div class="col-md-3">
+                <div class="col-md-12 ltr-stron text-algn-right">
+                    <?php if($this->plan == 'Pre-Pago') {echo 'Plan :';}else { echo 'Cuenta :';}?>
+                  <!--Plan :-->
+                </div>
+                <div class="col-md-12 ltr-stron text-algn-right">
+                  Operación :
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="col-md-12 wid10">
+                  <?php echo $this->plan; ?>
+                </div>
+                <div class="col-md-12 wid10">
+                  <?php echo $this->operacion; ?>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12 ltr-stron text-algn-right">
+                  Fecha :
+                </div>
+                <div class="col-md-12 ltr-stron text-algn-right">
+                  Tipo de Pago :
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-12">
+                  <?php echo $this->day; ?>
+                </div>
+                <div class="col-md-12">
+                  <?php echo $this->tarjeta ?>
+                </div>
+            </div>
+          </div>
+          <div class="ltr-stron txtalgn-center monto-modal">Monto Pagado: S/.<?php echo $this->monto; ?></div>
+          <div class="padModalText">
+              <?php //echo $this->mensaje; ?><br/>
+          </div>
+          <div class="padModalText texto-asterisco-modal">
+            * Este comprobante es informativo y no tiene ningún valor.
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#modal_comprobante_pago_afiliacion').modal('show')
+</script>

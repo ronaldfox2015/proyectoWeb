@@ -1,0 +1,292 @@
+<?php
+$this->headLink()
+        ->prependStylesheet($this->linkCdn('/css/afiliate/afiliate.css'));
+        
+$this->inlineScript()
+        ->prependFile($this->linkCdn('/js/afiliate/afiliate.js'));
+?>
+<?php
+$session = $this->session;
+$class = empty($session->isLoggedUser) ? "" : "disabled-input";
+
+if(empty($session->isLoggedUser) || $session->txtNombreTitular == '') {
+    $class_nombre_titular= '';
+}else {
+    $class_nombre_titular='disabled-input';
+}
+$class_haveApellidosTitular = ($session->offsetExists('haveApellidosTitular') && $session->haveApellidosTitular)? "disabled-input" : "";
+$class_enable_apellidos = ($class_haveApellidosTitular!="") ? "readonly" : "";
+$class_enable = empty($session->isLoggedUser) ? "" : "readonly";
+
+if(empty($session->isLoggedUser) || $session->txtNombreTitular == '') {
+    $class_enable_nombre_titular= '';
+}else {
+    $class_enable_nombre_titular='readonly';
+}
+//Cargar de formulario
+$form = $this->formRegistroAvanzado;
+$form->prepare();
+$form->setAttribute('method', 'post')
+        ->setAttribute('action', '')
+        ->setAttribute('class', 'formulario-afiliate')
+;
+echo $this->form()->openTag($form);
+?>
+<?php
+if($session->radTipo):
+?>
+    <style>
+        .form-venta {
+            display : none;
+        }
+        .form-domicilio{
+            display: block;
+        }
+    </style>
+<?php
+endif;
+?>
+<script type="text/javascript">
+    var idPlan = "<?php echo $session->idPlan; ?>";
+</script>
+
+<div class="contenidoAfiliate">
+    <div class="titulo">Afiliación</div>
+    <p class="letraAfiliate">
+        Para obtener nuestro servicio, sólo tiene que completar el siguiente formulario. Una vez que termine el proceso de afiliación, en un plazo no mayor de 72 horas recibirá su e-pass.
+    </p>
+    <div class="contenedorComponenteCuadroFlecha">
+        <!--************** publicidad epassFlecha **************//-->
+        <div class="ContenedorCuadroFlecha">
+            <div class="titulo-epassFlecha">Paquete Seleccionado</div>
+            <div class="contenedorPubli">
+                <div class="titulo-Naranja">Cuenta <?php echo $session->title; ?></div>
+                <div class="flechaConCss"><i class="fa fa-long-arrow-right"></i></div>
+                <div class="titulo-Naranja">Paquete de  S/. <?php echo $session->costoTotal; ?></div>
+            </div>
+        </div>
+        <!--************** publicidad epassFlecha **************//-->
+    </div>
+    <div class="contenedorComponenteFormularioEpass">
+        <!--************** formulario ePass **************//-->
+        <div class="contenedorFormularioEpass">
+            <div class="subContenedorFormularioEpass"><span class="spanEncima">Datos Personales</span>
+                <div class="contenedorInputsEpass row">
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="nombre" class="spanEpass col-xs-12 col-sm-12 col-md-4">Nombre de Titular :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtNombreTitular")->setAttribute('placeholder', 'Ingrese nombre completo')->
+                                setAttribute('class', "bloqueoSoloLetras imputEpass $class_nombre_titular col-xs-12 col-sm-12 col-md-12")->setAttribute('data-parsley-pattern-message', 'Solo letras, espacios () y guiones (-)')->setAttribute('minlength', 2)->setAttribute('maxlength', 20)->setAttribute('value',$session->txtNombreTitular)->setAttribute($class_enable_nombre_titular,$class_enable_nombre_titular)); ?>
+                            </div>
+                            
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="apellidos" class="spanEpass col-xs-12 col-sm-12 col-md-4">Apellidos del Titular :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtApellidosTitular")->setAttribute('placeholder', 'Ingrese apellidos completos')
+                                    ->setAttribute('minlength', '2')
+                                    ->setAttribute('maxlength', '20')
+                                    ->setAttribute('class', "bloqueoSoloLetras imputEpass $class_haveApellidosTitular col-xs-12 col-sm-12 col-md-12")->setAttribute('required', 'required')->setAttribute('value',$session->txtApellidosTitular)->setAttribute($class_enable_apellidos,$class_enable_apellidos)); ?>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tipo de Documento :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("tipoDoc")->setAttribute('class', "select_tipo_documento imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker")->setAttribute('required', 'required')->setValue($session->tipoDoc)); ?>
+                            </div>
+                            
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="nro_documento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Nro Documento :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtNumDocumento")->setAttribute('placeholder', 'Ingrese número documento')->setAttribute('class', "imputEpass col-xs-12 col-sm-12 col-md-12")->setAttribute('required', 'required')->setAttribute('value',$session->txtNumDocumento)); ?>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Correo :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtCorreo")->setAttribute('placeholder', 'Ingrese correo')->setAttribute('class', "imputEpass $class col-xs-12 col-sm-12 col-md-12 selectpicker")->setAttribute('required', 'required')->setAttribute('value',$session->txtCorreo)->setAttribute($class_enable,$class_enable)); ?>
+                            </div>
+                            
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-4">Teléfono :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtTelefono")->setAttribute('placeholder', 'Ingrese teléfono')->setAttribute('class', "bloqueoTelefono imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker")->setAttribute('required', 'required')->setAttribute('value',$session->txtTelefono)
+                                    ->setAttribute('value',$session->txtTelefono)
+                                    ->setAttribute('maxlength', '15')
+                                    ->setAttribute('autocomplete', "off")); ?>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <?php if($class==""){ ?>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="contrasenia" class="spanEpass col-xs-12 col-sm-12 col-md-4">Contraseña :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtContrasenia")->setAttribute('placeholder', 'Ingrese contraseña segura')->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12')->setAttribute('required', 'required')); ?>
+                                <div>(mínimo 6 y máximo 12 caracteres)</div>
+                            </div>
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="confirmar_contrasenia" class="spanEpass col-xs-12 col-sm-12 col-md-4">Confirmar Contraseña :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtConfirmaContrasenia")->setAttribute('placeholder', 'Repita contraseña')->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12')->setAttribute('required', 'required')); ?>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <?php }?>
+                </div>
+            </div>
+            <div class="subContenedorFormularioEpass top3em"><span class="spanEncima">Datos del Vehículo</span>
+                <div class="contenedorInputsEpass row">         
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Tipo de Vehículo :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("idTipoVehiculo")->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setValue($session->idTipoVehiculo)); ?>
+                            </div>
+                            
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Marca :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("idMarca")->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setValue($session->idMarca)); ?>
+                            </div>                                                        
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="contrasenia" class="spanEpass col-xs-12 col-sm-12 col-md-4">Placa :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("txtPlaca")->setAttribute('placeholder', 'Ejm: D9N470')->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12')->setAttribute('value',$session->txtPlaca)); ?>
+                                <div class="mensaje-placa-registrada-individual">(mínimo 6 y máximo 10 caracteres)</div>
+                            </div>
+                            
+                        </div>
+                        <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                            <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Modelo :</label>
+                            <div class="col-xs-12 col-sm-12 col-md-8">
+                                <?php echo $this->formElement($form->get("idModelo")->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setValue($session->idModelo)); ?>                               
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                                <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Color :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-10 tick-316">
+                                    <!--input type="text" name="txtColor" id="" data- maxlength="16" placeholder="Ingrese Color" class="slSinMarg imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker" value=""-->
+                                    <?php echo $this->formElement($form->get("txtColor")->setAttribute('maxlength', 14)->setAttribute('placeholder', 'Ingrese el color de Vehículo')->setAttribute('class', 'slSinMarg imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setValue($session->txtColor)); ?>
+                                </div>
+                                
+                            </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="subContenedorFormularioEpass top3em"><span class="spanEncima">Forma de Entrega</span>
+                <div class="contenedorInputsEpass row">
+                    <div class="form-inline txt-center">
+                        <?php echo $this->formElement($form->get("radTipo")->setValue($session->radTipo)); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="form-venta">
+
+            </div>
+            <div class="form-domicilio top3em">
+                <div class="subContenedorFormularioEpass"><span class="spanEncima">Dirección</span>
+                    <div class="contenedorInputsEpass row">
+                        <div class="form-inline">
+                            <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                                <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Departamento:</label>
+                                <div class="col-xs-12 col-sm-12 col-md-8">
+                                    <?php echo $this->formElement($form->get("idDpto")->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setValue($session->idDpto)); ?>
+                                </div>
+                                
+                            </div>
+                            <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                                <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Provincia :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-8">
+                                    <?php echo $this->formElement($form->get("idProvin")->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setValue($session->idProvin)); ?>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div class="bloqueInput col-xs-12 col-sm-6 col-md-6 form-group">
+                                <label for="docunento" class="spanEpass col-xs-12 col-sm-12 col-md-4">Distrito :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-8">
+                                    <?php echo $this->formElement($form->get("idDistrito")->setAttribute('class', 'imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setValue($session->idDistrito)); ?>
+                                </div>
+                                
+                            </div>
+                  
+                        </div>
+
+                        <div class="form-inline">
+                            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                                <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Dirección :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-10 tick-316">
+                                    <?php echo $this->formElement($form->get("txtDireccion")->setAttribute('placeholder', 'Ingrese dirección')->setAttribute('class', 'slSinMarg imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setAttribute('maxlength', '140')->setAttribute('value',$session->txtDireccion)); ?>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div class="bloqueInput col-xs-12 col-sm-12 col-md-12 form-group">
+                                <label for="correo" class="spanEpass col-xs-12 col-sm-12 col-md-2">Referencia :</label>
+                                <div class="col-xs-12 col-sm-12 col-md-10 tick-316">
+                                    <?php echo $this->formElement($form->get("txtReferencia")->setAttribute('placeholder', 'Referencia')->setAttribute('class', 'slSinMarg imputEpass col-xs-12 col-sm-12 col-md-12 selectpicker')->setAttribute('value',$session->txtReferencia)->setAttribute('maxlength', '180')); ?>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_errores"></div>
+        </div>
+        <div class="subContenedorFormularioEpass cont_check">       
+                <div class="contenedorInputsEpass row">                     
+                    <div class="form-inline">
+                        <div class="camp_checkbox col-xs-12 col-sm-6 col-md-6">
+                            <div>
+                                <?php echo $this->formElement($form->get("CkTerminos")->setAttribute('required', 'required')->setValue($session->CkTerminos)); ?>
+                                    <span class="inline-block span_check">
+                                        <span class="inline-block marg">Acepto los &nbsp;</span>
+                                            <a class="inline-block" href="/terminos-y-condiciones" target="_blank">términos y condiciones</a>
+                                            <span class="inline-block">&nbsp; del servicio</span>
+                                    </span>
+                            </div>
+                            <div>
+                                <?php echo $this->formElement($form->get("CkNovedades")->setValue($session->CkNovedades)); ?><span class="inline-block marg span_check">Quiero recibir novedades de e-pass</span>
+                            </div>
+                        </div>
+                        <?php echo $this->formElement($form->get("isUserSessionActive")); ?>
+                        <?php echo $this->formElement($form->get("id_plan")->setValue($session->idPlan)); ?>
+                        <?php echo $this->formElement($form->get("id_user_trunco")); ?>
+                        <!--input type="hidden" id="id_user_trunco" value="0" /-->
+                        <div class="btn_siguientePaso col-xs-12 col-sm-6 col-md-6">
+                           
+                            <?php echo $this->formElement($form->get("btnSgtPaso")
+                            ->setAttribute('id','btn-sgt-paso-individual')
+                            ->setAttribute('class', 'submit_sgtpaso')); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php echo $this->form()->closeTag(); ?> 
+        <!--************** formulario ePass **************//-->
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<!-- Modal confirmacion cuenta-->
+<div class="modal fade confirmacion_popup" id="confirmacion_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body orange-confirmacion">
+            <div class="mensaje-confirmacion">
+              ¿Está seguro que desea acceder a la nueva cuenta seleccionada?
+            </div>
+            <div class="row padding-btn">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <button id="aceptarNuevaCuenta" type="submit" class="col-xs-12 col-sm-12 col-md-12 btn btn-default">Aceptar</button>
+              </div>
+              <div class="col-xs-6  col-sm-6  col-md-6">
+                <button type="button" class="col-xs-12 col-sm-12 col-md-12 btn btn-default" data-dismiss="modal">Cancelar</button>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal agradecimiento/ envio correo-->
+<div class="modal fade confirmacion_popup" id="agradecimiento_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body lightblue-confirmacion">
+            <div class="mensaje-confirmacion">
+              Se te ha enviado un mail a tu correo <span id="correo">jhonsmithmiller@gmail.com</span> con el enlace para que Actives tu Cuenta de Usuario Web en e-pass.
+            </div>
+            <div class="row padding-btn">
+                <button type="submit" class=" btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal activacion/cuenta-->
+<div class="modal fade confirmacion_popup" id="activacion_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body lightblue-confirmacion">
+            <div class="mensaje-confirmacion">
+              Acabas de realizar la activación de tu Cuenta de Usuario Web en e-pass.
+              Por favor inicia sesión con tu usuario y contraeña que ingresaste en tu registro.
+            </div>
+            <div class="row padding-btn">
+                <button type="submit" class=" btn btn-default" data-dismiss="modal">Iniciar Sesión</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal caducidad de fecha de cuenta-->
+<div class="modal fade confirmacion_popup" id="caducidad_cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body lightblue-confirmacion">
+            <div class="mensaje-confirmacion">
+              El proceso de activación de cuenta ha caducado. Deberás realizar nuevamente el proceso solicitándolo <a class="aqui" href="#">Aquí</a>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal proceso exitoso cambio contraseña -->
+<div class="modal fade confirmacion_popup" id="exito_cambiopassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            <img class="logo-confirmacion" src="<?php echo $this->linkCdn('/img/logo.svg') ?>" alt="Epass">
+        </h4>
+      </div>
+      <div class="modal-body orange-confirmacion">
+            <h4>Proceso Exitoso</h4>
+            <div class="mensaje-confirmacion">
+              Se realizó el cambio de la contraseña de manera exitosa. Por favor inicie sesión para que acceda a su cuenta de usuario web en e-pass. 
+           
+            </div>
+             <div class="row padding-btn">
+                <button type="submit" class=" btn btn-default" data-dismiss="modal">Iniciar Sesión</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

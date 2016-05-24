@@ -1,0 +1,95 @@
+<style >
+    td{
+
+        margin: 15px;
+        padding: 8px;
+    }
+</style>
+<div class="contenedor" style="width: 500px;
+     border:2px solid #05AADD;
+     padding:2em;
+     margin:0 auto;
+     font-size: 12px;
+     font-family: 'Arial';
+     color:#333333">
+    <div class="div-img" style="text-align: center;">
+        <img src="<?= $this->view->linkCdn('/img/epass.png'); ?>" class="img" style="width: 100px">
+    </div>
+    <div class="body-mensaje" style="padding:1em;">
+        <div class="bienvenido">
+            <h3 style="color:#333333">Estimado Administrador </h3>
+        </div>
+        <div class="descripcion-cuerpo" style="font-size: 1.1em;
+             line-height: 1.7em;
+             color: #3C3B3B;">
+            <p>
+                Se ha registrado una nueva afiliación en el portal de <i class="italic">e-pass</i>.
+            </p>
+            <table border="1" style="border-collapse: collapse;width: 100%;font-size: 14px;margin-bottom: 10px;line-height: 20px;">
+                <thead style="background: #05AADD;color: white;">
+                <th colspan="2" style="text-align: center ">Datos del Cliente</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: bold">Nombre/Razón Social</td>
+                        <td><?php echo $this->nombre; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold">Correo de Contacto</td>
+                        <td><?php echo $this->email; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold">Tipo de Documento</td>
+                        <td><?php echo $this->tipo_documento; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold">Número de Documento</td>
+                        <td><?php echo $this->numero_documento; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold">Número de Contrato</td>
+                        <td><?php echo $this->contrato; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold">Plan</td>
+                        <td><?php echo $this->plan; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold">Número de Transacción</td>
+                        <td>3094</td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight: bold">Delivery</td>
+                        <td><?= ($this->delivery == '1') ? 'Si' : 'No'; ?></td>
+                    </tr>
+                    <?php if ($this->delivery == '1') { ?>
+                        <tr>
+                            <td style="font-weight: bold">Departamento</td>
+                            <td><?= $this->department ?></td>
+                        </tr>
+
+                        <tr>
+                            <td style="font-weight: bold">Provincia</td>
+                            <td><?= $this->district ?></td>
+                        </tr>
+
+                        <tr>
+                            <td style="font-weight: bold">Distrito</td>
+                            <td><?= $this->province ?></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold">Dirección</td>
+                            <td><?= $this->address ?></td>
+                        </tr> <tr>
+                            <td style="font-weight: bold">Referencia</td>
+                            <td><?= $this->observations ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+
+            <p>Atentamente,<br>El equipo de e-pass</p>
+        </div>
+    </div>
+</div>

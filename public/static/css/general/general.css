@@ -1,0 +1,1610 @@
+@-moz-keyframes specialPriceAnimation {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #2a6496;
+  }
+  100% {
+    color: #333;
+  }
+}
+@-webkit-keyframes specialPriceAnimation {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #2a6496;
+  }
+  100% {
+    color: #333;
+  }
+}
+@-o-keyframes specialPriceAnimation {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #2a6496;
+  }
+  100% {
+    color: #333;
+  }
+}
+@keyframes specialPriceAnimation {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #2a6496;
+  }
+  100% {
+    color: #333;
+  }
+}
+@-moz-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+  }
+  100% {
+    background: #333;
+  }
+}
+@-webkit-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+  }
+  100% {
+    background: #333;
+  }
+}
+@-o-keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+  }
+  100% {
+    background: #333;
+  }
+}
+@keyframes animationButton {
+  0% {
+    background: #333;
+  }
+  50% {
+    background: #2a6496;
+  }
+  100% {
+    background: #333;
+  }
+}
+@-webkit-keyframes animationFlechasSlideLeft {
+
+  50% {
+    -ms-transform: translate(-10px,0px); /* IE 9 */
+    -webkit-transform: translate(-10px,0px); /* Safari */
+    transform: translate(-10px,0px);
+  }
+ 
+}
+@-o-keyframes animationFlechasSlideLeft {
+ 
+  50% {
+    -ms-transform: translate(-10px,0px); /* IE 9 */
+    -webkit-transform: translate(-10px,0px); /* Safari */
+    transform: translate(-10px,0px);
+  }
+ 
+}
+@keyframes animationFlechasSlideLeft {
+  
+  50% {
+    -ms-transform: translate(-10px,0px); /* IE 9 */
+    -webkit-transform: translate(-10px,0px); /* Safari */
+    transform: translate(-10px,0px);
+  }
+  
+}
+@-webkit-keyframes animationFlechasSlide {
+
+  50% {
+    -ms-transform: translate(10px,0px); /* IE 9 */
+    -webkit-transform: translate(10px,0px); /* Safari */
+    transform: translate(10px,0px);
+  }
+ 
+}
+@-o-keyframes animationFlechasSlide {
+ 
+  50% {
+    -ms-transform: translate(10px,0px); /* IE 9 */
+    -webkit-transform: translate(10px,0px); /* Safari */
+    transform: translate(10px,0px);
+  }
+ 
+}
+@keyframes animationFlechasSlide {
+  
+  50% {
+    -ms-transform: translate(10px,0px); /* IE 9 */
+    -webkit-transform: translate(10px,0px); /* Safari */
+    transform: translate(10px,0px);
+  }
+  
+}
+
+/***********modal transparente********/
+#modal_afiliate,#modal_recarga
+{
+  background-color:rgba(171, 171, 171, 0.63);
+  
+}
+.bg-transparent
+{
+  background-color:rgba(171, 171, 171, 0);
+  box-shadow:none;
+  border:none;
+  padding: 3.6em 0em;
+  border-radius:0px; 
+}
+.modal_afiliate_title
+{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3em;
+  width: 53%;
+  margin: 0 auto;
+}
+.modal-dialog-afiliate
+{
+  width: 100%;
+  margin: 0;
+}
+.close_afiliate
+{
+  opacity: 1;
+  color: rgb(120, 120, 120);
+  background: white !important;
+  border-radius:50%;
+  height:1.2em;
+  width:1.2em;
+  padding: 0.15em !important;
+  margin-top: -13px !important;
+}
+@media screen and (max-width: 1090px) {
+  .modal_afiliate_title
+  {
+    width: 70%;
+  }
+  
+}
+@media screen and (max-width: 950px) {
+  .modal_afiliate_title
+  {
+    width: 80%;
+    padding: 16px;
+    font-size: 2.5em;
+  }
+  .requi_afiliacion
+  {
+    text-align: center;
+  }
+  .flecha-requisitos-afiliacion
+  {
+    transform:rotate(90deg);
+  }
+}
+@media screen and (max-width: 767px) {
+  .gota-epas-modal
+  {
+    margin-top:0px !important;
+  }
+  .segunda-gota
+  {
+    margin-top: 2em;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .paqueteEpass-TituloPlomo
+  {
+    margin-top: 0em !important;
+  }
+  .modal_afiliate_title
+  {
+    font-size: 2em;
+  }
+   .publicidadEpass-Texto
+  {
+    font-size: 20px !important;
+    text-align: center !important;
+  }
+  .publicidadEpass-Button
+  {
+    font-size: 12px;
+  }
+  .titulo-flotante-modal
+  {
+    font-size: 2em !important;
+  }
+
+}
+/***********modal transparente********/
+/**************gotita de ePass*********/
+.gota-epas {
+  margin: 0 auto;
+  font-size: 20px;
+  background: #f28b00;
+  height: 20em;
+  width: 20em;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-image: url(../../img/chofer.jpg);
+  background-size:100%;
+  background-position: 0em 4.4em;
+  background-repeat: no-repeat;
+  box-shadow: -15px 3px 0px -3px rgba(242,139,0,0.58);
+  -webkit-box-shadow: -15px 3px 0px -3px rgba(242,139,0,0.58);
+  overflow: hidden;
+}
+.gota-epas-titulo {
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 3px 3px #423e3e;
+  padding: 0.4em;
+}
+.gota-epas-img {
+  transition:all ease 1s;
+  text-align: center;
+  height: 17em;
+  margin-top: -1em;
+  background: rgba(242,139,0,0.42);
+}
+.gota-epas-img:hover
+{
+  background:none;
+}
+.gota-epas-img img {
+  height: 10em;
+  border-radius: 50%;
+}
+.gota-epas-btn {
+  text-align: center;
+}
+.gota-epas-btn a {
+  font-size: 27px;
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid #fff;
+  padding: 0.1em 0.2em;
+  border-radius: 0.4em;
+  font-weight: bold;  
+  text-shadow: 3px 3px #423e3e;
+  margin-top: 9em;
+  display: inline-block;
+}
+.gota-epas-btn a:hover {
+  animation: ahoverAnimation 1s infinite;
+}
+.gota-epas-btn i {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 0.2em;
+}
+.gota-epas-btn i,
+.gota-epas-btn span {
+  display: inline-block;
+  vertical-align: top;
+}
+@-moz-keyframes ahoverAnimation {
+ 
+  50% {
+    background: #f28b00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+ 
+}
+@-webkit-keyframes ahoverAnimation {
+
+  50% {
+    background: #f28b00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+  
+}
+@-o-keyframes ahoverAnimation {
+ 
+  50% {
+    background: #f28b00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+ 
+}
+@keyframes ahoverAnimation {
+  
+  50% {
+    background: #f28b00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+ 
+}
+.contenedor-gotas-personas {
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+.bg-celeste
+{
+  background-image: url(../../img/camion.jpg);
+  background-color: #05AADD;
+  box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+  -webkit-box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+  -moz-box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+  -o-box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+}
+.bg-celeste-woman
+{
+  background-image: url(../../img/persona_individual.jpg);
+  background-color: #05AADD;
+  box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+  -webkit-box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+  -moz-box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+  -o-box-shadow: -15px 3px 0px -3px rgba(5, 170, 221, 0.65);
+}
+
+.bg-green
+{
+  background-color: #CEDF00;
+  box-shadow: -15px 3px 0px -3px rgba(206, 223, 0, 0.63);
+  -webkit-box-shadow: -15px 3px 0px -3px rgba(206, 223, 0, 0.63);
+  -moz-box-shadow: -15px 3px 0px -3px rgba(206, 223, 0, 0.63);
+  -o-box-shadow: -15px 3px 0px -3px rgba(206, 223, 0, 0.63);
+}
+@-moz-keyframes ahoverAnimationCeleste {
+ 
+  50% {
+    background: #05AADD;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+
+}
+@-webkit-keyframes ahoverAnimationCeleste {
+ 
+  50% {
+    background: #05AADD;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+ 
+}
+@-o-keyframes ahoverAnimationCeleste {
+ 
+  50% {
+    background: #05AADD;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+ 
+}
+@keyframes ahoverAnimationCeleste {
+
+  50% {
+    background: #05AADD;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+  
+}
+.bg-celeste a:hover
+{
+  animation: ahoverAnimationCeleste 1s infinite;
+}
+.gota-epas-img-transarent-celeste
+{
+  background: rgba(5, 170, 221, 0.38);
+}
+@-moz-keyframes ahoverAnimationGreen {
+ 
+  50% {
+    background: #CEDF00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+
+}
+@-webkit-keyframes ahoverAnimationGreen {
+ 
+  50% {
+    background: #CEDF00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+ 
+}
+@-o-keyframes ahoverAnimationGreen {
+ 
+  50% {
+    background: #CEDF00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+ 
+}
+@keyframes ahoverAnimationGreen {
+
+  50% {
+    background: #CEDF00;
+    color: #464444;
+    border: 3px solid #464444;
+    text-shadow: 1px 1px #fff;
+  }
+  
+}
+.gota-epas-img-transarent-green
+{
+  background: rgba(206, 223, 0, 0.33);
+}
+.pack-epass-bordergreen
+{
+  border: 2px solid #CEDF00 !important
+}
+.bg-green a:hover
+{
+  animation: ahoverAnimationGreen 1s infinite;
+}
+.pack-epass-bggreen
+{
+  background: #CEDF00 !important;
+}
+.publicidadEpass-Texto {
+  font-size: 2em;
+  text-align: right;
+}
+.publicidadEpass-Button a {
+  text-decoration: none;
+  background: #fff;
+  color: #6f6f6e;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-size: 2em;
+  cursor: pointer;
+  
+}
+.texto-asterisco
+{
+  color: #757873;
+  clear: both;
+  padding-top: 3em;
+  padding-right:4%;
+  padding-left:4%;
+  padding-bottom:0.5em;
+  font-size: 1em;
+}
+@media screen and (max-width: 1250px) {
+  .gota-epas
+  {
+    font-size: 18px;
+  }
+  .gota-epas-btn a
+  {
+    font-size: 24px;
+  }
+
+}
+@media screen and (max-width: 1225px) {
+   .gota-epas
+  {
+    font-size: 16px;
+  }
+  .gota-epas-btn a
+  {
+    font-size: 20px;
+  }
+  .gota-epas-btn a
+  {
+    margin-top: 10em;
+  }
+}
+@media screen and (max-width: 840px) {
+  .gota-epas
+  {
+    font-size: 14px;
+  }
+  .gota-epas-btn a
+  {
+    font-size: 18px;
+  }
+  .gota-epas-btn a
+  {
+    margin-top: 9em;
+  }
+}
+@media screen and (max-width: 669px) {
+ 
+  .gota-epas
+  {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    /*
+    border-top-right-radius:0;
+    border-top-left-radius:50%;*/
+  }
+  .bg-green
+  {
+    margin-top: 0px;
+  }
+  /*
+  .gota-epas-titulo
+  {
+    text-align: right;
+  }*/
+}
+/**************gotita de ePass*********/
+/************** posit flotante ePass********/
+.modal-title-recarga
+{
+  text-align: center;
+}
+.modal-body-recarga
+{
+  background: #05AADD;
+  color:white;
+  padding: 2em 3em;
+}
+.modal-recarga-title
+{
+  text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+.modal-recarga-text
+{
+  font-size: 1.3em;
+}
+.imgModalRecarga
+{
+  height: 2em;  
+}
+.contenedorRadioModalRecarga
+{
+  padding: 1em;
+    font-size: 1.2em;
+}
+.input-group-addon .fa-credit-card
+{
+  font-size: 1.4em !important;
+  color: #05AADD;
+  width: 100%;
+}
+.contenedor-btn-siguiente
+{
+  width: 100%;
+  text-align: center;
+}
+@-moz-keyframes bg-color {
+
+  50% {
+    
+    color: white;
+    background: #363f45;
+    border: 1px solid #05AADD;
+  }
+ 
+}
+@-webkit-keyframes bg-color {
+
+  50% {    
+    color: white;
+    background: #363f45;
+    border: 1px solid #05AADD;
+  }
+ 
+}
+@-o-keyframes bg-color {
+ 
+  50% {    
+    color: white;
+    background: #363f45;
+    border: 1px solid #05AADD;
+  }
+ 
+}
+@keyframes bg-color {
+  
+  50% {    
+    color: white;
+    background: #363f45;
+    border: 1px solid #05AADD;
+  }
+  
+}
+.btn-default-personalizado:hover
+{
+  
+  animation:bg-color 1s infinite;
+}
+.btn-default-personalizado
+{
+  margin: 2em 0em !important;
+  width: 20em;
+  color: #05AADD;
+  height:2.5em;
+}
+@-moz-keyframes animationHoverLetra {
+
+  50% {
+    
+    color: #6f6f6e;
+  }
+ 
+}
+@-webkit-keyframes animationHoverLetra {
+
+  50% {    
+    color: #6f6f6e;
+  }
+ 
+}
+@-o-keyframes animationHoverLetra {
+ 
+  50% {    
+    color: #6f6f6e;
+  }
+ 
+}
+@keyframes animationHoverLetra {
+  
+  50% {    
+    color: #6f6f6e;
+  }
+  
+}
+.animationHoverLetra
+{
+  animation: animationHoverLetra 1s infinite;
+}
+.posit-Epass-MisSaldos
+{
+  color: #e0333d;
+}
+.posit-Epass-MisSaldos:hover
+{
+  
+}
+.posit-Epass-Container {  
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  z-index: 1;
+  width: 2em;
+}
+.infoConsultasHref
+{
+  cursor: pointer;
+}
+.posit-Epass-Consulta
+{
+  display: none;
+}
+.posit-Epass-Consulta-Oculta i
+{
+  color: #F28B00;
+  font-size: 2em;
+}
+.posit-Epass-Consulta-Oculta-background
+{
+  background: #e0333d;
+  padding: 1em 0em;
+  border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+.posit-Epass-Consulta-Oculta {
+  height: 13em;  
+  color: #fff;
+  width: 2em;
+  cursor: pointer;
+  float: right;
+  height: 13.5em;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.23em;  
+  border-radius: 0.2em;
+}
+.posit-Epass-Consulta-Oculta {
+  display: block;
+  text-align: center;
+}
+.posit-Epass {
+  width: 8em;
+
+}
+.posit-Epass-Titulo,
+.posit-Epass-Footer {
+  background: #e0333d;
+  color: #fff;
+  text-align: center;
+  height: 2em;  
+  font-weight: bold;
+  cursor: pointer;
+  padding-top: 0.2em;
+}
+.posit-Epass-MisSaldos {
+  height: 7em;
+  color: #e0333d;  
+  border-left: 1px dashed #757873;
+  border-right: 1px dashed #757873;
+  border-top: 1px dashed #757873;
+  background: white;
+}
+
+.posit-Epass-titulo {
+  background: white;
+  font-size: 1.1em;
+  text-align: center;
+  margin-top: 1em;
+  color: #e0333d;
+}
+.posit-Epass-Titulo-title
+{
+  background: #e0333d;
+  color: white;
+}
+.ePass-flecha {
+  font-size: 2em;
+   width: 27%;
+   display: inline-block;
+   text-align: center;
+}
+.fa-refresh,
+.fa-hand-o-up,
+.fa-credit-card {
+      font-size: 2.5em;
+    width: 40%;
+    text-align: center;
+}
+.posit-Epass-MisSaldos-Contenido {  
+  width: 100%;
+}
+.fa-angle-right,
+.fa-angle-left {
+  font-size: 1.5em;
+}
+.letras-90deg {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+
+.infoConsultasHref
+{
+  text-decoration: none !important;
+}
+
+
+@keyframes infoAnimationI {
+  0% {
+    font-size: 2em;
+    /*
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1); 
+    transform: scale(1,);*/
+  }
+  50% {
+
+    -ms-transform: translate(0px,-10px); /* IE 9 */
+    -webkit-transform: translate(0px,-10px); /* Safari */
+    transform: translate(0px,-10px);
+  }
+  100% {
+    -ms-transform: translate(0px,0px); /* IE 9 */
+    -webkit-transform: translate(0px,0px); /* Safari */
+    transform: translate(0px,0px);
+    /*
+    -ms-transform: scale(1); 
+    -webkit-transform: scale(1); 
+    transform: scale(1);*/
+  }
+}
+
+.posit-Epass-Consulta-Oculta i
+{
+  animation: infoAnimationI 1s infinite;    
+}
+
+/************** posit flotante ePass********/
+
+/*********paquete ePass**************/
+.precio {
+  font-size: 2.7em;
+  font-weight: bold;
+  width: 66%;
+}
+.contenedorContenido {
+  border: 2px solid #f28b00;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.soles,
+.precio {
+  display: inline-block;
+  vertical-align: top;
+}
+.paqueteEpass-Contenido-Recarga {
+  padding-top: 1.4em;
+  padding-bottom: 1.4em;
+  text-align: center;
+}
+.paqueteEpass-Contenido-bloque2,
+.paqueteEpass-Contenido-bloque3 {
+  padding: 1.5em 0.4em;
+  position: relative;
+  border-bottom: 2px dashed #f28b00;
+}
+.paqueteEpass-Contenido-bloque2-Derecha {
+  position: absolute;
+  right: 1em;
+  top: 2.5em;
+}
+.paqueteEpass-Contenido-bloque1 {
+  padding: 1em 0.4em;
+  border-bottom: 2px dashed #f28b00;
+  position: relative;
+  font-size: 1.3em;
+}
+.paqueteEpass-Contenido-bloque3 span
+{
+  font-size: 1.3em;
+}
+strike {
+  font-size: 0.9em;
+}
+.specialPrice {
+  font-size: 1.1em;
+  animation: specialPriceAnimation 2s infinite;
+  padding-top: 0.25em;
+}
+.pad {
+  padding-top: 0.3em;
+  animation: specialPriceAnimation 2s infinite;
+}
+.paqueteEpass-Contenido-bloque2 {
+  font-size: 1.3em;
+}
+.saldo-monto {
+  position: absolute;
+  right: 16px;
+}
+.paqueteEpass-Contenido-Recarga span {
+  font-size: 1.3em;
+  color: #f28b00;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+}
+.top0 {
+  top: 0;
+}
+.tachado {
+  top: 0;
+  color: #e0333d;
+}
+.pad03
+{
+  padding-top: 0.3em;
+}
+.paqueteEpass {
+  width: 19em;
+  margin: 0 auto;
+}
+.relative {
+  position: relative;
+}
+.paqueteEpass-Titulo {
+  color: #fff;
+  background: #f28b00;
+  text-align: center;
+  border-bottom: 3px solid #fff;
+  height: 1.6em;
+  font-size: 1.9em;
+  font-weight: bold;
+  border-top-right-radius: 0.7em;
+}
+.paqueteEpass-Contenido-Precio {
+  background: #f28b00;
+  height: 6em;
+  padding-top: 0.8em;
+  color: #fff;
+  text-align: center;
+  border-radius: 19em/6em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.paqueteEpass-Contenido-VerMas {
+  text-align: center;
+  padding: 0.5em 1.2em;
+  font-size: 2em;
+  color: #f28b00;
+  font-weight: bold;
+  border-top: 2px solid rgba(242,139,0,0.48);
+  background: rgba(242,139,0,0.19);
+}
+.paqueteEpass-Contenido-VerMas i {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 1.8em;
+  vertical-align: middle;
+}
+.paqueteEpass-Contenido-VerMas span {
+  display: inline-block;
+  vertical-align: middle;
+  background: #f28b00;
+  color: #fff;
+  padding: 0.3em 1em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.paqueteEpass-Contenido-VerMas span:hover {
+  animation: animationButton 1s infinite;
+}
+.sinDashed {
+  border-bottom: none;
+}
+
+
+/*********paquete ePassMas**********/
+.soles {
+  font-size: 1.5em;
+  margin-top: 0.4em;
+  width: 7%;
+}
+.precioPlomo {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+.contenedorContenidoPlomo {
+  border: 2px solid #CEDF00;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.bgceleste
+{
+  background: #05AADD !important;
+}
+.bgCelesteTransparent
+{
+  border-top: 2px solid rgba(5, 170, 221, 0.53) !important;
+  background: rgba(5, 170, 221, 0.2);
+}
+.colorceleste
+{
+  color: #05AADD !important;
+}
+.borderCeleste
+{
+  border: 2px solid #05AADD; 
+}
+.dashedCeleste
+{
+  border-bottom: 2px dashed #05AADD;
+}
+.paqueteEpass-Contenido-RecargaPlomo {
+  padding: 3.8em 2em;
+  text-align: center;
+  line-height: 2.2em;
+}
+.paqueteEpass-Contenido-RecargaPlomo > a
+{
+  cursor: pointer;
+}
+.paqueteEpass-Contenido-RecargaPlomo span {
+  font-size: 1.4em;
+  color: #464846;
+  border-radius: 5px;
+}
+.paqueteEpass-Contenido-RecargaPlomo a {
+  font-size: 1.7em;
+  color: #464846;
+  text-decoration: underline;
+}
+
+.paqueteEpass-TituloPlomo {
+  margin-top: 1.5em;
+  color: #fff;  
+  background: #CEDF00;
+  text-align: center;
+  border-bottom: 3px solid #fff;
+  height: 1.6em;
+  font-size: 1.9em;
+  font-weight: bold;
+  border-top-right-radius: 0.7em;
+}
+.paqueteEpass-Contenido-PrecioPlomo {  
+  background: #CEDF00;
+  height: 6em;
+  padding-top: 0.8em;
+  color: #fff;
+  text-align: center;
+  border-radius: 19em/6em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.paqueteEpass-Contenido-VerMasPlomo {
+  text-align: center;
+  padding: 0.5em 1.2em;
+  font-size: 2em;
+  color: #9a9c99;
+  font-weight: bold;  
+  background: rgba(206, 223, 0, 0.31);
+  border-top:2px solid rgba(206, 223, 0, 0.52);
+}
+.paqueteEpass-Contenido-VerMasPlomo i {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 1.8em;
+  vertical-align: middle;
+}
+.paqueteEpass-Contenido-VerMasPlomo span {
+  display: inline-block;
+  vertical-align: middle;  
+  background: #CEDF00;
+  color: #fff;
+  padding: 0.3em 1em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.paqueteEpass-Contenido-VerMasPlomo span:hover {
+  animation: animationButton 1s infinite;
+}
+/*********paquete ePassMas**********/
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out;
+}
+.owl-carousel .owl-item {
+  float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+  cursor: pointer;
+}
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.grabbing {
+  cursor: url("grabbing.png") 8 8, move;
+}
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+.span-color-green span
+{
+  color: #737920 !important;
+}
+.span-color-green
+{
+  color: #CEDF00 !important;
+}
+.dashed-green
+{
+  border-bottom:2px dashed #CEDF00;
+}
+.border-green-rgba
+{
+  border-top: 2px solid rgba(206, 223, 0, 0.45) !important;
+}
+.bg-green-rgba
+{
+  background: rgba(206, 223, 0, 0.23) !important;
+}
+@media screen and (max-width: 760px) {
+  .contenedor-gotas-personas
+  {
+    margin-top: 0;
+  }
+}
+.prepago-red
+{
+      background: #e0333d;
+    color: white;
+    text-align: center;
+    width: 10em;
+    padding: 0.5em;
+    border: 2px solid #F28B00;
+}
+.maspadding {
+    padding: 1.9em 0.4em;
+}
+.contenedor-msj
+{
+    padding: 1em 3em;
+    margin-top: 1em;    
+    color: white;
+    cursor: pointer;
+    clear: both;
+}
+.msj-paquete:hover
+{
+  animation: animationButton 1s infinite;
+}
+.bg-celeste-epass
+{
+  background: #05AADD;
+}
+.msj-paquete
+{
+    text-align: center;
+    padding: 0.3em;
+    border-radius: 5px;
+}
+.msj-paquete > a
+{
+  color: white;
+  text-decoration: underline;
+}
+.full-zkte-mod
+{
+  width: 100%;
+}
+.lista_pasos a
+{
+  color: white;
+}
+.lista_pasos li
+{
+  text-align: left;
+}
+.modal-body_pasos_recarga
+{
+    font-size: 1.2em;
+    padding: 0.5em;
+    text-align: center;
+}
+.btn-cerrar-modal-2
+{
+  height: 2em;
+  width: 10em;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+}
+.modal-fondo
+{
+    background-color: rgba(171, 171, 171, 0.63);    
+}
+.bg-orange,.bg-orange-epass
+{
+  background: #f28b00;
+}
+.titulo-flotante-modal
+{
+  font-size: 3em;
+  font-weight: bold;
+  text-align:center;
+  margin-top: -1em;
+  margin-bottom: 0.5em;
+}
+.modal-radius-top
+{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.modal-radius-bottom
+{
+  border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.close-modal-flotante
+{
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;        
+    color: rgb(120, 120, 120);
+    background: white !important;
+    border-radius: 50%;
+    height: 1.2em;
+    width: 1.2em;
+    padding: 0.15em !important;    
+}
+.bg-green-epass
+{
+  background: #CEDF00;
+}
+@media screen and (max-width: 1313px){
+  .zkte-spad
+  {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1040px){
+  .prev,.next
+  {
+    top: 25%;
+  }
+  .owl-pagination
+  {
+    top: -25px
+  }
+}
+
+
+@media screen and (max-width: 782px){
+  .preguntaEpassTitulo
+  {
+    font-size: 2.5em;
+  }
+  .backgroundPuntitos
+  {
+    height: 3em;
+  }
+  .height
+  {
+    height: 2em;
+  }
+  .zkte-spad
+  {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 767px){
+
+  .close_afiliate
+  {
+    right: 11px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .modal_afiliate_title
+  {
+    width: 100%;
+  }
+  .close_afiliate
+  {
+    right: 0px !important;
+  }
+  .preguntaEpassTitulo {
+    font-size: 2em;
+  }
+  .backgroundPuntitos
+  {
+    height: 3em;
+  }
+  .prev,.next
+  {
+    display: none;
+  }
+  .owl-page
+  {
+    height: 12px;
+    width:12px;
+  }
+  .lineaVerde
+  {
+    margin-bottom: 0em;
+  }
+  .gota-epas
+  {
+    font-size: 11px;
+  }
+  .gota-epas-btn a 
+  {
+    margin-top: 6.7em;
+  }
+}
+.btn-primary-mov
+{
+  margin-top: 1.2em;
+}
+.modal-70
+{
+  width: 70%;
+  margin:0 auto
+}
+.logo_login
+{
+  width: 9em;
+}
+.title-inicia-sesion-modal
+{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.subtitile-inicio-sesion
+{
+  text-align: center;
+  font-size: 1.2em;
+}
+.color-orange
+{
+  color: #F28B00;
+}
+.recordar-contra
+{
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+}
+.href_modal_olvidelacontra
+{
+      display: block;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.top-modal-login-container
+{
+  margin-top: 4em;
+}
+.cont_video_ePass
+{
+  clear: both;
+}
+.clear
+{
+  clear: both;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+#pagetransition {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#bg {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;  
+  background-size: cover;
+}
+.square {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.square.black {
+  background: #05AADD ;
+  top: -50%;
+  left: -20%;
+  z-index: 3;
+}
+.square.white {
+  background: #fff;
+  height: 200%;
+  right: -50%;
+  top: -130%;
+  z-index: 5;
+}
+.square.gold {
+  background: #CEDF00;
+  right: -20%;
+  bottom: -50%;
+  z-index: 4;
+}
+.square.grey {
+  background: #f28b00;
+  height: 200%;
+  left: -50%;
+  bottom: -130%;
+  z-index: 4;
+}
+.vic-gb {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -98px;
+  margin-left: -143.5px;
+  z-index: 999;
+  width: 287px;
+  height: 196px;
+  background: url(../../img/epass.png);
+  background-size:100%;
+  background-repeat: no-repeat; 
+}
+#pagetransition
+{
+  display: none;
+}
+.inline-block
+{
+    display: inline;
+    vertical-align: top;
+}
+.btn-cerrar-modal-pasos
+{
+    padding-top: 0.3em;
+}
+.gota-epas
+{
+  cursor: pointer;
+}
+
+.gota-persona-familia
+{
+  background-image: url(../../img/persona_familia.jpg);
+}
+.gota-epas-empresa-prepago
+{
+  background-image: url(../../img/empresa_prepago.jpg);
+}
+.gota-epas-empresa-postpago
+{
+  background-image: url(../../img/empresa_postpago.jpg);
+}
+.close_afiliate
+  {
+    position: absolute;
+    top: -13px;
+    right: -26px;
+  }
+.modal_afiliate_title
+{
+  position: relative;
+}
+.comprobanteContainer
+{
+  margin-top: 2em;
+}
+.btn_siguientePaso-modificado
+{
+    margin-top: 0em !important;
+    /* margin-right: 2em; */
+    right: 17px;
+    top: -2px;
+}
+.posit-Epass-Consulta-Oculta-no-logeada
+{
+  height: 1.5em !important;  
+}
+.cuadro-no-logeado
+{
+  padding: 0.5em 0em;
+}
+.cuadro-no-logeado i
+{
+  color: white;
+  animation:none !important;
+  width: 100%;  
+}
+.background-oculto
+{
+  border-top-left-radius:0px !important;
+  border-top-right-radius:0px !important;
+  padding: 0em;
+  width: 2.9em;
+  position: relative;
+  right: 15px;
+  border: 1px dashed white;
+}
+.cursorPointer
+{
+  cursor: pointer;
+}
+.paqueteEpass-Contenido
+{
+  position: relative;
+}
+.new-tag
+{
+  padding-top: 2em;
+}
+.texto-descriptivo-tag-new
+{
+  width: 100%;
+  padding: 1em 1em !important;
+  display: inline-block;
+}
+.recarga-1tag
+{
+  font-size: 15px;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 100%;
+}
+.whitePointer
+{
+  cursor: pointer;
+  color: white;
+}
+.flechaSlider-right
+{
+  animation: animationFlechasSlide 1s infinite;
+}
+.rigth-arrow
+{
+  
+}
+.left-arrow
+{
+}
+@media screen and (max-width: 1200px){
+  .paqueteEpass-recarga
+  {
+    font-size: 12px !important; 
+  }
+}

@@ -1,0 +1,88 @@
+
+<!--************** posit ePass **************//-->
+<?php $isauth = $this->session_active_helper();?>
+        <?php if($isauth) {?>
+            <div class="posit-Epass-Container">
+        <?php }else {?>
+            <div class="posit-Epass-Container" style="bottom: 0px; width: 8em;">
+        <?php } ?>
+        
+            
+            <?php if($isauth) {?>
+            <div class="posit-Epass-Consulta-Oculta">
+                <div><i class="fa fa-hand-o-down"></i></div>
+                <div class="posit-Epass-Consulta-Oculta-background">
+                    <div class="letras-90deg">S</div>
+                    <div class="letras-90deg">A</div>
+                    <div class="letras-90deg">T</div>
+                    <div class="letras-90deg">L</div>
+                    <div class="letras-90deg">U</div>
+                    <div class="letras-90deg">S</div>
+                    <div class="letras-90deg">N</div>
+                    <div class="letras-90deg">O</div>
+                    <div class="letras-90deg">C</div>
+                </div>
+            </div>
+            <?php } else {?>
+                <div class="posit-Epass-Consulta-Oculta posit-Epass-Consulta-Oculta-no-logeada" style="display: none;">
+               
+                <div class="posit-Epass-Consulta-Oculta-background background-oculto">
+                   <div class="cuadro-no-logeado">
+                       <i class="fa fa-refresh"></i>
+                   </div>
+                </div>
+                </div>
+            <?php }?>
+
+
+            <div class="posit-Epass">
+
+
+            <?php if($isauth) {?>
+                <div class="posit-Epass-Consulta">
+            <?php }else {?>
+                <div class="posit-Epass-Consulta" style="display: block;">
+            <?php } ?>
+                    
+
+                    <div class="posit-Epass-Titulo"> Consultas</div>
+                    <?php
+                            
+                            $data = $this->session_data_helper();
+                           
+                            if($isauth){
+                                if($data->role=='usuario'){
+                    ?>
+                        <a href="/mi-cuenta" class="infoConsultasHref">
+                            <div class="posit-Epass-MisSaldos">
+                                <div class="posit-Epass-titulo">Mis Saldos</div>
+                                <div class="posit-Epass-MisSaldos-Contenido"><span class="ePass-flecha"><i class="fa fa-angle-right"></i></span><span><i class="fa fa-hand-o-up"></i></span><span class="ePass-flecha"><i class="fa fa-angle-left"></i></span></div>
+                            </div>
+                        </a>
+                        <a href="/mi-cuenta/mis-datos" class="infoConsultasHref">
+                            <div class="posit-Epass-MisSaldos">
+                                <div class="posit-Epass-titulo">Mis Datos</div>
+                                <div class="posit-Epass-MisSaldos-Contenido"><span class="ePass-flecha"><i class="fa fa-angle-right"></i></span><span><i class="fa fa-credit-card"></i></span><span class="ePass-flecha"> <i class="fa fa-angle-left"></i></span></div>
+                            </div>
+                        </a>
+                                <?php }?>
+                        <a href="/mi-cuenta/recarga-directa" class="infoConsultasHref">
+                            <div class="posit-Epass-MisSaldos">
+                                <div class="posit-Epass-titulo" >Recargar</div>
+                                <div class="posit-Epass-MisSaldos-Contenido"><span class="ePass-flecha"><i class="fa fa-angle-right"></i></span><span><i class="fa fa-refresh"></i></span><span class="ePass-flecha"> <i class="fa fa-angle-left">      </i></span></div>
+                            </div>
+                        </a>
+                        <div class="posit-Epass-Footer">Cerrar</div>
+                    <?php   }else {  ?>
+                    <span class="infoConsultasHref" id="recarga-directa-only-show-modal">
+                        <div class="posit-Epass-MisSaldos">
+                            <div class="posit-Epass-titulo" >Recargar</div>
+                            <div class="posit-Epass-MisSaldos-Contenido"><span class="ePass-flecha"><i class="fa fa-angle-right"></i></span><span><i class="fa fa-refresh icono_recarga_epass"></i></span><span class="ePass-flecha"> <i class="fa fa-angle-left">      </i></span></div>
+                        </div>
+                    </span>
+                    <div class="posit-Epass-Footer">Cerrar</div>
+                    <?php   }?>
+                </div>
+            </div>
+        </div>
+<!--************** posit ePass **************//-->

@@ -1,0 +1,79 @@
+/* TEAM */
+    Project Manager: Deybee Chávez
+    Contact: deybeecz[at]gmail.com
+    From:Nuevo Chimbote, Ancash, Perú
+
+    Developer Back-end: Renzo Tejada
+    Twitter: @tejadarenzo
+    Email: renzzo09[at]gmail.com
+    From:Lima, Lima, Perú
+
+    Developer Back-end: Juan Sánchez
+    Email: juanperu[at]gmail.com
+    From:Lima, Lima, Perú
+
+    Developer Back-end: Ronald Cutisaca
+    Email: ronaldfox2015[at]gmail.com
+    From:Lima, Lima, Perú
+
+    Developer Back-end: César Velásquez
+    Email: vehac69[at]gmail.com & vehac69[at]hotmail.com
+    From:Trujillo, La Libertad, Perú
+
+    Developer Back-end: Jhon Campos
+    Email: camposarteaga.j[at]gmail.com
+    From:Trujillo, La Libertad, Perú
+
+    Developer Back-end: Martin Cruz
+    Email: i[at]martincruz.me
+    From:Trujillo, La Libertad, Perú
+
+    Developer Front-end: Daniel Moreno 
+    Email: irvind.moreno[at]hotmail.com
+    From:Trujillo, La Libertad, Perú
+
+    Developer Front-end: Samuel Márquez
+    Email: samuel_1710[at]hotmail.com
+    From:Trujillo, La Libertad, Perú
+
+    Developer Mobile & Back-end: Antonio Espinoza
+    Email: alonso1978[at]gmail.com
+    From:Lima, Lima, Perú
+    
+    Developer Mobile & Front-end & Back-end : Lester León
+    Email: lester77rlv[at]gmail.com
+    From:Lima, Lima, Perú
+
+/* THANKS */
+    CEO Clicks Latam: Vladimir Estrada
+    From:Lima, Lima, Perú
+
+    Analista Funcional: Karina Salazar
+    From:Lima, Lima, Perú
+
+    Jefe de QA : Rosa García
+    From:Lima, Lima, Perú
+
+    QA : Milagros Vallejos
+    From:Lima, Lima, Perú
+
+    Jefe de Infraestructura : Hector Paz
+    From:Lima, Lima, Perú
+
+/* TECHNOLOGY */
+    PHP & Zend Framework 2
+    MySQL
+    MongoDB
+    Ionic
+    TWITTER BOOTSTRAP & jQuery
+    JIRA
+    Bitbucket
+    Jenkins
+    Google Cloud Platform
+
+
+/* SITE */
+    Last update:2016/04/11
+    Language: Castellano
+    Doctype:HTML5
+    IDE: Sublime Text, NetBeans, PhpStorm, Photoshop

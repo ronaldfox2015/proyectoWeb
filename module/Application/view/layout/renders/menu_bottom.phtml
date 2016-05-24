@@ -1,0 +1,11 @@
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="navbar-collapse-secundario">
+    <ul class="nav navbar-nav ">
+        <?php foreach($this->container as $page): ?>
+            <li class="<?= $page->isActive(true) ? 'active': '' ?>">
+                <a href="<?= $page->getHref(); ?>"
+                   title="<?= $page->title ?>"><?= $page->label ?></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div><!-- /.navbar-collapse -->

@@ -1,0 +1,28 @@
+{
+    "name":              "tasmaniski/zf2-current-route",
+    "description":       "View Helper for reading current route info: Controller, Action, Module name",
+    "type":              "library",
+    "keywords":          ["zf2", "view", "helper", "route"],
+    "homepage":          "https://github.com/tasmaniski",
+    "authors": [
+        {
+            "name":     "Aleksandar Varnicic",
+            "email":    "tasmaniski@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "zendframework/zendframework": "2.5.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "CurrentRoute": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-0": { "CurrentRouteTest": "test/" }
+    }
+}
